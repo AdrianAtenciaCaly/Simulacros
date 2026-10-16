@@ -12,7 +12,15 @@
 
         constructor(listElement, items) {
             items.forEach(({ id, label, onSelect }) => {
-                const button = h('button', { type: 'button', class: 'nav-item', onClick: onSelect }, label);
+                const match = label.match(/^(\p{Extended_Pictographic}|\S+)\s+(.+)$/u);
+                const buttonContent = match
+                    ? [
+                        h('span', { class: 'nav-icon' }, match[1]),
+                        h('span', { class: 'nav-text' }, match[2])
+                      ]
+                    : [h('span', { class: 'nav-text' }, label)];
+
+                const button = h('button', { type: 'button', class: 'nav-item', onClick: onSelect }, ...buttonContent);
                 this.#buttons.set(id, button);
                 listElement.append(h('li', {}, button));
             });

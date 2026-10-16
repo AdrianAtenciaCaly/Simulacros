@@ -40,9 +40,23 @@
                 h(
                     'div',
                     { class: 'grid-actions' },
-                    modules.map((mod, index) =>
-                        h('button', { type: 'button', class: 'btn', onClick: () => this.#navigator.openModule(index) }, mod.homeLabel)
-                    )
+                    modules.map((mod, index) => {
+                        const match = mod.navLabel.match(/^(\p{Extended_Pictographic}|\S+)\s+(.+)$/u);
+                        const icon = match ? match[1] : '📘';
+                        const count = mod.questions.length;
+                        const blocks = this.#repository.getBlockCount(index);
+                        return h(
+                            'button',
+                            {
+                                type: 'button',
+                                class: 'module-card',
+                                onClick: () => this.#navigator.openModule(index),
+                            },
+                            h('div', { class: 'mod-icon' }, icon),
+                            h('div', { class: 'mod-title' }, mod.homeLabel),
+                            h('div', { class: 'mod-count' }, `${count} preguntas · ${blocks} bloques`)
+                        );
+                    })
                 )
             );
         }

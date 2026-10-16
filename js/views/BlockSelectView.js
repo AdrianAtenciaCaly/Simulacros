@@ -30,8 +30,9 @@
                 const to = Math.min((b + 1) * size, mod.questions.length);
                 return h(
                     'button',
-                    { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.startBlock(moduleIndex, b) },
-                    `Bloque ${b + 1} (Q${from}-${to})`
+                    { type: 'button', class: 'block-btn', onClick: () => this.#navigator.startBlock(moduleIndex, b) },
+                    h('strong', {}, `Bloque ${b + 1}`),
+                    h('span', { class: 'block-btn-sub' }, `Preguntas ${from}–${to}`)
                 );
             });
 

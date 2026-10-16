@@ -66,12 +66,16 @@
                 );
 
                 const optionButtons = q.options.map((text, idx) => {
-                    const btn = h('button', {
-                        type: 'button',
-                        class: 'option-btn',
-                        'data-letter': letters[idx] || String(idx + 1),
-                        onClick: () => reveal(idx),
-                    }, text);
+                    const btn = h(
+                        'button',
+                        {
+                            type: 'button',
+                            class: 'option-btn',
+                            onClick: () => reveal(idx),
+                        },
+                        h('span', { class: 'option-letter' }, letters[idx] || String(idx + 1)),
+                        h('span', { class: 'option-text' }, text)
+                    );
                     return btn;
                 });
 
