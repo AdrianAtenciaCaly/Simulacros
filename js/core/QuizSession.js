@@ -38,7 +38,8 @@
         #passPercentage;
 
         constructor(questions, { shuffle = shuffleArray, passPercentage = PASS_PERCENTAGE } = {}) {
-            this.#questions = questions.map((q) => prepareQuestion(q, shuffle));
+            const shuffledQuestions = shuffle(questions);
+            this.#questions = shuffledQuestions.map((q) => prepareQuestion(q, shuffle));
             this.#passPercentage = passPercentage;
         }
 
