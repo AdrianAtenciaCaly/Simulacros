@@ -1,0 +1,37 @@
+(function (PM) {
+    'use strict';
+
+    const { h } = PM;
+
+    /**
+     * Menú lateral. Recibe sus ítems por configuración; no conoce las vistas.
+     * items: [{ id, label, onSelect }]
+     */
+    class SidebarView {
+        #buttons = new Map();
+
+        constructor(listElement, items) {
+            items.forEach(({ id, label, onSelect }) => {
+                const button = h('button', { type: 'button', class: 'nav-item', onClick: onSelect }, label);
+                this.#buttons.set(id, button);
+                listElement.append(h('li', {}, button));
+            });
+        }
+
+        setActive(id) {
+            this.#buttons.forEach((button, buttonId) => {
+                const active = buttonId === id;
+                button.classList.toggle('active', active);
+                if (active) {
+                    button.setAttribute('aria-current', 'page');
+                    // En móvil el menú es horizontal: mantener visible el ítem activo.
+                    button.scrollIntoView?.({ inline: 'center', block: 'nearest' });
+                } else {
+                    button.removeAttribute('aria-current');
+                }
+            });
+        }
+    }
+
+    PM.SidebarView = SidebarView;
+})((window.PrepMaster = window.PrepMaster || {}));
