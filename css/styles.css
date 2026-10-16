@@ -1107,6 +1107,50 @@ main {
 .theory-content li > ul { margin-top: 6px; }
 .theory-term { font-weight: 700; color: var(--text-primary); }
 
+/* Cajas de Aprendizaje Rápido y Tips CNSC */
+.theory-callout {
+  padding: 14px 18px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--brand);
+  border-radius: var(--radius-sm);
+  margin: 16px 0;
+  font-size: .88rem;
+  line-height: 1.6;
+}
+
+.theory-callout-title {
+  display: block;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.theory-callout.tip {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  border-left-color: #22c55e;
+}
+.theory-callout.tip .theory-callout-title { color: #166534; }
+.theory-callout.tip p { color: #166534; }
+
+.theory-callout.warning {
+  background: #fefce8;
+  border-color: #fef08a;
+  border-left-color: #f59e0b;
+}
+.theory-callout.warning .theory-callout-title { color: #854d0e; }
+.theory-callout.warning p { color: #854d0e; }
+
+.theory-callout.info {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  border-left-color: #3b82f6;
+}
+.theory-callout.info .theory-callout-title { color: #1e40af; }
+.theory-callout.info p { color: #1e40af; }
+
 .theory-nav {
   display: flex;
   flex-wrap: wrap;

@@ -29,6 +29,13 @@
                 return h('p', {}, block.text);
             case 'list':
                 return renderList(block);
+            case 'callout':
+                return h(
+                    'div',
+                    { class: `theory-callout ${block.variant || 'info'}` },
+                    block.title && h('strong', { class: 'theory-callout-title' }, block.title),
+                    block.text && h('p', {}, block.text)
+                );
             default:
                 throw new Error(`Tipo de bloque de teoría desconocido: ${block.type}`);
         }
