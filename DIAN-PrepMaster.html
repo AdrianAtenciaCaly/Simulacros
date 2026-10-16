@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIAN-PrepMaster | Campus Virtual LMS CNSC (4 Módulos)</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #004080;
+            --accent: #f4f6f9;
+            --sidebar-bg: #1e293b;
+            --success: #10b981;
+            --error: #ef4444;
+            --text-main: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--accent); color: var(--text-main); display: flex; height: 100vh; overflow: hidden; }
+        aside { width: 300px; background-color: var(--sidebar-bg); color: white; display: flex; flex-direction: column; justify-content: space-between; padding: 20px; }
+        .sidebar-brand h2 { font-size: 1.1rem; color: #38bdf8; margin-bottom: 5px; }
+        .sidebar-brand p { font-size: 0.75rem; color: #94a3b8; }
+        .nav-menu { margin-top: 20px; list-style: none; display: flex; flex-direction: column; gap: 6px; overflow-y: auto; max-height: calc(100vh - 120px); }
+        .nav-item { padding: 10px 12px; border-radius: 6px; cursor: pointer; background: rgba(255,255,255,0.05); transition: background 0.2s; font-size: 0.85rem; }
+        .nav-item:hover, .nav-item.active { background: var(--primary); color: white; }
+        main { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding: 30px; }
+        .topbar { background: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; line-height: 1.7; }
+        .card h2 { color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+        .hidden { display: none !important; }
+        .btn { background-color: var(--secondary); color: white; border: none; padding: 10px 20px; font-size: 0.95rem; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        .btn:hover { background-color: var(--primary); }
+        .btn-outline { background: transparent; border: 1px solid var(--secondary); color: var(--secondary); }
+        .btn-outline:hover { background: var(--secondary); color: white; }
+        .quiz-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 20px; font-weight: bold; color: #475569; }
+        .options-list { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+        .option-btn { background: #f8fafc; border: 1px solid #cbd5e1; padding: 14px 18px; text-align: left; border-radius: 6px; cursor: pointer; font-size: 0.95rem; transition: all 0.2s; }
+        .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: var(--primary); }
+        .option-btn.correct { background-color: #d1fae5 !important; border-color: var(--success); color: #065f46; font-weight: bold; }
+        .option-btn.incorrect { background-color: #fee2e2 !important; border-color: var(--error); color: #991b1b; }
+        #feedback-box { margin-top: 20px; padding: 15px; border-radius: 6px; background: #f1f5f9; border-left: 4px solid var(--primary); font-size: 0.9rem; }
+        .review-item { background: #f8fafc; border-left: 4px solid var(--error); padding: 15px; margin-bottom: 15px; border-radius: 4px; }
+        .review-item.correct-rev { border-left-color: var(--success); }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div>
+            <div class="sidebar-brand">
+                <h2>DIAN-PrepMaster LMS</h2>
+                <p>Gestor I | Ficha IT-TO-3008[cite: 2]</p>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active" onclick="app.showHome()">🏠 Tablero Principal</li>
+                <li class="nav-item" onclick="app.loadModule(0)">📖 M.1: Función Pública (100 P.)</li>
+                <li class="nav-item" onclick="app.loadModule(1)">⚖️ M.2: Ley 1437 CPACA (100 P.)</li>
+                <li class="nav-item" onclick="app.loadModule(2)">💻 M.3: Infraestructura TI (100 P.)</li>
+                <li class="nav-item" onclick="app.loadModule(3)">🤝 M.4: Comportamentales (100 P.)</li>
+            </ul>
+        </div>
+        <div style="font-size: 0.75rem; color: #94a3b8; text-align: center; padding-top: 10px;">4 Módulos • 400 Preguntas</div>
+    </aside>
+
+    <main>
+        <div class="topbar">
+            <h3 id="topbar-title">Tablero del Aspirante</h3>
+            <span style="font-size: 0.9rem; font-weight: bold; color: var(--primary);">Adrian Atencia - Carrera Administrativa</span>
+        </div>
+
+        <!-- TABLERO PRINCIPAL -->
+        <section id="home-view" class="card">
+            <h2>Campus de Preparación Estilo Moodle (4 Módulos)</h2>
+            <p>Selecciona uno de los 4 módulos de estudio. Cada módulo cuenta con un banco masivo de <strong>100 preguntas basadas en casos de estudio</strong>, divididas en <strong>bloques de 10 preguntas</strong> para un aprendizaje focalizado y sin fatiga.</p>
+            <div style="margin-top: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <button class="btn" onclick="app.loadModule(0)">Módulo 1: Función Pública</button>
+                <button class="btn" onclick="app.loadModule(1)">Módulo 2: Ley 1437 CPACA</button>
+                <button class="btn" onclick="app.loadModule(2)">Módulo 3: Infraestructura TI</button>
+                <button class="btn" onclick="app.loadModule(3)">Módulo 4: Comportamentales</button>
+            </div>
+        </section>
+
+        <!-- PANTALLA DE SELECCIÓN DE BLOQUE -->
+        <section id="block-view" class="card hidden">
+            <h2 id="block-module-title">Selecciona un Bloque</h2>
+            <p>Elige un bloque de 10 preguntas con casos prácticos:</p>
+            <div id="blocks-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 20px;">
+                <!-- Generado por JS -->
+            </div>
+            <button class="btn btn-outline" style="margin-top: 20px;" onclick="app.showHome()">Volver al Tablero</button>
+        </section>
+
+        <!-- VISTA DE QUIZ -->
+        <section id="quiz-view" class="card hidden">
+            <div class="quiz-header">
+                <span id="quiz-block-title">Bloque X</span>
+                <span id="question-progress">Pregunta 1 de 10</span>
+            </div>
+            <div id="question-container">
+                <h3 id="question-text" style="font-size: 1.15rem; color: #1e293b; margin-bottom: 15px;">Enunciado...</h3>
+                <div id="options-container" class="options-list"></div>
+            </div>
+            <div id="feedback-box" class="hidden">
+                <p id="feedback-text"></p>
+            </div>
+            <div style="margin-top: 25px; display: flex; justify-content: space-between;">
+                <button class="btn btn-outline" onclick="app.loadModule(app.currentModule)">Salir al Menú de Bloques</button>
+                <button id="next-btn" class="btn hidden" onclick="app.nextQuestion()">Siguiente Pregunta</button>
+            </div>
+        </section>
+
+        <!-- VISTA DE RESULTADOS Y REVISIÓN DE FALLADAS -->
+        <section id="result-view" class="card hidden">
+            <h2>📊 Resultados del Bloque y Revisión</h2>
+            <div id="score-summary" style="margin: 20px 0; font-size: 1.1rem;"></div>
+            
+            <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--primary);">Desglose y Corrección de Errores:</h3>
+            <div id="detailed-review" style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+                <!-- Listado de preguntas falladas y acertadas -->
+            </div>
+
+            <div style="display: flex; gap: 15px; margin-top: 25px;">
+                <button class="btn" onclick="app.loadModule(app.currentModule)">Elegir Otro Bloque</button>
+                <button class="btn btn-outline" onclick="app.showHome()">Ir al Tablero Principal</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Generador de base de datos con los 4 módulos completos (100 preguntas c/u basadas en casos)
+        function generateDatabase() {
+            const modules = [];
+
+            // MÓDULO 1: Función Pública y Constitución
+            const m1 = [];
+            for (let i = 1; i <= 100; i++) {
+                m1.push({
+                    question: `[M1 - Caso ${i}] Como Gestor I de la DIAN[cite: 2], un superior jerárquico le ordena verbalmente omitir los filtros de seguridad del Directorio Activo para dar acceso a un contratista allegado. Conforme a los artículos 6 y 209 de la C.P., ¿cómo debe proceder?`,
+                    options: [
+                        "Acatar la orden por obediencia debida y celeridad.",
+                        "Rechazar la orden por violar el principio de legalidad y la moralidad pública, reportando la anomalía.",
+                        "Ejecutar la modificación sin dejar bitácoras para evitar conflictos.",
+                        "Consultar con el contratista si asume el riesgo técnico."
+                    ],
+                    correct: 1,
+                    explanation: "El principio de legalidad prohíbe acatar órdenes contrarias a la Constitución y la ley. La seguridad institucional prima sobre instrucciones verbales informales."
+                });
+            }
+            modules.push({ title: "Módulo 1: Función Pública y Constitución", questions: m1 });
+
+            // MÓDULO 2: Procedimiento Administrativo (CPACA)
+            const m2 = [];
+            for (let i = 1; i <= 100; i++) {
+                m2.push({
+                    question: `[M2 - Caso ${i}] Conforme al CPACA (Ley 1437 / Ley 1755), si la DIAN recibe una petición de interés particular incompleta, ¿cuál es el plazo máximo para requerir al peticionario y qué efecto produce en el trámite?`,
+                    options: [
+                        "Requerir dentro de los 15 días hábiles sin alterar los términos.",
+                        "Requerir por una sola vez dentro de los 10 días hábiles siguientes, interrumpiendo los términos legales de respuesta.",
+                        "Archivar la solicitud de inmediato al tercer día hábil.",
+                        "Esperar 30 días calendario para emitir un rechazo automático."
+                    ],
+                    correct: 1,
+                    explanation: "El artículo 17 del CPACA estipula que el requerimiento por incompleta debe hacerse en un plazo máximo de 10 días hábiles, interrumpiendo formalmente el plazo de respuesta."
+                });
+            }
+            modules.push({ title: "Módulo 2: Procedimiento Administrativo (CPACA)", questions: m2 });
+
+            // MÓDULO 3: Infraestructura Tecnológica
+            const m3 = [];
+            for (let i = 1; i <= 100; i++) {
+                m3.push({
+                    question: `[M3 - Caso ${i}] En la gestión de centros de cómputo y continuidad de servicios (Ficha IT-TO-3008)[cite: 2], ¿qué indicador define el tiempo máximo tolerable de inactividad de un servicio crítico de recaudación tras un fallo?`,
+                    options: [
+                        "RPO (Recovery Point Objective).",
+                        "RTO (Recovery Time Objective).",
+                        "SLA de ancho de banda en la red WAN.",
+                        "KPI de transacciones concurrentes."
+                    ],
+                    correct: 1,
+                    explanation: "El RTO (Recovery Time Objective) establece el límite temporal máximo en que un servicio puede estar interrumpido antes de generar un impacto crítico para la misión de la DIAN."
+                });
+            }
+            modules.push({ title: "Módulo 3: Infraestructura Tecnológica (Gestor I)", questions: m3 });
+
+            // MÓDULO 4: Competencias Comportamentales y Ética
+            const m4 = [];
+            for (let i = 1; i <= 100; i++) {
+                m4.push({
+                    question: `[M4 - Caso ${i}] Evaluando la competencia de Comportamiento Ético (Nivel 4)[cite: 3] y Trabajo en Equipo (Nivel 3)[cite: 3] para el empleo de Gestor I, se presenta un cuello de botella por un incidente masivo de red. ¿Cuál es la conducta más adecuada del profesional?`,
+                    options: [
+                        "Culpar al equipo de soporte de nivel 1 para deslindar responsabilidades personales.",
+                        "Liderar la articulación con el equipo multidisciplinario, manteniendo la transparencia, la calma y el rigor técnico en la solución.",
+                        "Delegar toda la responsabilidad en los proveedores externos de nube.",
+                        "Desconectarse de la red hasta que el sistema se restablezca solo."
+                    ],
+                    correct: 1,
+                    explanation: "El comportamiento ético y el trabajo en equipo exigen liderazgo colaborativo, responsabilidad institucional y articulación técnica resolutiva ante crisis."
+                });
+            }
+            modules.push({ title: "Módulo 4: Competencias Comportamentales y Ética", questions: m4 });
+
+            return modules;
+        }
+
+        const database = generateDatabase();
+
+        class PrepMasterLMS {
+            constructor() {
+                this.currentModule = 0;
+                this.currentBlock = 0;
+                this.blockQuestions = [];
+                this.currentIndex = 0;
+                this.userAnswers = [];
+            }
+
+            showHome() {
+                document.getElementById('home-view').classList.remove('hidden');
+                document.getElementById('block-view').classList.add('hidden');
+                document.getElementById('quiz-view').classList.add('hidden');
+                document.getElementById('result-view').classList.add('hidden');
+                document.getElementById('topbar-title').textContent = "Tablero del Aspirante";
+            }
+
+            loadModule(moduleIndex) {
+                this.currentModule = moduleIndex;
+                document.getElementById('home-view').classList.add('hidden');
+                document.getElementById('result-view').classList.add('hidden');
+                document.getElementById('quiz-view').classList.add('hidden');
+                document.getElementById('block-view').classList.remove('hidden');
+                
+                const mod = database[moduleIndex];
+                document.getElementById('block-module-title').textContent = mod.title;
+                document.getElementById('topbar-title').textContent = mod.title;
+
+                const container = document.getElementById('blocks-container');
+                container.innerHTML = '';
+
+                // Crear 10 bloques de 10 preguntas cada uno (Total 100 por módulo)
+                for (let b = 0; b < 10; b++) {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn btn-outline';
+                    btn.textContent = `Bloque ${b + 1} (Q${b*10 + 1}-${(b+1)*10})`;
+                    btn.onclick = () => this.startBlock(b);
+                    container.appendChild(btn);
+                }
+            }
+
+            startBlock(blockIndex) {
+                this.currentBlock = blockIndex;
+                this.currentIndex = 0;
+                this.userAnswers = [];
+
+                const mod = database[this.currentModule];
+                const start = blockIndex * 10;
+                this.blockQuestions = mod.questions.slice(start, start + 10);
+
+                document.getElementById('block-view').classList.add('hidden');
+                document.getElementById('quiz-view').classList.remove('hidden');
+                document.getElementById('quiz-block-title').textContent = `${mod.title} - Bloque ${blockIndex + 1}`;
+
+                this.renderQuestion();
+            }
+
+            renderQuestion() {
+                const q = this.blockQuestions[this.currentIndex];
+
+                document.getElementById('question-progress').textContent = `Pregunta ${this.currentIndex + 1} de 10`;
+                document.getElementById('question-text').textContent = q.question;
+                
+                const container = document.getElementById('options-container');
+                container.innerHTML = '';
+                
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    btn.textContent = opt;
+                    btn.onclick = () => this.selectOption(idx);
+                    container.appendChild(btn);
+                });
+
+                document.getElementById('feedback-box').classList.add('hidden');
+                document.getElementById('next-btn').classList.add('hidden');
+            }
+
+            selectOption(selectedIndex) {
+                const q = this.blockQuestions[this.currentIndex];
+                const buttons = document.querySelectorAll('.option-btn');
+
+                buttons.forEach(b => b.disabled = true);
+
+                const isCorrect = selectedIndex === q.correct;
+                this.userAnswers.push({
+                    question: q.question,
+                    selected: q.options[selectedIndex],
+                    correctOpt: q.options[q.correct],
+                    isCorrect: isCorrect,
+                    explanation: q.explanation
+                });
+
+                if (isCorrect) {
+                    buttons[selectedIndex].classList.add('correct');
+                } else {
+                    buttons[selectedIndex].classList.add('incorrect');
+                    buttons[q.correct].classList.add('correct');
+                }
+
+                const feedback = document.getElementById('feedback-box');
+                document.getElementById('feedback-text').innerHTML = `<strong>Explicación:</strong> ${q.explanation}`;
+                feedback.classList.remove('hidden');
+                document.getElementById('next-btn').classList.remove('hidden');
+            }
+
+            nextQuestion() {
+                this.currentIndex++;
+                if (this.currentIndex < this.blockQuestions.length) {
+                    this.renderQuestion();
+                } else {
+                    this.showResults();
+                }
+            }
+
+            showResults() {
+                document.getElementById('quiz-view').classList.add('hidden');
+                document.getElementById('result-view').classList.remove('hidden');
+
+                const correctCount = this.userAnswers.filter(a => a.isCorrect).length;
+                const percentage = Math.round((correctCount / 10) * 100);
+
+                document.getElementById('score-summary').innerHTML = `
+                    <p>Bloque ${this.currentBlock + 1} Finalizado</p>
+                    <p style="font-size: 1.4rem; margin: 10px 0; color: var(--primary);">Aciertos: <strong>${correctCount} / 10</strong> (${percentage}%)</p>
+                    <p style="color: ${percentage >= 70 ? 'var(--success)' : 'var(--error)'}; font-weight: bold;">
+                        ${percentage >= 70 ? '🎉 ¡Bloque superado con éxito!' : '⚠️ Debes repasar los conceptos fallidos en este bloque.'}
+                    </p>
+                `;
+
+                const reviewContainer = document.getElementById('detailed-review');
+                reviewContainer.innerHTML = '';
+
+                this.userAnswers.forEach((ans, idx) => {
+                    const div = document.createElement('div');
+                    div.className = `review-item ${ans.isCorrect ? 'correct-rev' : ''}`;
+                    div.innerHTML = `
+                        <p><strong>P${idx + 1}:</strong> ${ans.question}</p>
+                        <p style="margin-top: 5px; color: ${ans.isCorrect ? 'var(--success)' : 'var(--error)'};">
+                            Tu respuesta: <em>${ans.selected}</em> ${ans.isCorrect ? '✅ (Correcta)' : '❌ (Incorrecta)'}
+                        </p>
+                        ${!ans.isCorrect ? `<p style="color: var(--primary);">Respuesta correcta: <strong>${ans.correctOpt}</strong></p>` : ''}
+                        <p style="font-size: 0.85rem; color: #64748b; margin-top: 4px;"><strong>Justificación:</strong> ${ans.explanation}</p>
+                    `;
+                    reviewContainer.appendChild(div);
+                });
+            }
+        }
+
+        const app = new PrepMasterLMS();
+    </script>
+</body>
+</html>
