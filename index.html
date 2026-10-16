@@ -15,10 +15,15 @@
             <div class="sidebar-brand">
                 <div class="sidebar-logo-row">
                     <div class="sidebar-logo-icon">🏛️</div>
-                    <div>
+                    <div class="sidebar-brand-text">
                         <h2>DIAN-PrepMaster</h2>
                         <p>Campus de Mérito CNSC</p>
                     </div>
+                    <button type="button" id="sidebar-close-btn" class="sidebar-close-btn" aria-label="Ocultar menú lateral" title="Ocultar menú lateral">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
                 <div class="sidebar-subchip">Gestor I · IT-TO-3008</div>
             </div>
@@ -31,7 +36,16 @@
 
     <main id="main">
         <header class="topbar">
-            <h3 id="topbar-title">Tablero del Aspirante</h3>
+            <div class="topbar-left">
+                <button type="button" id="sidebar-toggle" class="sidebar-toggle" aria-label="Alternar menú lateral" title="Mostrar u ocultar menú lateral">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <h3 id="topbar-title">Tablero del Aspirante</h3>
+            </div>
             <span class="topbar-user">Adrian Atencia - Carrera Administrativa</span>
         </header>
 

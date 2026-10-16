@@ -131,6 +131,15 @@ strong { font-weight: 600; color: var(--text-primary); }
   border-right: 1px solid var(--border);
   overflow: hidden;
   position: relative;
+  transition: margin-left var(--dur-slow) var(--ease), width var(--dur-slow) var(--ease);
+}
+
+/* Ocultar / Colapsar sidebar en escritorio y tablet */
+@media (min-width: 681px) {
+  body.sidebar-collapsed .sidebar {
+    margin-left: calc(-1 * var(--sidebar-w));
+    border-right-color: transparent;
+  }
 }
 
 .sidebar-brand {
@@ -144,6 +153,37 @@ strong { font-weight: 600; color: var(--text-primary); }
   align-items: center;
   gap: 10px;
   margin-bottom: 6px;
+}
+
+.sidebar-brand-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-close-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--dur) var(--ease);
+  flex-shrink: 0;
+}
+
+.sidebar-close-btn:hover {
+  background: var(--surface-alt);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.sidebar-close-btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
 }
 
 .sidebar-logo-icon {
@@ -298,6 +338,43 @@ main {
   margin-bottom: 20px;
   box-shadow: var(--shadow-xs);
   flex-shrink: 0;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.sidebar-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--dur) var(--ease);
+  flex-shrink: 0;
+}
+
+.sidebar-toggle:hover {
+  background: var(--surface-alt);
+  color: var(--text-primary);
+  border-color: #cbd5e1;
+}
+
+.sidebar-toggle:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.sidebar-toggle svg {
+  display: block;
 }
 
 .topbar h3 {
@@ -1209,6 +1286,16 @@ main {
   body {
     flex-direction: column-reverse;
     overflow: hidden;
+  }
+
+  /* En móvil el menú lateral se convierte en barra inferior fija y no se oculta */
+  .sidebar-toggle,
+  .sidebar-close-btn {
+    display: none !important;
+  }
+
+  body.sidebar-collapsed .sidebar {
+    margin-left: 0 !important;
   }
 
   .sidebar {

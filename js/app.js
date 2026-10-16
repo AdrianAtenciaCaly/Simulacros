@@ -47,6 +47,32 @@
     document.getElementById('sidebar-footer').textContent =
         `${repository.getModules().length} Módulos • ${repository.getTotalQuestions()} Preguntas`;
 
+    // Alternar visibilidad del menú lateral (mostrar / ocultar)
+    const sidebarToggleBtn = document.getElementById('sidebar-toggle');
+    const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+
+    const toggleSidebar = () => {
+        const isCollapsed = document.body.classList.toggle('sidebar-collapsed');
+        sidebarToggleBtn?.setAttribute('aria-expanded', String(!isCollapsed));
+        try {
+            localStorage.setItem('pm_sidebar_collapsed', String(isCollapsed));
+        } catch (e) {
+            // Ignorar errores de acceso a almacenamiento
+        }
+    };
+
+    try {
+        if (localStorage.getItem('pm_sidebar_collapsed') === 'true') {
+            document.body.classList.add('sidebar-collapsed');
+            sidebarToggleBtn?.setAttribute('aria-expanded', 'false');
+        } else {
+            sidebarToggleBtn?.setAttribute('aria-expanded', 'true');
+        }
+    } catch (e) {}
+
+    sidebarToggleBtn?.addEventListener('click', toggleSidebar);
+    sidebarCloseBtn?.addEventListener('click', toggleSidebar);
+
     navigator.goHome();
 
 })((window.PrepMaster = window.PrepMaster || {}));
