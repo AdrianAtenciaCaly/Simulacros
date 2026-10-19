@@ -36,6 +36,17 @@
                     block.title && h('strong', { class: 'theory-callout-title' }, block.title),
                     block.text && h('p', {}, block.text)
                 );
+            case 'table':
+                return h(
+                    'div',
+                    { class: 'theory-table-wrapper' },
+                    h(
+                        'table',
+                        { class: 'theory-table' },
+                        block.headers && h('thead', {}, h('tr', {}, block.headers.map((th) => h('th', {}, th)))),
+                        block.rows && h('tbody', {}, block.rows.map((row) => h('tr', {}, row.map((cell) => h('td', {}, cell)))))
+                    )
+                );
             default:
                 throw new Error(`Tipo de bloque de teoría desconocido: ${block.type}`);
         }

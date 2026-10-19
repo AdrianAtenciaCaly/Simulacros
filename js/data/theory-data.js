@@ -2,77 +2,132 @@
     'use strict';
 
     /**
-     * COMPENDIO TEÓRICO MAESTRO Y EXHAUSTIVO PARA EL ESTUDIO OFICIAL: CONCURSO DIAN
+     * COMPENDIO TEÓRICO MAESTRO Y EXHAUSTIVO PARA EL CONCURSO DIAN (CNSC)
      * Proceso de Selección CNSC – Empleo: Gestor I (Código 301, Grado 01)
-     * Ficha de Empleo: IT-TO-3008 | Nivel Jerárquico: Profesional
-     * Proceso: Información, Innovación y Tecnología | Subproceso: Infraestructura y Operaciones
+     * OPEC: 198476 | Ficha: CC-AU-3008 | Nivel Jerárquico: Profesional
+     * Proceso: Cercanía con el Ciudadano | Subproceso: Asistencia al Usuario
      *
-     * Estructura pedagógica: Bloques { type: 'p' }, { type: 'list' }, { type: 'callout' }
+     * Propósito: Ejecutar acciones que faciliten la administración del Registro Único Tributario (RUT)
+     * y el cumplimiento voluntario de las obligaciones de carácter tributario, aduanero y cambiario (TACI).
      */
     const THEORY = {
-        title: 'Compendio Teórico Maestro: Concurso de Méritos DIAN (Gestor I - IT-TO-3008)',
+        title: 'Compendio Teórico Oficial: Concurso DIAN — Gestor I (OPEC 198476)',
         meta: [
-            'Proceso de Selección CNSC – Convocatoria Oficial DIAN | Nivel Profesional',
-            'Ficha IT-TO-3008: Infraestructura Tecnológica, Centros de Cómputo, Cloud y Operaciones TIC',
-            'Basado en las Guías Oficiales de Orientación de Pruebas Escritas de la CNSC y la Universidad Libre / Nacional',
+            'Proceso de Selección CNSC – Convocatoria Oficial DIAN | Nivel Profesional (Grado 01)',
+            'OPEC 198476 · Ficha CC-AU-3008: Proceso Cercanía con el Ciudadano · Subproceso Asistencia al Usuario',
+            'Propósito Principal: Administración del RUT, Atención a Clientes TACI, Cultura de la Contribución y Cumplimiento Voluntario',
+            'Basado en la Guía de Aprendizaje Oficial OPEC 198476, Estatuto Tributario, DURT 1625/2016, CPACA, Ley 1755/2015, Decreto Ley 071/2020 y Guías CNSC',
         ],
         sections: [
             /* -------------------------------------------------------------------------
-               SECCIÓN 0: INTRODUCCIÓN Y GUÍA ESTRATÉGICA PARA GANAR EL EXAMEN CNSC
+               SECCIÓN 0: ESTRATEGIA DE ÉXITO Y METODOLOGÍA DE JUICIO SITUACIONAL CNSC
                ------------------------------------------------------------------------- */
             {
                 id: 'introduccion',
                 label: 'Guía del Examen',
-                title: 'Estrategia de Éxito y Metodología de Juicio Situacional CNSC',
+                title: 'Estrategia de Éxito y Metodología de Juicio Situacional CNSC para Gestor I',
                 topics: [
                     {
-                        heading: 'Estructura Oficial de las Pruebas Escritas de la CNSC',
+                        heading: '1. Estructura Oficial de las Pruebas Escritas en el Concurso DIAN',
                         blocks: [
                             {
                                 type: 'p',
-                                text: 'En los concursos de mérito para la DIAN, las pruebas escritas se dividen en dos grandes componentes evaluados en la misma jornada: la Prueba de Competencias Funcionales (de carácter eliminatorio, con un puntaje mínimo aprobatorio que oscila entre 65 y 70 puntos sobre 100) y la Prueba de Competencias Comportamentales (de carácter clasificatorio, que suma al ponderado final para la lista de elegibles).',
-                            },
-                            {
-                                type: 'callout',
-                                variant: 'warning',
-                                title: '¡Regla de Oro Eliminatoria!',
-                                text: 'Si no alcanzas el puntaje mínimo en la prueba funcional, quedas automáticamente excluido del concurso, sin importar tu puntaje en comportamentales o en la valoración de antecedentes.',
-                            },
-                        ],
-                    },
-                    {
-                        heading: '¿Cómo Responde un Experto un Caso de Juicio Situacional?',
-                        blocks: [
-                            {
-                                type: 'p',
-                                text: 'Las preguntas no evalúan memoria literal de artículos, sino la capacidad del profesional para resolver dilemas organizacionales complejos. Cada pregunta presenta un Caso (Contexto institucional), un Conflicto técnico/jurídico, y cuatro opciones estructuradas.',
+                                text: 'En las convocatorias de méritos de la DIAN administradas por la Comisión Nacional del Servicio Civil (CNSC), la evaluación escrita se desarrolla en una jornada única y comprende dos instrumentos evaluativos diferenciados:',
                             },
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: '1. Identificar el Rol Evaluado',
-                                        text: 'Usted actúa siempre como Gestor I (Nivel Profesional en Infraestructura TI). No debe asumir funciones de juez, director general ni operador de primer nivel básico.',
+                                        term: 'Prueba de Competencias Funcionales (Carácter Eliminatorio)',
+                                        text: 'Pondera habitualmente el 60% del concurso. Evalúa el dominio normativo, técnico y procedimental indispensable para desempeñar las funciones del empleo. Requiere un puntaje mínimo aprobatorio (típicamente 65 o 70 puntos sobre 100). Quien no alcance dicho umbral queda automáticamente excluido del proceso de selección.',
                                     },
                                     {
-                                        term: '2. Descartar Opciones Pasivas o Informales',
-                                        text: 'En el sector público nunca son válidas las respuestas que proponen "acatar órdenes verbales sin soporte", "esperar a que el sistema se arregle solo", "solucionar por canales informales de chat" o "culpar a terceros".',
+                                        term: 'Prueba de Competencias Comportamentales (Carácter Clasificatorio)',
+                                        text: 'Pondera habitualmente entre el 20% y el 25% del total del concurso. Evalúa las conductas, actitudes y destrezas interpersonales descritas en el Decreto 815 de 2018 y el modelo institucional de la DIAN. No elimina, pero su puntaje es decisivo para determinar la posición en la lista de elegibles.',
+                                    },
+                                ],
+                            },
+                            {
+                                type: 'callout',
+                                variant: 'warning',
+                                title: '¡Regla de Oro de la CNSC!',
+                                text: 'En la prueba funcional no hay negociación: si no se alcanza el puntaje mínimo eliminatorio, la CNSC no evalúa los antecedentes ni pondera la prueba comportamental. El aspirante queda por fuera de concurso.',
+                            },
+                        ],
+                    },
+                    {
+                        heading: '2. El Rol Evaluado: Gestor I (OPEC 198476 · Ficha CC-AU-3008)',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'El aspirante debe posicionarse mentalmente en el rol exacto para el cual concursa: Gestor I en el Subproceso de Asistencia al Usuario y Cercanía con el Ciudadano. Sus funciones giran en torno a:',
+                            },
+                            {
+                                type: 'list',
+                                items: [
+                                    {
+                                        term: 'Administración del Registro Único Tributario (RUT)',
+                                        text: 'Validar documentos, ejecutar trámites de inscripción, actualización, verificar requisitos previos en cambios de responsabilidades (ej. retiro de IVA), así como tramitar suspensiones y cancelaciones conforme al Decreto 1625 de 2016.',
                                     },
                                     {
-                                        term: '3. Seguir el Conducto Regular y el Procedimiento Escrito',
-                                        text: 'Toda actuación de un servidor de la DIAN debe quedar registrada en actas, tickets oficiales, bitácoras (logs) o memorandos radicados formalmente.',
+                                        term: 'Orientación Normativa y Asistencia a Clientes TACI',
+                                        text: 'Atender a contribuyentes y usuarios Tributarios, Aduaneros y Cambiarios a través de canales presenciales, virtuales y telefónicos, garantizando trato digno y lenguaje claro.',
                                     },
                                     {
-                                        term: '4. Privilegiar la Continuidad del Servicio y el Interés General',
-                                        text: 'Entre dos opciones técnicamente válidas, la opción correcta es siempre la que restablece el servicio tributario/aduanero protegiendo el debido proceso del ciudadano y salvaguardando la evidencia digital.',
+                                        term: 'Fomento de la Cultura de la Contribución (Ley 223 de 1995)',
+                                        text: 'Promover el cumplimiento voluntario de los deberes formales y sustanciales, apoyar los Núcleos de Apoyo Contable y Fiscal (NAF) y ejecutar acciones persuasivas frente a omisos e inexactos.',
                                     },
+                                    {
+                                        term: 'Gestión Oportuna de PQRSD',
+                                        text: 'Clasificar, tramitar y responder peticiones, quejas, reclamos, sugerencias y denuncias en los estrictos términos de la Ley 1755 de 2015 y los protocolos DIAN.',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        heading: '3. Claves Metodológicas para Responder Preguntas de Juicio Situacional',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'Cada reactivo de la prueba escrita plantea una situación laboral concreta (Caso), un problema técnico-jurídico o dilema institucional, y cuatro opciones de respuesta. Para elegir la opción correcta con criterio de elegible:',
+                            },
+                            {
+                                type: 'table',
+                                headers: ['Conducta Evaluada', 'Opción Incorrecta (Distractor)', 'Opción Correcta (Elegible CNSC)'],
+                                rows: [
+                                    [
+                                        'Legalidad y Procedimiento',
+                                        'Acatar órdenes verbales que violen la norma o actuar por vías de hecho.',
+                                        'Requerir orden escrita motivada si hay duda o actuar conforme a la ley y manuales vigentes.',
+                                    ],
+                                    [
+                                        'Atención al Ciudadano',
+                                        'Negar el servicio por formalismos menores, ser displicente o remitir a otra sede sin validar.',
+                                        'Brindar orientación completa, verificar requisitos en el sistema y aplicar enfoque diferencial.',
+                                    ],
+                                    [
+                                        'Reserva Tributaria (Art. 583 E.T.)',
+                                        'Suministrar datos tributarios privados a familiares, terceros o prensa por cortesía o presión.',
+                                        'Negar la información motivadamente invocando la reserva legal y el Estatuto Tributario.',
+                                    ],
+                                    [
+                                        'Administración del RUT',
+                                        'Aprobar modificaciones sensibles (ej. retiro de IVA) sin revisar documentos soporte.',
+                                        'Efectuar la verificación técnica y documental antes de registrar o negar fundadamente.',
+                                    ],
+                                    [
+                                        'Términos de PQRSD (Ley 1755)',
+                                        'Esperar al vencimiento o guardar silencio ante peticiones incompletas.',
+                                        'Requerir al peticionario por escrito dentro de los 10 días para que subsane en 1 mes.',
+                                    ],
                                 ],
                             },
                             {
                                 type: 'callout',
                                 variant: 'tip',
                                 title: 'Técnica de Descarte Rápido en el Examen',
-                                text: 'Descarte de inmediato las opciones que contengan absolutismos ("siempre", "nunca", "en ningún caso") a menos que se trate de prohibiciones expresas de la ley disciplinaria (como recibir dádivas o alterar bases de datos).',
+                                text: 'Descarte inmediatamente las opciones que sugieran: 1) Ignorar el procedimiento oficial; 2) Tomar decisiones por fuera de la competencia funcional del Gestor I; 3) Actuaciones discrecionales arbitrarias; 4) Respuestas informales no documentadas en el expediente.',
                             },
                         ],
                     },
@@ -84,72 +139,87 @@
                ------------------------------------------------------------------------- */
             {
                 id: 'modulo-1',
-                label: 'Módulo 1: Función Pública',
-                title: 'Módulo 1: Régimen Constitucional de la Función Pública y Estructura del Estado',
+                label: 'M.1: Función Pública',
+                title: 'Módulo 1: Régimen Constitucional de la Función Pública y Estructura Orgánica de la DIAN',
                 topics: [
                     {
-                        heading: '1.1 Estado Social de Derecho y Fines Esenciales (Art. 1 y 2 C.P.)',
+                        heading: '1.1 Estado Social de Derecho y Principios Constitucionales',
                         blocks: [
                             {
                                 type: 'p',
-                                text: 'Colombia está fundada en el respeto de la dignidad humana, el trabajo, la solidaridad y la prevalencia del interés general. Las autoridades existen para proteger a los ciudadanos y asegurar el cumplimiento de los deberes sociales del Estado.',
+                                text: 'Colombia se define como un Estado Social de Derecho organizado en forma de república unitaria, descentralizada y participativa (Art. 1 C.P.). Las autoridades de la República están instituidas para proteger a todas las personas en su vida, honra, bienes y derechos, y para asegurar el cumplimiento de los deberes sociales del Estado y de los particulares (Art. 2 C.P.).',
                             },
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: 'Traducción para el Gestor I de TI',
-                                        text: 'La infraestructura de servidores, enlaces y centros de datos de la DIAN no persigue fines comerciales lucrativos, sino asegurar la recaudación continua de los tributos que financian la salud, educación e inversión social del país.',
+                                        term: 'Principio de Legalidad (Art. 6 C.P.)',
+                                        text: 'Los particulares solo son responsables ante las autoridades por infringir la Constitución y las leyes. Los servidores públicos lo son por la misma causa y por omisión o extralimitación en el ejercicio de sus funciones.',
                                     },
                                     {
-                                        term: 'Prevalencia del Interés General (Art. 1 C.P.)',
-                                        text: 'Ante contingencias de la plataforma tecnológica en días límites de declaración, prima la garantía del derecho del ciudadano a cumplir sus obligaciones sin sanciones indebidas sobre la rigidez técnica.',
+                                        term: 'Debido Proceso Administrativo (Art. 29 C.P.)',
+                                        text: 'Se aplica a toda clase de actuaciones judiciales y administrativas. Toda persona tiene derecho a conocer las acusaciones, presentar pruebas, ser notificada legalmente y controvertir las decisiones de la administración.',
+                                    },
+                                    {
+                                        term: 'Principios del Sistema Tributario (Art. 363 C.P.)',
+                                        text: 'El sistema tributario se funda en los principios de equidad, eficiencia y progresividad. Las leyes tributarias no se aplicarán con retroactividad.',
+                                    },
+                                    {
+                                        term: 'Deber Ciudadano de Contribuir (Art. 95 num. 9 C.P.)',
+                                        text: 'Es deber de toda persona contribuir al financiamiento de los gastos e inversiones del Estado dentro de conceptos de justicia y equidad.',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '1.2 Principio de Legalidad y Responsabilidad Pública (Art. 6, 121 y 122 C.P.)',
+                        heading: '1.2 Principios de la Función Administrativa (Art. 209 C.P.)',
                         blocks: [
+                            {
+                                type: 'p',
+                                text: 'La función administrativa está al servicio de los intereses generales y se desarrolla con fundamento en los principios de igualdad, moralidad, eficacia, economía, celeridad, imparcialidad y publicidad, mediante la descentralización, la delegación y la desconcentración de funciones.',
+                            },
                             {
                                 type: 'list',
                                 items: [
-                                    {
-                                        term: 'Legalidad Taxativa de los Servidores Públicos',
-                                        text: 'A diferencia de los particulares (que pueden hacer todo lo que la ley no prohíba), los servidores públicos solo pueden hacer aquello para lo cual están facultados de manera expresa por la Constitución, la ley y el manual de funciones.',
-                                    },
-                                    {
-                                        term: 'Cláusula de Responsabilidad (Art. 6 C.P.)',
-                                        text: 'Los servidores responden ante las autoridades por infringir la Constitución y la ley, pero también por omisión o extralimitación en el ejercicio de sus funciones técnicas.',
-                                    },
-                                    {
-                                        term: 'Trámite de Órdenes Ilegítimas o de Insistencia (Ley 1952 de 2019, Art. 38)',
-                                        text: 'El servidor tiene el deber de obedecer a sus superiores jerárquicos, pero si una instrucción técnica vulnera la ley, genera riesgo informático o implica delito, debe representar la orden por escrito. Si el superior insiste formalmente por escrito, se ejecuta salvando la responsabilidad del servidor técnico.',
-                                    },
+                                    { term: 'Moralidad', text: 'El servidor de la DIAN debe actuar con pulcritud, probidad y transparencia en la atención ciudadana y manejo de expedientes.' },
+                                    { term: 'Eficacia', text: 'Garantizar que los trámites (como el RUT) cumplan su finalidad material de formalización y control, no meramente formal.' },
+                                    { term: 'Economía y Celeridad', text: 'Evitar dilaciones injustificadas, trámites innecesarios o exigencias documentales que ya reposen en las bases de datos de la DIAN.' },
+                                    { term: 'Publicidad', text: 'Dar a conocer las decisiones y actos administrativos a los interesados a través de las notificaciones legales vigentes.' },
                                 ],
-                            },
-                            {
-                                type: 'callout',
-                                variant: 'warning',
-                                title: '¡Trampa Típica de Examen!',
-                                text: 'Nunca ejecute una orden verbal riesgosa basada en la simple "subordinación jerárquica". La orden debe ser formalizada por escrito y motivada por el superior jerárquico.',
                             },
                         ],
                     },
                     {
-                        heading: '1.3 Principios de la Función Administrativa (Art. 209 C.P. y Ley 489 de 1998)',
+                        heading: '1.3 Naturaleza Jurídica y Estructura de la DIAN (Decreto 1742 de 2020)',
                         blocks: [
+                            {
+                                type: 'p',
+                                text: 'La Unidad Administrativa Especial Dirección de Impuestos y Aduanas Nacionales (DIAN) es una entidad del orden nacional, adscrita al Ministerio de Hacienda y Crédito Público, dotada de personería jurídica, autonomía administrativa y presupuestal, y con patrimonio propio.',
+                            },
                             {
                                 type: 'list',
                                 items: [
-                                    { term: 'Igualdad e Imparcialidad', text: 'Mismo nivel de servicio técnico a todos los usuarios, sin favoritismos ni sesgos en colas de procesamiento.' },
-                                    { term: 'Moralidad', text: 'Actuación exenta de conflicto de interés, sobornos o uso de recursos públicos para fines personales.' },
-                                    { term: 'Eficacia y Economía', text: 'Logro oportuno de metas optimizando el gasto público en licenciamiento y hardware.' },
-                                    { term: 'Celeridad', text: 'Impulso expedito de requerimientos evitando dilaciones burocráticas injustificadas.' },
-                                    { term: 'Publicidad y Trazabilidad', text: 'Transparencia de las decisiones técnicas garantizada mediante bitácoras y registros inalterables.' },
-                                    { term: 'Coordinación Interinstitucional', text: 'Colaboración obligatoria entre entidades del Estado (DIAN, POLFA, INVIMA, MinTIC) para resolver contingencias conjuntas.' },
-                                    { term: 'Desconcentración y Delegación', text: 'La DIAN desconcentra funciones operativas en Direcciones Seccionales, pero centraliza la política técnica de TI en el nivel central.' },
+                                    {
+                                        term: 'Objeto Superior de la DIAN',
+                                        text: 'Coadyuvar a garantizar la seguridad fiscal del Estado colombiano y la protección del orden público económico nacional, mediante la administración y el control al debido cumplimiento de las obligaciones tributarias, aduaneras y cambiarias (TACI).',
+                                    },
+                                    {
+                                        term: 'Dirección de Gestión del Servicio',
+                                        text: 'Dependencia del nivel central encargada de formular lineamientos para la atención y cercanía con el ciudadano, el fomento de la cultura tributaria y la administración del Registro Único Tributario a través de sus subdirecciones misionales.',
+                                    },
+                                    {
+                                        term: 'Subdirección de Asistencia al Ciudadano',
+                                        text: 'Orienta y administra los canales de atención (presencial, telefónico, virtual), define protocolos de servicio, y gestiona el sistema integral de PQRSD.',
+                                    },
+                                    {
+                                        term: 'Subdirección de Identificación y Registro',
+                                        text: 'Ejerce la gobernanza normativa y técnica del RUT, definiendo procedimientos de inscripción, actualización, verificación de calidades y cancelación.',
+                                    },
+                                    {
+                                        term: 'Direcciones Seccionales de Impuestos, Aduanas y Mixtas',
+                                        text: 'Desconcentran las operaciones de la DIAN en el territorio nacional, albergando los Puntos de Contacto donde opera el Gestor I en atención directa.',
+                                    },
                                 ],
                             },
                         ],
@@ -159,66 +229,52 @@
                         blocks: [
                             {
                                 type: 'p',
-                                text: 'La DIAN cuenta con un régimen específico de carrera administrativa de origen legal (Decreto Ley 071 de 2020), vigilado por la Comisión Nacional del Servicio Civil (CNSC).',
+                                text: 'El personal de la DIAN cuenta con un sistema específico de carrera administrativa de origen constitucional (Art. 130 C.P. y Decreto Ley 071 de 2020), orientado a la profesionalización, integridad y mérito técnico:',
                             },
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: 'El Mérito como Eje Estructural',
-                                        text: 'El ingreso, permanencia y ascenso en la DIAN se fundamenta exclusivamente en la demostración de mérito mediante concurso público abierto.',
+                                        term: 'Ingreso por Concurso Abierto de Méritos',
+                                        text: 'Proceso público administrado por la CNSC para proveer las vacantes definitivas de la planta global con base en mérito demostrable.',
+                                    },
+                                    {
+                                        term: 'Período de Prueba (6 Meses)',
+                                        text: 'El aspirante nombrado adquiere los derechos de carrera administrativa únicamente tras superar satisfactoriamente la evaluación de período de prueba de seis (6) meses con calificación sobresaliente o satisfactoria.',
                                     },
                                     {
                                         term: 'Derecho Preferente de Encargo (Art. 19)',
-                                        text: 'Las vacantes temporales o definitivas en empleos de carrera deben proveerse prioritariamente mediante encargo con servidores de carrera del empleo inmediatamente inferior que cumplan el perfil, posean evaluación de desempeño sobresaliente y no registren sanción disciplinaria, antes de acudir a nombramientos provisionales.',
+                                        text: 'Las vacantes temporales o definitivas deben proveerse prioritariamente mediante encargo con el empleado escalafonado en carrera que ocupe el cargo inmediatamente inferior, cumpla el perfil y tenga la última calificación de desempeño sobresaliente.',
                                     },
                                     {
                                         term: 'Evaluación del Desempeño Laboral (EDL)',
-                                        text: 'Se realiza anualmente con base en compromisos funcionales y comportamentales. La calificación definitiva "No Satisfactoria" genera automáticamente el retiro del servicio y la declaratoria de insubsistencia del nombramiento en carrera.',
+                                        text: 'Instrumento periódico que mide el cumplimiento de metas funcionales y competencias comportamentales. Una calificación insatisfactoria en firme produce el retiro del servicio.',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '1.5 Estructura Orgánica de la DIAN (Decreto 1742 de 2020)',
+                        heading: '1.5 Régimen Disciplinario (Ley 1952 de 2019 / Ley 2094 de 2021) y Código de Integridad',
                         blocks: [
                             {
-                                type: 'list',
-                                items: [
-                                    {
-                                        term: 'Naturaleza Jurídica',
-                                        text: 'Unidad Administrativa Especial (UAE) del orden nacional, con personería jurídica, autonomía administrativa y presupuestal, adscrita al Ministerio de Hacienda y Crédito Público.',
-                                    },
-                                    {
-                                        term: 'Dirección de Gestión de Innovación y Tecnología',
-                                        text: 'Dependencia del nivel central rectora de la política, arquitectura y seguridad tecnológica de la entidad a nivel nacional.',
-                                    },
-                                    {
-                                        term: 'Subdirección de Infraestructura y Operaciones Tecnológicas',
-                                        text: 'Unidad donde se ubica la Ficha IT-TO-3008 (Gestor I), responsable directa de operar los datacenters, redes, servidores físicos y en la nube.',
-                                    },
-                                ],
+                                type: 'p',
+                                text: 'El Código General Disciplinario sanciona el incumplimiento de deberes, la incursión en prohibiciones y la vulneración del régimen de inhabilidades, incompatibilidades y conflicto de intereses de los servidores públicos.',
                             },
-                        ],
-                    },
-                    {
-                        heading: '1.6 Responsabilidad Fiscal, Penal, Disciplinaria y Acción de Repetición',
-                        blocks: [
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: 'Responsabilidad Disciplinaria (Ley 1952 de 2019 / Ley 2094 de 2021)',
-                                        text: 'Investiga faltas contra los deberes funcionales. Constituye falta gravísima dolosa el uso de bienes de la entidad para fines comerciales propios (ej. minar criptomonedas o alojar software privado).',
+                                        term: 'Faltas Gravísimas Típicas en la DIAN',
+                                        text: '1) Solicitar o recibir dádivas, dinero o promesas remuneratorias (concusión/cohecho); 2) Revelar información sometida a reserva legal tributaria (Art. 583 E.T.); 3) Alterar, borrar o falsificar registros en el RUT o declaraciones tributarias en el Muisca; 4) Tramitar asuntos en provecho propio o de familiares.',
                                     },
                                     {
-                                        term: 'Responsabilidad Fiscal (Ley 610 de 2000)',
-                                        text: 'Vigilada por la Contraloría General de la República ante daño o pérdida patrimonial del Estado por conducta dolosa o gravemente culposa en contratos o activos TI.',
+                                        term: 'Deber de Acatar Órdenes y Derecho de Representación (Art. 38)',
+                                        text: 'El servidor debe cumplir las órdenes legítimas de sus superiores. Si considera que una instrucción quebranta manifiestamente la Constitución o la ley, debe representarla por escrito exponiendo sus razones. Si el superior insiste por escrito, el servidor ejecuta la orden y la responsabilidad recae en quien la emitió.',
                                     },
                                     {
-                                        term: 'Acción de Repetición (Art. 90 C.P. y Ley 678 de 2001)',
-                                        text: 'Mecanismo legal obligatorio mediante el cual el Estado demanda civilmente al servidor público para recuperar las sumas que la entidad tuvo que pagar por condenas judiciales derivadas de su dolo o culpa grave.',
+                                        term: 'Código de Integridad DIAN',
+                                        text: 'Estructurado en cinco valores esenciales: Honestidad, Respeto, Compromiso, Diligencia y Justicia.',
                                     },
                                 ],
                             },
@@ -232,15 +288,15 @@
                ------------------------------------------------------------------------- */
             {
                 id: 'modulo-2',
-                label: 'Módulo 2: Procedimiento CPACA',
-                title: 'Módulo 2: Procedimiento Administrativo y de lo Contencioso Administrativo (CPACA)',
+                label: 'M.2: CPACA y Peticiones',
+                title: 'Módulo 2: Procedimiento Administrativo (CPACA), Derecho de Petición y Gestión de PQRSD',
                 topics: [
                     {
-                        heading: '2.1 Ámbito y Garantías del Debido Proceso (Art. 29 C.P. y CPACA)',
+                        heading: '2.1 Ámbito y Garantías del Debido Proceso (Art. 29 C.P. y Ley 1437 de 2011)',
                         blocks: [
                             {
                                 type: 'p',
-                                text: 'El CPACA regula la relación entre los ciudadanos y las autoridades administrativas. En toda actuación se garantiza el debido proceso: derecho a la defensa, a presentar pruebas, a ser notificado formalmente y a controvertir decisiones.',
+                                text: 'El Código de Procedimiento Administrativo y de lo Contencioso Administrativo (CPACA), reformado por la Ley 2080 de 2021, regula las actuaciones de las autoridades administrativas frente a los particulares, garantizando el respeto de los derechos fundamentales y la efectividad del interés general.',
                             },
                         ],
                     },
@@ -249,23 +305,56 @@
                         blocks: [
                             {
                                 type: 'p',
-                                text: 'Términos legales perentorios para resolver peticiones ciudadanas ante la DIAN:',
+                                text: 'Toda persona tiene derecho a presentar peticiones respetuosas a las autoridades por motivos de interés general o particular y a obtener pronta resolución completa y de fondo.',
+                            },
+                            {
+                                type: 'table',
+                                headers: ['Tipo de Petición', 'Término Legal de Respuesta', 'Particularidad Normativa'],
+                                rows: [
+                                    [
+                                        'Peticiones de Documentos y Copias',
+                                        '10 días hábiles',
+                                        'Si no se resuelve en dicho término, se entenderá aceptada la solicitud y la DIAN entregará las copias gratuitamente dentro de los 3 días siguientes.',
+                                    ],
+                                    [
+                                        'Peticiones de Interés General o Particular',
+                                        '15 días hábiles',
+                                        'Regla general para trámites, quejas, reclamos, aclaraciones sobre el estado del RUT y solicitudes de servicio.',
+                                    ],
+                                    [
+                                        'Consultas Doctrinales o Conceptuales',
+                                        '30 días hábiles',
+                                        'Preguntas sobre interpretación de normas tributarias, aduaneras o cambiarias (competencia de la Subdirección de Normativa y Doctrina).',
+                                    ],
+                                    [
+                                        'Peticiones entre Autoridades',
+                                        '10 días hábiles',
+                                        'Informes o certificaciones solicitadas por otra entidad pública u organismo de control.',
+                                    ],
+                                ],
                             },
                             {
                                 type: 'list',
                                 items: [
-                                    { term: 'Peticiones de Copias y Documentos', text: '10 días hábiles. Si no se responde en este plazo, la ley ordena que se entregarán las copias gratuitamente dentro de los 3 días siguientes.' },
-                                    { term: 'Peticiones de Interés General o Particular', text: '15 días hábiles como regla general.' },
-                                    { term: 'Peticiones de Consultas Conceptuales o Técnicas', text: '30 días hábiles dada su complejidad analítica.' },
-                                    { term: 'Peticiones Incompletas (Art. 17 CPACA)', text: 'La entidad debe requerir al peticionario por una sola vez dentro de los 10 días siguientes para que subsane en el plazo de 1 mes, término en el cual se suspenden los plazos de respuesta.' },
-                                    { term: 'Desistimiento Tácito (Art. 17 CPACA)', text: 'Vencido el mes del requerimiento sin que el solicitante aporte lo requerido, se declara el desistimiento tácito y el archivo del expediente mediante resolución motivada.' },
+                                    {
+                                        term: 'Peticiones Incompletas (Art. 17 CPACA)',
+                                        text: 'Si la petición no cuenta con los documentos indispensables para decidir, la autoridad debe requerir al peticionario por una sola vez y por escrito dentro de los diez (10) días siguientes a la radicación.',
+                                    },
+                                    {
+                                        term: 'Término para Subsanar y Desistimiento Tácito',
+                                        text: 'El peticionario tiene un (1) mes para completar la solicitud, prorrogable por otro mes si lo solicita justificadamente. Si vence el plazo sin que subsane, la entidad declara el desistimiento tácito y el archivo del expediente mediante acto administrativo motivado.',
+                                    },
+                                    {
+                                        term: 'Desistimiento Expreso',
+                                        text: 'El ciudadano puede desistir en cualquier momento de su petición, pero la DIAN puede continuar de oficio si razones de interés público o fiscal lo ameritan.',
+                                    },
                                 ],
                             },
                             {
                                 type: 'callout',
                                 variant: 'tip',
-                                title: '¡Pregunta Típica CNSC sobre Términos!',
-                                text: 'Memorice los 3 números mágicos de las peticiones: 10 días (documentos/copias), 15 días (regla general), 30 días (consultas doctrinales).',
+                                title: '¡Pregunta Típica de Examen sobre Términos!',
+                                text: 'Memorice la regla 10 - 15 - 30: 10 días para copias/documentos, 15 días regla general de peticiones, 30 días para consultas doctrinales y técnicas.',
                             },
                         ],
                     },
@@ -277,81 +366,45 @@
                                 items: [
                                     {
                                         term: 'Presunción de Legalidad',
-                                        text: 'Los actos administrativos se presumen legales y obligatorios mientras no sean suspendidos o anulados por la Jurisdicción de lo Contencioso Administrativo.',
+                                        text: 'Los actos administrativos se presumen conformes a derecho y son de obligatorio cumplimiento mientras no sean suspendidos o anulados por la Jurisdicción de lo Contencioso Administrativo.',
+                                    },
+                                    {
+                                        term: 'Firmeza de los Actos Administrativos (Art. 87 CPACA)',
+                                        text: 'Ocurre cuando: 1) Contra ellos no proceda recurso alguno; 2) Vencen los términos para interponer recursos sin haberlo hecho; 3) Se resuelven los recursos interpuestos; 4) Se produce desistimiento de los recursos.',
                                     },
                                     {
                                         term: 'Pérdida de Fuerza Ejecutoria / Decaimiento (Art. 91 CPACA)',
-                                        text: 'Ocurre cuando: 1) Se suspenden provisionalmente sus efectos por orden judicial; 2) Desaparecen sus fundamentos de hecho o de derecho; 3) Transcurren cinco (5) años sin que la administración haya realizado los actos de cobro o ejecución forzosa.',
+                                        text: 'Los actos pierden obligatoriedad cuando: 1) Sean suspendidos judicialmente; 2) Desaparezcan sus fundamentos de hecho o de derecho; 3) Transcurran cinco (5) años sin que la administración haya ejecutado el acto.',
                                     },
                                     {
                                         term: 'Corrección de Errores Formales (Art. 45 CPACA)',
-                                        text: 'Los errores puramente aritméticos o mecanográficos en nombres, NITs o cifras pueden corregirse en cualquier tiempo sin necesidad de revocar el fondo del acto.',
+                                        text: 'Los errores puramente aritméticos, mecanográficos o de digitación en nombres, NIT o valores pueden corregirse en cualquier tiempo de oficio o a petición de parte, sin revocar el fondo del acto.',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '2.4 Recursos en la Vía Administrativa (Art. 74 a 76 CPACA)',
+                        heading: '2.4 Recursos en la Vía Administrativa y Notificaciones Especiales',
                         blocks: [
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: 'Recurso de Reposición',
-                                        text: 'Se interpone ante el mismo funcionario que profirió la decisión para que la aclare, modifique, adicione o revoque.',
+                                        term: 'Recurso de Reposición (Art. 74 CPACA)',
+                                        text: 'Se interpone ante el mismo funcionario que tomó la decisión para que la aclare, modifique, adicione o revoque, dentro de los diez (10) días hábiles siguientes a la notificación.',
                                     },
                                     {
-                                        term: 'Recurso de Apelación',
-                                        text: 'Se interpone ante el superior jerárquico o funcional directo con el mismo propósito. Es obligatorio para agotar la vía administrativa cuando la ley lo contemple.',
+                                        term: 'Recurso de Apelación (Art. 74 CPACA)',
+                                        text: 'Se interpone ante el superior jerárquico funcional para que revise la decisión, bien directamente o en subsidio del de reposición.',
                                     },
                                     {
-                                        term: 'Recurso de Queja',
-                                        text: 'Procede directamente ante el superior jerárquico cuando el funcionario de primera instancia rechaza indebidamente el recurso de apelación.',
+                                        term: 'Recurso de Queja (Art. 74 CPACA)',
+                                        text: 'Procede cuando se rechaza el recurso de apelación, directamente ante el superior para que determine si debió concederse.',
                                     },
                                     {
-                                        term: 'Plazo Legal de Interposición',
-                                        text: 'Diez (10) días hábiles siguientes a la notificación formal del acto administrativo.',
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                    {
-                        heading: '2.5 Notificaciones Electrónicas en la DIAN (Art. 566-1 Estatuto Tributario)',
-                        blocks: [
-                            {
-                                type: 'p',
-                                text: 'En materia tributaria, aduanera y cambiaria, la notificación por medios electrónicos al correo registrado en el RUT es el mecanismo preferente.',
-                            },
-                            {
-                                type: 'list',
-                                items: [
-                                    {
-                                        term: 'Cómputo Procesal de Términos',
-                                        text: 'La notificación electrónica se entenderá surtida para el administrado a partir del día en que acceda al documento o transcurridos cinco (5) días hábiles siguientes al envío del aviso de notificación por parte de la DIAN.',
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                    {
-                        heading: '2.6 Revocatoria Directa y Silencio Administrativo',
-                        blocks: [
-                            {
-                                type: 'list',
-                                items: [
-                                    {
-                                        term: 'Revocatoria Directa (Art. 93 CPACA)',
-                                        text: 'Procede de oficio o a solicitud de parte cuando: 1) Sea manifiesta su oposición a la Constitución o la ley; 2) No estén conformes con el interés público; 3) Causen agravio injustificado a una persona.',
-                                    },
-                                    {
-                                        term: 'Silencio Administrativo Negativo (Art. 83 CPACA)',
-                                        text: 'Regla general: transcurridos tres (3) meses sin respuesta, se entiende denegada la solicitud para permitir acudir a la vía judicial.',
-                                    },
-                                    {
-                                        term: 'Silencio Administrativo Positivo (Art. 84 CPACA)',
-                                        text: 'Solo opera en los casos expresamente consagrados por la ley especial, requiriendo protocolización en notaría para exigir su cumplimiento.',
+                                        term: 'Notificación Electrónica Tributaria (Art. 566-1 E.T.)',
+                                        text: 'Es el mecanismo preferente de notificación en la DIAN. Se remite al correo electrónico informado en la casilla 44 del RUT. Se entiende surtida para la DIAN con el envío, y para el contribuyente a partir del quinto (5) día hábil siguiente al acuse de entrega o recepción.',
                                     },
                                 ],
                             },
@@ -361,169 +414,192 @@
             },
 
             /* -------------------------------------------------------------------------
-               MÓDULO 3: INFRAESTRUCTURA TECNOLÓGICA Y OPERACIONES TIC (GESTOR I)
+               MÓDULO 3: REGISTRO ÚNICO TRIBUTARIO (RUT) — NÚCLEO MISIONAL GESTOR I
                ------------------------------------------------------------------------- */
             {
                 id: 'modulo-3',
-                label: 'Módulo 3: Infraestructura TI',
-                title: 'Módulo 3: Infraestructura Tecnológica, Centros de Cómputo, Cloud y Operaciones TIC',
+                label: 'M.3: Administración del RUT',
+                title: 'Módulo 3: Registro Único Tributario (RUT) — Marco Legal, Trámites y Casillas Críticas',
                 topics: [
                     {
-                        heading: '3.1 Data Centers y Estándar ANSI/TIA-942',
+                        heading: '3.1 Naturaleza y Fundamento Normativo del RUT',
                         blocks: [
                             {
                                 type: 'p',
-                                text: 'La norma TIA-942 clasifica la infraestructura física de los centros de cómputo en 4 niveles (Tiers) según su nivel de redundancia y disponibilidad:',
+                                text: 'El Registro Único Tributario (RUT) está consagrado en el artículo 555-2 del Estatuto Tributario y reglamentado integralmente en el Decreto Único Reglamentario en Materia Tributaria 1625 de 2016 (DURT, Libro 1, Título 6, Capítulo 1).',
+                            },
+                            {
+                                type: 'callout',
+                                variant: 'info',
+                                title: 'Definición Legal del RUT',
+                                text: 'Constituye el mecanismo único para identificar, ubicar y clasificar a las personas y entidades que tengan la calidad de contribuyentes declarantes del impuesto sobre la renta y no declarantes, responsables y no responsables del IVA y del Impoconsumo, agentes retenedores, importadores, exportadores y demás usuarios aduaneros y sujetos de obligaciones administradas por la DIAN.',
+                            },
+                        ],
+                    },
+                    {
+                        heading: '3.2 Sujetos Obligados a Inscribirse en el RUT',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'De conformidad con el artículo 1.6.1.2.6 del Decreto 1625 de 2016, están obligados a inscribirse en el RUT de manera previa al inicio de la actividad económica o al cumplimiento de sus deberes formales:',
                             },
                             {
                                 type: 'list',
                                 items: [
-                                    { term: 'Tier I (Básico)', text: 'Una sola vía de distribución eléctrica y enfriamiento, sin componentes redundantes. Disponibilidad: 99.67%.' },
-                                    { term: 'Tier II (Componentes Redundantes)', text: 'Una sola vía con equipos redundantes (N+1 en bombas, UPS). Disponibilidad: 99.74%.' },
-                                    { term: 'Tier III (Mantenibilidad Concurrente - Estándar DIAN)', text: 'Múltiples vías de distribución eléctrica y enfriamiento, donde cualquiera puede ser intervenida o reparada en caliente sin apagar los servidores. Disponibilidad: 99.982%.' },
-                                    { term: 'Tier IV (Tolerante a Fallos)', text: 'Múltiples vías activas independientes y redundancia 2(N+1). Tolera cualquier falla catastrófica sin afectación. Disponibilidad: 99.995%.' },
+                                    { term: 'Personas Naturales y Jurídicas', text: 'Nacionales o extranjeras con residencia o domicilio fiscal en Colombia que realicen actividades económicas o sean sujetos pasivos de obligaciones tributarias.' },
+                                    { term: 'Sucesiones Ilíquidas', text: 'Bienes del causante pendientes de partición y adjudicación judicial o notarial.' },
+                                    { term: 'Consorcios y Uniones Temporales', text: 'Estructuras contractuales de colaboración empresarial para contratación pública o privada.' },
+                                    { term: 'Inversionistas Extranjeros', text: 'Personas naturales o jurídicas no residentes que realicen inversión extranjera directa o de portafolio en Colombia.' },
+                                    { term: 'Responsables y No Responsables de IVA e Impoconsumo', text: 'Quienes vendan bienes corporales muebles o presten servicios gravados, así como pequeños comerciantes pertenecientes al grupo no responsable.' },
+                                    { term: 'Operadores del Comercio Exterior', text: 'Importadores, exportadores, agencias de aduanas, depósitos habilitados y usuarios de zonas francas.' },
+                                    { term: 'Contribuyentes del Régimen Simple de Tributación (RST)', text: 'Quienes opten por el modelo unificado de tributación del Art. 903 del E.T.' },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '3.2 Redes, Conectividad y Seguridad Perimetral',
+                        heading: '3.3 Procesos del RUT: Inscripción Presencial y Virtual',
                         blocks: [
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: 'Modelo OSI y TCP/IP',
-                                        text: 'Capas: Física (1), Enlace (2 - MAC/Switch), Red (3 - IP/Router), Transporte (4 - TCP/UDP), Sesión (5), Presentación (6), Aplicación (7 - HTTP, DNS, SSH).',
+                                        term: 'Inscripción Virtual para Personas Naturales',
+                                        text: 'Se realiza 100% en línea mediante autogestión en el portal web de la DIAN o App DIAN, requiriendo validación fotográfica y biométrica de la cédula de ciudadanía mediante tecnologías de reconocimiento facial del Estado.',
                                     },
                                     {
-                                        term: 'Zona Desmilitarizada (DMZ)',
-                                        text: 'Subred aislada entre dos cortafuegos que alberga los servidores web públicos expuestos a Internet, protegiendo las bases de datos de la red LAN corporativa de accesos directos.',
+                                        term: 'Inscripción Presencial con Cita Previa',
+                                        text: 'Aplica cuando la validación biométrica falla, para personas jurídicas, menores de edad, sucesiones ilíquidas o apoderados. Requiere documento de identidad original, certificado de existencia y representación legal (con vigencia no mayor a 30 días si aplica) y poder debidamente otorgado.',
                                     },
                                     {
-                                        term: 'VLANs y Enrutamiento Inter-VLAN',
-                                        text: 'Segmentación lógica de tráfico para aislar áreas críticas (ej. VLAN de servidores tributarios separada de VLAN de usuarios administrativos).',
-                                    },
-                                    {
-                                        term: 'Protocolos de Red Esenciales',
-                                        text: 'DNS (puerto 53), DHCP (puertos 67/68), HTTP (80), HTTPS (443 con TLS 1.3), SSH (22), RDP (3389), BGP (enrutamiento de enlaces redundantes entre proveedores).',
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                    {
-                        heading: '3.3 Virtualización, Servidores y Contenedores',
-                        blocks: [
-                            {
-                                type: 'list',
-                                items: [
-                                    {
-                                        term: 'Hipervisores Tipo 1 (Bare-Metal)',
-                                        text: 'Instalados directamente sobre el hardware físico (ej. VMware ESXi, KVM, Microsoft Hyper-V), garantizando máximo rendimiento y aislamiento para servidores productivos.',
-                                    },
-                                    {
-                                        term: 'Clústeres de Alta Disponibilidad (HA y DRS)',
-                                        text: 'Permiten migración de máquinas virtuales sin interrupción del servicio (vMotion / Live Migration) y balanceo automático de recursos de CPU/RAM.',
-                                    },
-                                    {
-                                        term: 'Contenedores vs Máquinas Virtuales',
-                                        text: 'Los contenedores (Docker/Kubernetes) comparten el kernel del sistema operativo anfitrión, siendo mucho más ligeros y rápidos de desplegar que las VMs tradicionales.',
+                                        term: 'Inscripción Previa para Personas Jurídicas en Constitución',
+                                        text: 'Se expide el formulario del RUT con la leyenda "Para trámite en Cámara de Comercio", el cual no incluye NIT definitivo hasta tanto la Cámara registre la sociedad mercantil y formalice la matrícula.',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '3.4 Almacenamiento, Arreglos RAID y Estrategia de Respaldo 3-2-1',
+                        heading: '3.4 Actualización del RUT: Solicitud de Parte vs De Oficio',
                         blocks: [
                             {
-                                type: 'list',
-                                items: [
-                                    { term: 'RAID 0 (Stripping)', text: 'Distribuye datos sin redundancia. No tolera fallas de disco (cero tolerancia a fallos).' },
-                                    { term: 'RAID 1 (Mirroring)', text: 'Copia idéntica en 2 discos. Tolera la falla de 1 disco. Capacidad útil: 50%.' },
-                                    { term: 'RAID 5 (Paridad Distribuida)', text: 'Mínimo 3 discos. Tolera la falla de 1 disco. Excelente balance entre costo y seguridad.' },
-                                    { term: 'RAID 6 (Doble Paridad)', text: 'Mínimo 4 discos. Tolera la pérdida simultánea de 2 discos duros sin perder datos.' },
-                                    { term: 'RAID 10 (1+0)', text: 'Espejo de discos distribuidos. Mínimo 4 discos. Máxima velocidad y alta tolerancia a fallos para motores transaccionales (Oracle/SQL).' },
-                                    { term: 'Estrategia de Respaldo 3-2-1 Inmutable', text: '3 copias de los datos, en al menos 2 soportes diferentes, con 1 copia fuera del datacenter (off-site/cloud) o protegida con tecnología inmutable WORM contra ransomware.' },
-                                ],
+                                type: 'p',
+                                text: 'Es la modificación de la información contenida en el RUT por cambios en los datos de identificación, ubicación, actividades económicas o responsabilidades:',
                             },
-                        ],
-                    },
-                    {
-                        heading: '3.5 Continuidad de Negocio (BCP / DRP) y Métricas RTO/RPO',
-                        blocks: [
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: 'RTO (Recovery Time Objective)',
-                                        text: 'Tiempo máximo tolerable que un servicio crítico puede estar inactivo tras una falla antes de causar un daño grave a la DIAN.',
+                                        term: 'Obligación Temporal del Contribuyente (Art. 658-3 E.T.)',
+                                        text: 'El obligado debe actualizar el RUT dentro del mes siguiente a la ocurrencia del hecho que genera la modificación. El incumplimiento genera sanción de dos (2) UVT por cada día de retraso en la actualización.',
                                     },
                                     {
-                                        term: 'RPO (Recovery Point Objective)',
-                                        text: 'Cantidad máxima de datos que la entidad tolera perder tras un desastre, expresada en tiempo transcurrido desde el último respaldo.',
+                                        term: 'Actualización Directa por Autogestión Virtual',
+                                        text: 'El titular puede modificar en línea sin intervención de funcionario: dirección, teléfono, correo electrónico, adición de actividades económicas secundarias y ciertas responsabilidades no condicionadas.',
                                     },
                                     {
-                                        term: 'MTTR (Mean Time to Repair) y MTBF (Mean Time Between Failures)',
-                                        text: 'MTTR mide el tiempo promedio para reparar un equipo; MTBF mide el tiempo medio que transcurre entre fallas consecutivas.',
-                                    },
-                                    {
-                                        term: 'Sitios Alternos de Contingencia',
-                                        text: 'Hot Site (sitio espejo activo-activo sincronizado en tiempo real), Warm Site (hardware disponible que requiere restaurar backups), Cold Site (espacio físico con energía pero sin servidores listos).',
+                                        term: 'Actualización de Oficio por la DIAN (Art. 1.6.1.2.15 DURT 1625)',
+                                        text: 'La DIAN puede actualizar de oficio el RUT sin solicitud previa cuando constate modificaciones con base en información exógena, cruces con notarías, cámaras de comercio, catastro o entidades públicas. Se notifica al correo informado.',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '3.6 Buenas Prácticas de ITIL v4 en la Operación de TI',
+                        heading: '3.5 Actualizaciones del RUT Sujetas a Verificación Previa',
                         blocks: [
+                            {
+                                type: 'p',
+                                text: 'Determinadas modificaciones del RUT NO pueden realizarse de forma automática por autogestión, sino que exigen verificación documental exhaustiva por parte del Gestor I antes de su aprobación registral:',
+                            },
+                            {
+                                type: 'table',
+                                headers: ['Modificación Solicitada', 'Requisitos Normativos y Documentales', 'Rol del Gestor I en la Validación'],
+                                rows: [
+                                    [
+                                        'Retiro de la Responsabilidad del IVA (Código 48 a 49)',
+                                        'Haber cumplido durante los tres (3) años fiscales anteriores todos los topes del parágrafo 3 del Art. 437 E.T. (ingresos inferiores a 3.500 UVT anuales, máximo un establecimiento de comercio, no explotar intangibles, etc.).',
+                                        'Verificar declaraciones de renta de los 3 años anteriores, libros de contabilidad o registros de ingresos, cruces exógenos y elaborar informe técnico recomendando aprobación o rechazo.',
+                                    ],
+                                    [
+                                        'Retiro del Impuesto Nacional al Consumo (INC)',
+                                        'Demostrar el cese definitivo en el expendio de comidas y bebidas gravadas o cumplimiento de topes legales.',
+                                        'Validar certificado de Cámara de Comercio, balance de corte y cese efectivo de la prestación del servicio.',
+                                    ],
+                                    [
+                                        'Cese Definitivo de Actividades Gravadas',
+                                        'Manifestación expresa y pruebas de no continuar ejerciendo actos gravados con IVA o renta.',
+                                        'Cruzar con facturación electrónica y declaraciones de IVA del último período.',
+                                    ],
+                                ],
+                            },
+                            {
+                                type: 'callout',
+                                variant: 'warning',
+                                title: '¡Punto Crítico de la Guía Oficial OPEC 198476!',
+                                text: 'Si un contribuyente solicita retirar la responsabilidad de IVA pero en cualquiera de los 3 años fiscales previos superó las 3.500 UVT de ingresos brutos, el Gestor I debe RECHAZAR motivadamente la solicitud mediante acto administrativo, informando los recursos procedentes.',
+                            },
+                        ],
+                    },
+                    {
+                        heading: '3.6 Suspensión del RUT (Art. 1.6.1.2.16 Decreto 1625 de 2016)',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'Es una medida cautelar administrativa que inhabilita temporalmente el NIT para realizar transacciones comerciales y aduaneras. Causales principales:',
+                            },
                             {
                                 type: 'list',
                                 items: [
-                                    {
-                                        term: 'Gestión de Incidentes',
-                                        text: 'Objetivo: Restablecer la operación normal del servicio de TI lo antes posible, minimizando el impacto en los contribuyentes.',
-                                    },
-                                    {
-                                        term: 'Gestión de Problemas',
-                                        text: 'Objetivo: Identificar la causa raíz de uno o varios incidentes recurrentes para evitar que vuelvan a ocurrir, documentando la solución temporal (Workaround) y registrando el "Error Conocido".',
-                                    },
-                                    {
-                                        term: 'Gestión de Cambios y el Comité CAB',
-                                        text: 'Todo cambio en producción (parche, nueva regla de red, actualización de base de datos) debe ser evaluado por el Change Advisory Board (CAB) con su respectivo plan de Rollback (reversión).',
-                                    },
-                                    {
-                                        term: 'SLA (Service Level Agreement) y OLA (Operational Level Agreement)',
-                                        text: 'SLA es el acuerdo formal de servicio con los usuarios/clientes; OLA es el acuerdo de soporte interno entre áreas de la DIAN.',
-                                    },
+                                    { term: 'Inconsistencias en Identificación', text: 'Discrepancias entre los datos del RUT y la Registraduría Nacional o causales de suplantación de identidad.' },
+                                    { term: 'No Ubicación del Contribuyente', text: 'Comunicaciones oficiales devueltas por el correo por dirección inexistente, incompleta o renuencia a recibir.' },
+                                    { term: 'Fallecimiento sin Apertura de Sucesión', text: 'Muerte del titular reportada por la Registraduría sin que los herederos formalicen la sucesión ilíquida.' },
+                                    { term: 'Orden Judicial o Administrativa', text: 'Mandato de fiscalía, jueces o autoridades de control financiero (UIAF).' },
+                                ],
+                            },
+                            {
+                                type: 'callout',
+                                variant: 'info',
+                                title: 'Efectos de la Suspensión del RUT',
+                                text: 'El contribuyente con RUT suspendido no puede facturar válidamente, no puede realizar trámites de comercio exterior y sus facturas no dan derecho a costos ni deducciones para sus clientes.',
+                            },
+                        ],
+                    },
+                    {
+                        heading: '3.7 Cancelación del RUT (Art. 1.6.1.2.18 Decreto 1625 de 2016)',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'Pone fin definitivo a la vigencia del registro tributario. Procede en los siguientes casos taxativos previa verificación de inexistencia de obligaciones tributarias pendientes:',
+                            },
+                            {
+                                type: 'list',
+                                items: [
+                                    { term: 'Liquidación de Personas Jurídicas', text: 'Acreditación de la escritura pública o acta de liquidación registrada en Cámara de Comercio con cancelación de matrícula.' },
+                                    { term: 'Fallecimiento y Liquidación de Sucesión', text: 'Partición material de la herencia formalizada mediante escritura notarial o sentencia judicial ejecutoriada.' },
+                                    { term: 'Duplicidad de Inscripción', text: 'Existencia de dos o más NIT asignados a la misma persona por error del sistema; se anula el más reciente.' },
+                                    { term: 'Inexistencia Legal de la Organización', text: 'Declaración de nulidad de contrato social o cancelación de personerías jurídicas por autoridad competente.' },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '3.7 Ciberseguridad, Modelo Zero Trust y Gestión de Incidentes CSIRT',
+                        heading: '3.8 Estructura del Formulario 001 del RUT (Hoja 1 y Casillas Críticas)',
                         blocks: [
                             {
-                                type: 'list',
-                                items: [
-                                    {
-                                        term: 'Principio Zero Trust ("Nunca confiar, siempre verificar")',
-                                        text: 'Ningún usuario, dispositivo o red (incluso interna) es confiable por defecto. Todo acceso requiere autenticación estricta (MFA) y autorización continua.',
-                                    },
-                                    {
-                                        term: 'Directorio Activo y Control RBAC',
-                                        text: 'Administración de identidades corporativas, Políticas de Grupo (GPO) y Control de Acceso Basado en Roles (RBAC) con privilegios mínimos.',
-                                    },
-                                    {
-                                        term: 'Protocolo ante Incidentes y Cadena de Custodia Forense',
-                                        text: 'Ante un servidor comprometido, la primera acción es aislarlo de la red lógica sin apagarlo, con el fin de volcar y preservar la memoria volátil (RAM) imprescindible para el análisis forense.',
-                                    },
-                                    {
-                                        term: 'Modelo MSPI (MinTIC) e ISO/IEC 27001',
-                                        text: 'Marco gubernamental de Seguridad y Privacidad de la Información que asegura confidencialidad, integridad y disponibilidad de la información pública.',
-                                    },
+                                type: 'p',
+                                text: 'El Formulario 001 oficial consta de varias hojas, siendo la Hoja 1 la de mayor relevancia misional para el Gestor I:',
+                            },
+                            {
+                                type: 'table',
+                                headers: ['Casilla(s)', 'Nombre del Campo', 'Función y Criterio Técnico'],
+                                rows: [
+                                    ['Casilla 4 y 5', 'Número de Identificación Tributaria (NIT) y Dígito de Verificación (DV)', 'Identificador numérico único asignado por la DIAN. El DV se calcula mediante un algoritmo módulo 11.'],
+                                    ['Casilla 31 a 37', 'Datos de Identificación Personal o Razón Social', 'Primer y segundo apellido, primer y otros nombres para personas naturales; o Razón Social exacta según certificado de existencia para personas jurídicas.'],
+                                    ['Casilla 38 a 43', 'Ubicación Geográfica', 'País (169 Colombia), Departamento, Municipio y Dirección procesal exacta estandarizada.'],
+                                    ['Casilla 44', 'Correo Electrónico de Notificación Procesal', 'Dirección electrónica obligatoria donde la DIAN surte la notificación electrónica de todos los actos oficiales.'],
+                                    ['Casilla 46 a 50', 'Actividad Económica Principal y Secundarias (CIIU)', 'Código numérico de 4 dígitos según la Clasificación Industrial Internacional Uniforme (CIIU Rev. 4 A.C., Resolución DIAN 000139 de 2020) y fecha de inicio.'],
+                                    ['Casilla 53', 'Responsabilidades, Calidades y Atributos', 'Códigos fiscales que determinan las obligaciones del contribuyente (05 Renta, 07 Retención, 10 Gran Contribuyente, 14 Aduanero, 47 Simple RST, 48 Responsable de IVA, 49 No responsable de IVA, 52 Facturador Electrónico).'],
                                 ],
                             },
                         ],
@@ -532,54 +608,230 @@
             },
 
             /* -------------------------------------------------------------------------
-               MÓDULO 4: COMPETENCIAS COMPORTAMENTALES OFICIALES (NIVEL PROFESIONAL)
+               MÓDULO 4: ATENCIÓN, SERVICIO Y CANALES DE ASISTENCIA (CLIENTES TACI)
                ------------------------------------------------------------------------- */
             {
                 id: 'modulo-4',
-                label: 'Módulo 4: Comportamentales',
-                title: 'Módulo 4: Diccionario de Competencias Comportamentales (Decreto 815 de 2018 / DIAN)',
+                label: 'M.4: Atención y Canales TACI',
+                title: 'Módulo 4: Atención, Servicio al Ciudadano y Canales de Asistencia a Clientes TACI',
                 topics: [
                     {
-                        heading: 'Competencias Comportamentales Evaluadas para el Nivel Profesional',
+                        heading: '4.1 Concepto de Clientes TACI',
                         blocks: [
                             {
                                 type: 'p',
-                                text: 'En las pruebas de la CNSC, las preguntas comportamentales presentan situaciones laborales simuladas donde se evalúa el nivel de desarrollo de las conductas descritas en el Decreto 815 de 2018:',
+                                text: 'En la arquitectura de servicio de la DIAN, se denomina "Clientes TACI" a todos los ciudadanos, empresas, intermediarios y usuarios que interactúan con la entidad en asuntos Tributarios, Aduaneros y Cambiarios, o que demandan Trámites y Asistencia al Contribuyente e Interesados.',
+                            },
+                        ],
+                    },
+                    {
+                        heading: '4.2 Arquitectura Multicanal de Servicio de la DIAN',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'La DIAN dispone de un modelo de atención omnicanal integrado para garantizar la accesibilidad y el cumplimiento tributario:',
                             },
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: '1. Comportamiento Ético (Nivel 4)',
-                                        text: 'Actúa con rectitud, imparcialidad y transparencia. Rechaza y denuncia cualquier intento de soborno, favoritismo o manipulación indebida de sistemas o bitácoras.',
+                                        term: 'Canal Presencial (Puntos de Contacto)',
+                                        text: 'Sedes físicas distribuidas en las Direcciones Seccionales. Funciona mediante citas agendadas, kioscos de autogestión guiada y ventanillas de radicación de correspondencia oficial.',
                                     },
                                     {
-                                        term: '2. Trabajo en Equipo (Nivel 3)',
-                                        text: 'Aporta activamente al logro de metas colectivas, fomenta la comunicación abierta y coopera constructivamente en salas de crisis sin eludir responsabilidades.',
+                                        term: 'Canal Virtual / Electrónico',
+                                        text: 'Portal transaccional www.dian.gov.co, sistema Muisca, radicación virtual de PQRSD, agendamiento de citas virtuales por Teams, y chatbot de atención guiada por inteligencia artificial.',
                                     },
                                     {
-                                        term: '3. Orientación a Resultados (Nivel 4)',
-                                        text: 'Enfoca su labor en el impacto misional del Estado, priorizando la solución definitiva de problemas críticos de infraestructura y optimizando tiempos de respuesta.',
+                                        term: 'Canal Telefónico (Contact Center)',
+                                        text: 'Líneas nacionales gratuitas y PBX con operadores capacitados para resolver dudas sobre el RUT, fechas de vencimiento, uso de la web y soporte técnico a declaraciones.',
                                     },
                                     {
-                                        term: '4. Adaptabilidad al Cambio (Nivel 3)',
-                                        text: 'Muestra apertura proactiva y flexibilidad ante la modernización tecnológica (nube, automatización), aprendiendo de forma continua y facilitando la transición técnica del equipo.',
+                                        term: 'Canal Móvil (App DIAN)',
+                                        text: 'Aplicación oficial para teléfonos inteligentes que permite consultar el estado del RUT, descargar la copia en PDF y recibir notificaciones y alertas de vencimientos.',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        heading: '4.3 Protocolo de Servicio, Trato Digno y Enfoque Diferencial',
+                        blocks: [
+                            {
+                                type: 'list',
+                                items: [
+                                    {
+                                        term: 'Política de Lenguaje Claro del Estado',
+                                        text: 'Es obligación del Gestor I comunicarse en un lenguaje simple, directo, pedagógico y transparente, evitando tecnicismos oscuros que confundan al contribuyente o restrinjan el ejercicio de sus derechos.',
                                     },
                                     {
-                                        term: '5. Comunicación Efectiva (Nivel 4)',
-                                        text: 'Transmite información técnica compleja en un lenguaje claro, sintético y asertivo, traduciendo riesgos informáticos en impactos comprensibles para los directivos.',
+                                        term: 'Enfoque Diferencial e Inclusivo (Ley 1757 de 2015)',
+                                        text: 'Atención prioritaria obligatoria y sin cita para: adultos mayores, mujeres gestantes, personas con niños en brazos y personas en condición de discapacidad. La DIAN dispone de intérpretes de lengua de señas colombiana (LSC) en sus canales virtuales.',
                                     },
                                     {
-                                        term: '6. Liderazgo Técnico (Nivel 3)',
-                                        text: 'Orienta y acompaña a otros servidores con pedagogía y respeto, convirtiendo los errores en oportunidades de aprendizaje y promoviendo buenas prácticas.',
+                                        term: 'Cero Rechazo por Defectos Formales Subsanables',
+                                        text: 'El servidor no puede devolver un trámite al ciudadano sin indicarle con precisión todos los documentos faltantes en un solo acto y orientarlo de inmediato sobre cómo subsanarlos.',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        heading: '4.4 Instrumento de Firma Electrónica (IFE / e-Firma)',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'El IFE es un mecanismo técnico de identificación y firma digital que la DIAN asigna a los contribuyentes para suscribir válidamente declaraciones, solicitudes y recursos electrónicos con plena equivalencia jurídica (Ley 527 de 1999):',
+                            },
+                            {
+                                type: 'list',
+                                items: [
+                                    { term: 'Generación por Autogestión', text: 'El titular puede generar su e-Firma de forma autónoma en el portal web de la DIAN mediante código OTP (One Time Password) remitido a su correo o celular registrado en el RUT.' },
+                                    { term: 'Vigencia de la e-Firma', text: 'Tiene una vigencia legal de tres (3) años, renovable en línea antes de su expiración.' },
+                                    { term: 'Obligatoriedad de Uso', text: 'Obligatoria para representantes legales, revisores fiscales, contadores públicos y todas las personas naturales y jurídicas obligadas a declarar virtualmente.' },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+
+            /* -------------------------------------------------------------------------
+               MÓDULO 5: CULTURA DE LA CONTRIBUCIÓN, FACTURA Y OBLIGACIONES TACI
+               ------------------------------------------------------------------------- */
+            {
+                id: 'modulo-5',
+                label: 'M.5: Cultura y Obligaciones TACI',
+                title: 'Módulo 5: Fomento de la Cultura de la Contribución (Ley 223/1995), Facturación y Obligaciones TACI',
+                topics: [
+                    {
+                        heading: '5.1 Fomento de la Cultura de la Contribución (Ley 223 de 1995)',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'La Ley 223 de 1995 ordenó al Estado colombiano y a la DIAN diseñar y ejecutar de forma permanente programas pedagógicos para promover la cultura tributaria y fiscal, concibiendo el pago de impuestos no como una carga represiva sino como el mecanismo solidario que financia la educación, salud, justicia y desarrollo social de la nación.',
+                            },
+                            {
+                                type: 'list',
+                                items: [
+                                    {
+                                        term: 'Núcleos de Apoyo Contable y Fiscal (NAF)',
+                                        text: 'Alianzas estratégicas entre la DIAN y las universidades del país. Estudiantes de contaduría y derecho, debidamente capacitados por la DIAN, brindan asesoría fiscal gratuita a personas naturales de bajos ingresos y microempresarios.',
                                     },
                                     {
-                                        term: '7. Toma de Decisiones Bajo Presión (Nivel 4)',
-                                        text: 'Elige con criterio técnico y oportunidad la mejor alternativa ante contingencias, ejecutando responsablemente los planes de contingencia aprobados.',
+                                        term: 'Gestión Persuasiva vs Gestión Coactiva',
+                                        text: 'El modelo moderno de la DIAN prioriza las acciones persuasivas (comunicaciones preventivas, recordatorios amigables de vencimientos, invitaciones a corregir inconsistencias) para lograr el cumplimiento voluntario antes de iniciar el cobro coactivo o procesos sancionatorios.',
                                     },
                                     {
-                                        term: '8. Vocación de Servicio y Orientación al Ciudadano (Nivel 4)',
-                                        text: 'Concibe la infraestructura tecnológica no como cables y servidores aislados, sino como el soporte vital para que los ciudadanos ejerzan sus derechos tributarios con dignidad.',
+                                        term: 'Cultura de Exigencia de la Factura de Venta',
+                                        text: 'Campañas ciudadanas que incentivan a los consumidores a exigir la factura electrónica como herramienta directa para combatir la evasión del IVA y el contrabando.',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        heading: '5.2 Sistema de Facturación Electrónica y Documentos Equivalentes (Art. 616-1 E.T.)',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'La factura electrónica de venta es el documento tributario obligatorio que soporta transacciones de venta de bienes o prestación de servicios:',
+                            },
+                            {
+                                type: 'list',
+                                items: [
+                                    {
+                                        term: 'Validación Previa en Tiempo Real',
+                                        text: 'Toda factura electrónica generada por el vendedor debe transmitirse telemáticamente a la DIAN antes de su entrega al adquirente. La DIAN valida en milisegundos su estructura XML, firma digital y CUFE (Código Único de Factura Electrónica).',
+                                    },
+                                    {
+                                        term: 'Documento Equivalente Electrónico (Tiquete POS)',
+                                        text: 'Los tiquetes de máquinas registradoras POS expedidos por grandes superficies deben transmitirse electrónicamente a la DIAN para que otorguen derecho a costos y deducciones en el impuesto de renta.',
+                                    },
+                                    {
+                                        term: 'Documento Soporte en Adquisiciones a No Obligados a Facturar',
+                                        text: 'Documento electrónico generado por el comprador cuando adquiere bienes o servicios de personas que no están obligadas a expedir factura (ej. trabajadores independientes o pequeños artesanos).',
+                                    },
+                                    {
+                                        term: 'Plataforma RADIAN',
+                                        text: 'Sistema administrado por la DIAN donde se registran los eventos de la factura electrónica (acuse de recibo, recibo de bienes, aceptación expresa/tácita) para que circule como título valor en operaciones de factoring.',
+                                    },
+                                    {
+                                        term: 'Beneficio del 1% para Personas Naturales (Ley 2277 de 2022)',
+                                        text: 'Los contribuyentes personas naturales pueden deducir en su impuesto sobre la renta el 1% del valor de sus compras de bienes o servicios, siempre que hayan sido pagadas por medios electrónicos (tarjetas, transferencias) y respaldadas con factura electrónica validada.',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        heading: '5.3 Obligaciones Básicas del Contribuyente: Sustanciales vs Formales',
+                        blocks: [
+                            {
+                                type: 'table',
+                                headers: ['Tipo de Obligación', 'Naturaleza Jurídica', 'Ejemplos Principales'],
+                                rows: [
+                                    [
+                                        'Obligación Sustancial',
+                                        'Pagar la suma líquida del tributo nacido de la ocurrencia del hecho generador previsto en la ley.',
+                                        'Pago del Impuesto sobre la Renta, IVA bimestral/cuatrimestral, Impoconsumo, Aranceles aduaneros, Gravamen a Movimientos Financieros (GMF).',
+                                    ],
+                                    [
+                                        'Obligaciones Formales',
+                                        'Acciones de hacer, soportar e informar que facilitan la fiscalización y determinación del tributo.',
+                                        'Inscribirse y actualizar el RUT, presentar declaraciones tributarias en los formularios oficiales, expedir factura electrónica, reportar información exógena, atender citaciones.',
+                                    ],
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        heading: '5.4 Régimen Simple de Tributación (RST - Art. 903 y ss. E.T.)',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'Mecanismo voluntario y alternativo de tributación creado para impulsar la formalización y simplificar las cargas tributarias de pequeños y medianos empresarios:',
+                            },
+                            {
+                                type: 'list',
+                                items: [
+                                    {
+                                        term: 'Impuesto Unificado Integrador',
+                                        text: 'Sustituye el impuesto sobre la renta e integra en una sola declaración anual el Impuesto Nacional al Consumo (expendio de alimentos) y el Impuesto de Industria y Comercio (ICA) consolidado municipal.',
+                                    },
+                                    {
+                                        term: 'Requisitos de Ingresos',
+                                        text: 'Pueden optar personas naturales que desarrollen empresa o personas jurídicas cuyos socios sean personas naturales residentes, con ingresos brutos fiscales inferiores a 100.000 UVT en el año anterior.',
+                                    },
+                                    {
+                                        term: 'No Sujetos a Retención en la Fuente',
+                                        text: 'A los contribuyentes del RST no se les practica retención en la fuente a título de renta ni de ICA, mejorando notablemente su flujo de caja.',
+                                    },
+                                    {
+                                        term: 'Aportes a Pensiones como Descuento Tributario',
+                                        text: 'Los aportes obligatorios a pensiones pagados por el empleador respecto de sus trabajadores pueden descontarse directamente del valor a pagar en el RST.',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        heading: '5.5 Nociones Básicas Aduaneras y Cambiarias para el Gestor I',
+                        blocks: [
+                            {
+                                type: 'list',
+                                items: [
+                                    {
+                                        term: 'Registro Aduanero en el RUT',
+                                        text: 'Todo usuario que intervenga en operaciones de comercio exterior debe tener habilitada en la casilla 53 del RUT la responsabilidad 14 (Aduanero) y el código de usuario correspondiente (ej. Importador 22, Exportador 23).',
+                                    },
+                                    {
+                                        term: 'Régimen de Viajeros y Menaje Doméstico',
+                                        text: 'Trámite aduanero común en puntos de contacto para ciudadanos que ingresan mercancías o menaje doméstico al país dentro de los cupos y condiciones autorizados por la legislación aduanera.',
+                                    },
+                                    {
+                                        term: 'Control Cambiario Asignado a la DIAN',
+                                        text: 'A la DIAN le compete el control y vigilancia sobre el cumplimiento del régimen cambiario en materia de importaciones y exportaciones de bienes y servicios y financiación de comercio exterior (Declaraciones de cambio canalizadas a través de intermediarios financieros).',
                                     },
                                 ],
                             },
@@ -589,15 +841,15 @@
             },
 
             /* -------------------------------------------------------------------------
-               MÓDULO 5: MARCO ESTRATÉGICO DIAN, MIPG Y LEY DE TRANSPARENCIA
+               MÓDULO 6: MARCO ESTRATÉGICO DIAN, MIPG, RESERVA LEGAL Y GESTIÓN DOCUMENTAL
                ------------------------------------------------------------------------- */
             {
-                id: 'modulo-5',
-                label: 'Módulo 5: Estrategia y MIPG',
-                title: 'Módulo 5: Marco Estratégico de la DIAN, Modelo MIPG y Ley de Transparencia',
+                id: 'modulo-6',
+                label: 'M.6: MIPG y Reserva Legal',
+                title: 'Módulo 6: Marco Estratégico DIAN, MIPG, Reserva Tributaria y Transparencia',
                 topics: [
                     {
-                        heading: '5.1 Modelo Integrado de Planeación y Gestión (MIPG - Decreto 1499 de 2017)',
+                        heading: '6.1 Modelo Integrado de Planeación y Gestión (MIPG - Decreto 1499 de 2017)',
                         blocks: [
                             {
                                 type: 'p',
@@ -608,61 +860,146 @@
                                 items: [
                                     {
                                         term: 'Las 7 Dimensiones del MIPG',
-                                        text: '1) Talento Humano (el corazón del modelo); 2) Direccionamiento Estratégico; 3) Gestión con Valores para el Resultado; 4) Evaluación de Resultados; 5) Información y Comunicación; 6) Gestión del Conocimiento y la Innovación; 7) Control Interno.',
+                                        text: '1) Talento Humano; 2) Direccionamiento Estratégico; 3) Gestión con Valores para el Resultado; 4) Evaluación de Resultados; 5) Información y Comunicación; 6) Gestión del Conocimiento e Innovación; 7) Control Interno.',
                                     },
                                     {
-                                        term: 'Esquema de las Tres Líneas de Defensa',
-                                        text: '',
-                                        children: [
-                                            { term: 'Línea Estratégica', text: 'Alta Dirección y Comité Institucional de Coordinación de Control Interno.' },
-                                            { term: '1ª Línea (Operativa)', text: 'Líderes de proceso y servidores de TI en su labor cotidiana (responsables directos de diseñar y ejecutar los controles de riesgos tecnológicos).' },
-                                            { term: '2ª Línea (Riesgos y Cumplimiento)', text: 'Oficinas de Planeación y Seguridad de la Información (monitorean y aseguran que los controles se cumplan).' },
-                                            { term: '3ª Línea (Evaluación Independiente)', text: 'Oficina de Control Interno / Auditoría Interna (evalúa objetivamente la eficacia de las dos primeras líneas).' },
-                                        ],
+                                        term: 'El Gestor I en las Tres Líneas de Defensa',
+                                        text: 'El Gestor I opera en la Primera Línea de Defensa (operativa): es el responsable primario de ejecutar los controles diarios (validar cédulas, verificar poderes, corroborar certificados de existencia) para mitigar los riesgos de fraude en el RUT o de servicio inadecuado.',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '5.2 Transparencia (Ley 1712 de 2014) vs Reserva Legal Tributaria (Art. 583 E.T.)',
+                        heading: '6.2 Reserva Legal Tributaria (Art. 583 del Estatuto Tributario)',
                         blocks: [
                             {
                                 type: 'p',
-                                text: 'El principio de máxima publicidad y apertura informativa tiene límites constitucionales estrictos y taxativos:',
+                                text: 'La información tributaria respecto de las bases gravables y la determinación privada de los impuestos tiene carácter estrictamente reservado. Los servidores de la DIAN solo pueden utilizarla para el control y liquidación de los tributos:',
                             },
+                            {
+                                type: 'table',
+                                headers: ['Situación / Solicitante', '¿Procede Suministrar Información?', 'Sustento Legal'],
+                                rows: [
+                                    [
+                                        'Autoridades Judiciales Penales (Juez o Fiscal con orden)',
+                                        'SÍ procede',
+                                        'Art. 583 E.T. Se suministra exclusivamente la información solicitada en el marco de la investigación judicial.',
+                                    ],
+                                    [
+                                        'Órganos de Control Fiscal (Contraloría) y Disciplinario (Procuraduría)',
+                                        'SÍ procede',
+                                        'Art. 585 y 586 E.T. Para investigaciones fiscales o disciplinarias de su competencia.',
+                                    ],
+                                    [
+                                        'Jueces de Familia en Procesos de Alimentos',
+                                        'SÍ procede',
+                                        'Excepción legal expresa para fijar cuotas de alimentos de menores y cónyuge.',
+                                    ],
+                                    [
+                                        'Cónyuge, Pareja, Socios o Familiares del Contribuyente',
+                                        'NO procede (Negativa Rotunda)',
+                                        'La reserva ampara la intimidad económica. Solo el titular o su apoderado formal pueden acceder.',
+                                    ],
+                                    [
+                                        'Periodistas o Medios de Comunicación',
+                                        'NO procede (Prohibición Absoluta)',
+                                        'Constituye falta gravísima disciplinaria y delito de violación de reserva.',
+                                    ],
+                                ],
+                            },
+                            {
+                                type: 'callout',
+                                variant: 'warning',
+                                title: 'Sanción por Violación de Reserva (Art. 584 E.T.)',
+                                text: 'El servidor de la DIAN que viole la reserva legal tributaria será destituido de su cargo y sancionado disciplinariamente con inhabilidad general, sin perjuicio de la responsabilidad penal.',
+                            },
+                        ],
+                    },
+                    {
+                        heading: '6.3 Transparencia (Ley 1712 de 2014) y Protección de Datos Personales (Ley 1581 de 2012)',
+                        blocks: [
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: 'Reserva Legal Tributaria (Art. 583 del Estatuto Tributario)',
-                                        text: 'La información tributaria respecto de las bases gravables y la determinación privada de los impuestos tiene carácter estrictamente reservado. Solo puede suministrarse a autoridades judiciales, fiscales o disciplinarias en el ejercicio de sus funciones.',
+                                        term: 'Información Pública vs Reservada vs Clasificada',
+                                        text: 'La información pública de la DIAN (estadísticas agregadas de recaudo, normatividad, guías) es de libre acceso. La información clasificada protege datos personales privados del ciudadano (Ley 1581 de 2012). La información reservada protege intereses del Estado o datos protegidos por reserva tributaria expresa.',
                                     },
                                     {
-                                        term: 'Información Reservada e Información Clasificada (Ley 1712 de 2014)',
-                                        text: 'La información clasificada protege derechos de particulares (intimidad, datos personales Ley 1581/2012, secretos comerciales). La información reservada protege intereses públicos superiores (seguridad nacional, infraestructura crítica del Estado, defensa).',
+                                        term: 'Habeas Data Tributario',
+                                        text: 'El ciudadano tiene derecho a conocer, actualizar y rectificar la información que repose en las bases de datos de la DIAN, pero dicho derecho se ejerce a través de los canales institucionales de actualización del RUT.',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        heading: '5.3 Gestión Documental y Archivo en Entidades Públicas (Ley 594 de 2000)',
+                        heading: '6.4 Gestión Documental y Archivo en Entidades Públicas (Ley 594 de 2000)',
                         blocks: [
                             {
                                 type: 'list',
                                 items: [
                                     {
-                                        term: 'Ley General de Archivos (Ley 594 de 2000)',
-                                        text: 'Regula los principios archivísticos en Colombia, obligando a conservar el patrimonio documental del Estado.',
-                                    },
-                                    {
                                         term: 'Tablas de Retención Documental (TRD)',
-                                        text: 'Instrumento archivístico que define el ciclo de vida de los documentos (gestión, central, histórico) y su tiempo de retención o disposición final.',
+                                        text: 'Definen los tiempos de permanencia de los expedientes tributarios en el archivo de gestión, archivo central e histórico.',
                                     },
                                     {
                                         term: 'Expediente Electrónico y Foliado Digital',
-                                        text: 'Conjunto de documentos electrónicos correspondientes a un mismo trámite, enlazados mediante un índice electrónico firmado digitalmente y metadatos del Archivo General de la Nación (AGN).',
+                                        text: 'Toda actuación administrativa adelantada por el Gestor I debe integrarse al expediente electrónico del contribuyente en el Muisca, con foliado digital y firma del funcionario actuante.',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+
+            /* -------------------------------------------------------------------------
+               MÓDULO 7: COMPETENCIAS COMPORTAMENTALES OFICIALES (NIVEL PROFESIONAL)
+               ------------------------------------------------------------------------- */
+            {
+                id: 'modulo-7',
+                label: 'M.7: Comportamentales',
+                title: 'Módulo 7: Diccionario de Competencias Comportamentales del Gestor I (Decreto 815 de 2018 / DIAN)',
+                topics: [
+                    {
+                        heading: '7.1 Marco de Evaluación Comportamental para el Nivel Profesional',
+                        blocks: [
+                            {
+                                type: 'p',
+                                text: 'El Decreto 815 de 2018 y el modelo de competencias laborales de la DIAN definen los comportamientos observables que evidencian la idoneidad y el compromiso ético del servidor público profesional:',
+                            },
+                            {
+                                type: 'list',
+                                items: [
+                                    {
+                                        term: '1. Orientación al Usuario y al Ciudadano (Nivel 4)',
+                                        text: 'Identifica y atiende con prontitud y empatía las necesidades de los contribuyentes. Brinda asesoría precisa y completa, orientando pedagógicamente para facilitar el cumplimiento voluntario y resolver trabas en el servicio.',
+                                    },
+                                    {
+                                        term: '2. Orientación a Resultados (Nivel 4)',
+                                        text: 'Enfoca su labor cotidiana hacia el cumplimiento eficaz de metas institucionales, resolviendo trámites de RUT y peticiones dentro de los términos legales sin sacrificar el rigor analítico ni generar reprocesos.',
+                                    },
+                                    {
+                                        term: '3. Transparencia e Integridad (Nivel 4)',
+                                        text: 'Actúa con rectitud, imparcialidad y apego irrestricto a la ley. Rechaza y denuncia cualquier intento de soborno o tráfico de influencias, y custodia rigurosamente la reserva legal tributaria.',
+                                    },
+                                    {
+                                        term: '4. Trabajo en Equipo (Nivel 3)',
+                                        text: 'Coopera constructivamente con sus compañeros de Punto de Contacto, Contact Center y áreas de fiscalización. Comparte conocimientos técnicos y apoya operativamente en picos de alta afluencia de usuarios.',
+                                    },
+                                    {
+                                        term: '5. Comunicación Asertiva y Efectiva (Nivel 4)',
+                                        text: 'Transmite instrucciones complejas en un lenguaje claro, respetuoso y comprensible. Sabe escuchar al ciudadano inconforme y desactiva tensiones sin ceder en el cumplimiento de los requisitos legales.',
+                                    },
+                                    {
+                                        term: '6. Adaptabilidad al Cambio (Nivel 3)',
+                                        text: 'Muestra disposición proactiva para aprender y utilizar las nuevas herramientas tecnológicas de la DIAN (Muisca, App DIAN, reconocimiento biométrico, firma electrónica), facilitando la transición digital.',
+                                    },
+                                    {
+                                        term: '7. Toma de Decisiones y Juicio Situacional (Nivel 4)',
+                                        text: 'Elige con autonomía responsable la mejor alternativa jurídica y operativa ante situaciones imprevistas o dilemas de atención, priorizando siempre el debido proceso, la legalidad y el interés público.',
                                     },
                                 ],
                             },
