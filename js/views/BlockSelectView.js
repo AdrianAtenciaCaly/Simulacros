@@ -37,23 +37,22 @@
             });
 
             return h(
-                'section',
-                { class: 'card' },
-                h('h2', {}, mod.title),
-                h('p', {}, `Elige un bloque de ${size} preguntas con casos prácticos:`),
-                h('div', { class: 'grid-blocks' }, blocks),
-                h(
-                    'div',
-                    { class: 'actions-row' },
-                    h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.goHome() }, 'Volver al Tablero'),
-                    mod.theoryId &&
-                        h(
-                            'button',
-                            { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.openTheory(mod.theoryId) },
-                            '📚 Ver teoría de este módulo'
-                        )
-                )
-            );
+    'section',
+    { class: 'card' },
+    h('h2', {}, mod.title),
+    // Botón de teoría (si existe) antes de los bloques
+    mod.theoryId &&
+        h('div', { class: 'actions-row' },
+            h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.openTheory(mod.theoryId) },
+                '📚 Ver teoría de este módulo')
+        ),
+    h('p', {}, `Elige un bloque de ${size} preguntas con casos prácticos:`),
+    h('div', { class: 'grid-blocks' }, blocks),
+    // Botón para volver al tablero
+    h('div', { class: 'actions-row' },
+        h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.goHome() }, 'Volver al Tablero')
+    )
+);
         }
     }
 
