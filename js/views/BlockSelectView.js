@@ -1,7 +1,7 @@
 (function (PM) {
     'use strict';
 
-    const { h } = PM;
+    const { h, THEORY, renderSection } = PM;
 
     class BlockSelectView {
         #repository;
@@ -40,22 +40,19 @@
     'section',
     { class: 'card' },
     h('h2', {}, mod.title),
-    // Botón de teoría (si existe) antes de los bloques
-    mod.theoryId &&
-        h('div', { class: 'actions-row' },
-            h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.openTheory(mod.theoryId) },
-                '📚 Ver teoría de este módulo'),
-            h('button', { type: 'button', class: 'btn btn-primary', onClick: () => this.#navigator.startBlock(moduleIndex, 0) },
-                '▶️ Iniciar Preguntas')
-        ),
-    h('p', {}, `Elige un bloque de ${size} preguntas con casos prácticos:`),
-    h('div', { class: 'grid-blocks' }, blocks),
-    // Botón para volver al tablero
+    // Render the full theory for this module (if exists)
+    mod.theoryId && (
+        renderSection(
+            THEORY.sections.find(sec => sec.id === mod.theoryId)
+        )
+    ),
+    // Botón para iniciar preguntas al final de la teoría
     h('div', { class: 'actions-row' },
+        h('button', { type: 'button', class: 'btn btn-primary', onClick: () => this.#navigator.startBlock(moduleIndex, 0) },
+            '▶️ Iniciar Preguntas'),
         h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.goHome() }, 'Volver al Tablero')
     )
-);
-        }
+);        }
     }
 
     PM.BlockSelectView = BlockSelectView;
