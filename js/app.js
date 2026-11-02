@@ -29,15 +29,14 @@
         .register('theory', new TheoryView({ theory: THEORY, navigator }));
 
     const sidebar = new SidebarView(document.getElementById('nav-menu'), [
-        { id: 'home', label: '🏠 Tablero Principal', onSelect: () => navigator.goHome() },
-        ...repository.getModules().map((mod, index) => ({
-            id: `module-${index}`,
-            label: mod.navLabel,
-            onSelect: () => navigator.openModule(index),
-        })),
-        { id: 'theory', label: '📚 Teoría', onSelect: () => navigator.openTheory() },
-    ]);
-
+    { id: 'home', label: '🏠 Tablero Principal', onSelect: () => navigator.goHome() },
+    { id: 'theory', label: '📚 Teoría', onSelect: () => navigator.openTheory() },
+    ...repository.getModules().map((mod, index) => ({
+        id: `module-${index}`,
+        label: mod.navLabel,
+        onSelect: () => navigator.openModule(index),
+    })),
+]);
     const topbarTitle = document.getElementById('topbar-title');
     viewManager.onChange(({ title, navId }) => {
         topbarTitle.textContent = title;
