@@ -44,7 +44,9 @@
     mod.theoryId &&
         h('div', { class: 'actions-row' },
             h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.openTheory(mod.theoryId) },
-                '📚 Ver teoría de este módulo')
+                '📚 Ver teoría de este módulo'),
+            h('button', { type: 'button', class: 'btn btn-primary', onClick: () => this.#navigator.startBlock(moduleIndex, 0) },
+                '▶️ Iniciar Preguntas')
         ),
     h('p', {}, `Elige un bloque de ${size} preguntas con casos prácticos:`),
     h('div', { class: 'grid-blocks' }, blocks),
