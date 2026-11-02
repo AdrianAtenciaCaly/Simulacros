@@ -33,6 +33,19 @@
             return Math.ceil(this.getModule(moduleIndex).questions.length / this.#blockSize);
         }
 
+        /**
+         * Randomiza el orden de las preguntas del módulo indicado.
+         * Utiliza Fisher‑Yates para una distribución uniforme.
+         */
+        shuffleModule(moduleIndex) {
+            const mod = this.getModule(moduleIndex);
+            const arr = mod.questions;
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]]; // swap
+            }
+        }
+
         getBlock(moduleIndex, blockIndex) {
             const start = blockIndex * this.#blockSize;
             const questions = this.getModule(moduleIndex).questions.slice(start, start + this.#blockSize);
