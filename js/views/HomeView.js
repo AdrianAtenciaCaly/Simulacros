@@ -37,6 +37,13 @@
                     h('strong', {}, `bloques de ${this.#repository.blockSize} preguntas`),
                     ' para un aprendizaje focalizado y sin fatiga.'
                 ),
+                // Resumen del tablero principal
+                h('section', { class: 'card summary-card' },
+                    h('h3', {}, 'Resumen del Simulacro'),
+                    h('p', {}, `Módulos disponibles: ${modules.length}`),
+                    h('p', {}, `Preguntas totales: ${modules.reduce((s,m)=>s+(m.questions?.length||0),0)}`),
+                    h('p', {}, `Bloques totales: ${modules.reduce((s,m,i)=>s+this.#repository.getBlockCount(i),0)}`)
+                ),
                 h(
                     'div',
                     { class: 'grid-actions' },

@@ -126,6 +126,10 @@
                 h('button', { type: 'button', class: 'btn',
                     onClick: () => this.#navigator.openModule(moduleIndex) },
                     '📚 Elegir Otro Bloque'),
+                // Nuevo botón: Simular todo el módulo desde el principio
+                h('button', { type: 'button', class: 'btn btn-primary',
+                    onClick: () => this.#navigator.startBlock(moduleIndex, 0) },
+                    '🔁 Simular Módulo'),
                 h('button', { type: 'button', class: 'btn',
                     onClick: () => {
                         const prev = moduleIndex - 1;

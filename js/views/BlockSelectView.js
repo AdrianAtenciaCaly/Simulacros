@@ -50,6 +50,29 @@
     h('div', { class: 'actions-row' },
         h('button', { type: 'button', class: 'btn btn-primary', onClick: () => this.#navigator.startBlock(moduleIndex, 0) },
             '▶️ Iniciar Preguntas'),
+        // Botón módulo anterior
+        h('button', { type: 'button', class: 'btn',
+            onClick: () => {
+                const prev = moduleIndex - 1;
+                if (prev >= 0) {
+                    this.#navigator.openModule(prev);
+                } else {
+                    this.#navigator.goHome();
+                }
+            } },
+            '⬅️ Módulo Anterior'),
+        // Botón módulo siguiente
+        h('button', { type: 'button', class: 'btn',
+            onClick: () => {
+                const next = moduleIndex + 1;
+                const modulesCount = this.#repository.getModules().length;
+                if (next < modulesCount) {
+                    this.#navigator.openModule(next);
+                } else {
+                    this.#navigator.goHome();
+                }
+            } },
+            '➡️ Siguiente Módulo'),
         h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.goHome() }, 'Volver al Tablero')
     )
 );        }
