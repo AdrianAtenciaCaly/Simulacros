@@ -71,23 +71,29 @@
     } catch (e) {}
 
     sidebarToggleBtn?.addEventListener('click', toggleSidebar);
-    // Mobile three‑dot menu button: abrir/cerrar sidebar en pantallas pequeñas
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    mobileMenuBtn?.addEventListener('click', () => {
-        document.body.classList.toggle('sidebar-open');
-    });
     // Dark mode toggle button handling
     const darkModeBtn = document.getElementById('dark-mode-toggle');
+    const updateThemeIcon = () => {
+        if (!darkModeBtn) return;
+        const isDark = document.body.classList.contains('dark-mode');
+        darkModeBtn.textContent = isDark ? '☀️' : '🌙';
+        darkModeBtn.title = isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+        darkModeBtn.setAttribute('aria-label', darkModeBtn.title);
+    };
+
     // Apply persisted theme on load
     try {
         if (localStorage.getItem('pm_dark_mode') === 'true') {
             document.body.classList.add('dark-mode');
         }
     } catch (e) {}
+    updateThemeIcon();
+
     darkModeBtn?.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
-        try { localStorage.setItem('pm_dark_mode', isDark); } catch (e) {}
+        try { localStorage.setItem('pm_dark_mode', String(isDark)); } catch (e) {}
+        updateThemeIcon();
     });
 
 })((window.PrepMaster = window.PrepMaster || {}));

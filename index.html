@@ -44,11 +44,12 @@
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </button>
-                <!-- Dark mode toggle -->
-                <button type="button" id="dark-mode-toggle" class="btn" aria-label="Modo Oscuro" title="Modo Oscuro">🌙</button>
                 <h3 id="topbar-title">Tablero del Aspirante</h3>
             </div>
-            <span class="topbar-user">Adrian Atencia - Carrera Administrativa</span>
+            <div class="topbar-right">
+                <span class="topbar-user">Adrian Atencia - Carrera Administrativa</span>
+                <button type="button" id="dark-mode-toggle" class="theme-toggle-btn" aria-label="Modo Oscuro" title="Cambiar tema">🌙</button>
+            </div>
         </header>
 
         <div id="view-root"></div>
@@ -69,9 +70,6 @@
     <script src="js/views/QuizView.js"></script>
     <script src="js/views/ResultView.js"></script>
     <script src="js/views/TheoryView.js"></script>
-    <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
-        <button type="button" id="mobile-menu-btn" class="btn" aria-label="Abrir menú lateral" title="Abrir menú lateral">⋮</button>
-    </nav>
     <script src="js/app.js"></script>
 </body>
 </html>
