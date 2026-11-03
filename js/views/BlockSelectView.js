@@ -48,8 +48,6 @@
     ),
     // Botón para iniciar preguntas al final de la teoría
     h('div', { class: 'actions-row' },
-        h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => { this.#repository.shuffleModule(moduleIndex); this.#navigator.openModule(moduleIndex); } },
-            '🔀 Regenerar Bloques'),
         h('button', { type: 'button', class: 'btn btn-primary', onClick: () => this.#navigator.startBlock(moduleIndex, 0) },
             '▶️ Iniciar Preguntas'),
         h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.goHome() }, 'Volver al Tablero')
