@@ -76,5 +76,18 @@
     mobileMenuBtn?.addEventListener('click', () => {
         document.body.classList.toggle('sidebar-open');
     });
+    // Dark mode toggle button handling
+    const darkModeBtn = document.getElementById('dark-mode-toggle');
+    // Apply persisted theme on load
+    try {
+        if (localStorage.getItem('pm_dark_mode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    } catch (e) {}
+    darkModeBtn?.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        try { localStorage.setItem('pm_dark_mode', isDark); } catch (e) {}
+    });
 
 })((window.PrepMaster = window.PrepMaster || {}));

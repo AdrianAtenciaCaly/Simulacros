@@ -78,6 +78,17 @@
   --sidebar-w: 260px;
 }
 
+/* Dark mode overrides */
+body.dark-mode {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --border: #475569;
+    --text-primary: #f1f5f9;
+    --text-body: #cbd5e1;
+    --brand: #f1f5f9;
+    --brand-text: #0f172a;
+}
+
 /* ─────────────────────────────────────────────────────────
    RESET & BASE
    ───────────────────────────────────────────────────────── */
