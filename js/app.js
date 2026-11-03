@@ -27,6 +27,7 @@
         .register('quiz', new QuizView(deps))
         .register('result', new ResultView(deps))
         .register('theory', new TheoryView({ theory: THEORY, navigator }));
+        navigator.goHome();
 
     const sidebar = new SidebarView(document.getElementById('nav-menu'), [
     { id: 'home', label: '🏠 Tablero Principal', onSelect: () => navigator.goHome() },
