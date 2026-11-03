@@ -70,8 +70,10 @@
     } catch (e) {}
 
     sidebarToggleBtn?.addEventListener('click', toggleSidebar);
-    sidebarCloseBtn?.addEventListener('click', toggleSidebar);
-
-    navigator.goHome();
+    // Mobile three‑dot menu button: abrir/cerrar sidebar en pantallas pequeñas
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    mobileMenuBtn?.addEventListener('click', () => {
+        document.body.classList.toggle('sidebar-open');
+    });
 
 })((window.PrepMaster = window.PrepMaster || {}));
