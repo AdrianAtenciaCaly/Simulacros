@@ -87,6 +87,8 @@ body.dark-mode {
     --text-body: #cbd5e1;
     --brand: #f1f5f9;
     --brand-text: #0f172a;
+    --surface-alt: #1e293b; /* dark surface alternative */
+    --text-muted: #94a3b6; /* lighter muted text for contrast */
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -514,7 +516,7 @@ main {
   transition: all var(--dur) var(--ease);
   user-select: none;
   background: var(--brand);
-  color: #ffffff;
+  color: var(--brand-text); /* Use brand-text for contrast in both modes */
   box-shadow: var(--shadow-xs);
 }
 
@@ -530,6 +532,28 @@ main {
   outline: 2px solid var(--border-focus);
   outline-offset: 2px;
 }
+
+/* Explicit dark‑mode overrides */
+body.dark-mode .card {
+  background: var(--surface);
+  color: var(--text-body);
+}
+
+body.dark-mode .question-text,
+body.dark-mode .question-number {
+  color: var(--text-primary);
+}
+body.dark-mode .module-card:hover {
+  background: var(--surface-alt);
+  border-color: var(--border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+body.dark-mode .btn-ghost:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
 
 /* Variantes */
 .btn-outline {
@@ -594,7 +618,7 @@ main {
 
 .module-card:hover {
   border-color: #cbd5e1;
-  background: #ffffff;
+  background: var(--surface-alt);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
