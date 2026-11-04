@@ -960,6 +960,62 @@ body.dark-mode .theme-toggle-btn:hover {
   color: #ffffff !important;
 }
 
+.option-btn.incorrect-dim:not(.incorrect) {
+  opacity: 0.78;
+}
+
+/* Indicadores de Estado: Check (✓) y Error (X) */
+.option-mark {
+  margin-left: auto;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1;
+  animation: optionMarkPop 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes optionMarkPop {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.option-mark.correct {
+  background: var(--success-badge);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(34, 197, 94, 0.35);
+}
+
+.option-mark.incorrect {
+  background: var(--danger-badge);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.35);
+}
+
+.option-mark.incorrect-neutral {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--danger);
+  border: 1px solid var(--danger-border);
+}
+
+body.dark-mode .option-mark.incorrect-neutral {
+  background: rgba(239, 68, 68, 0.22);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
 /* Caja de Retroalimentación — Pastel Warm Parchment */
 .feedback-box {
   margin-top: 16px;

@@ -83,9 +83,30 @@
                     if (session.isAnswered) return;
                     const result = session.answer(selectedIndex);
 
-                    optionButtons.forEach((btn) => (btn.disabled = true));
-                    optionButtons[result.correctIndex].classList.add('correct');
-                    if (!result.isCorrect) optionButtons[selectedIndex].classList.add('incorrect');
+                    optionButtons.forEach((btn, idx) => {
+                        btn.disabled = true;
+                        const isCorrectOpt = idx === result.correctIndex;
+                        const isSelectedOpt = idx === selectedIndex;
+
+                        if (isCorrectOpt) {
+                            btn.classList.add('correct');
+                            btn.appendChild(
+                                h('span', { class: 'option-mark correct', 'aria-label': 'Respuesta correcta' }, '✓')
+                            );
+                        } else {
+                            btn.classList.add('incorrect-dim');
+                            if (isSelectedOpt) {
+                                btn.classList.add('incorrect');
+                                btn.appendChild(
+                                    h('span', { class: 'option-mark incorrect', 'aria-label': 'Tu respuesta (Incorrecta)' }, 'X')
+                                );
+                            } else {
+                                btn.appendChild(
+                                    h('span', { class: 'option-mark incorrect-neutral', 'aria-label': 'Opción incorrecta' }, 'X')
+                                );
+                            }
+                        }
+                    });
 
                     feedback.replaceChildren(h('strong', {}, '💡 Explicación: '), result.explanation);
                     feedback.classList.remove('hidden');

@@ -3,6 +3,8 @@
 
     const { PASS_PERCENTAGE } = PM;
 
+    const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
     /** Fisher-Yates sobre una copia. */
     function shuffleArray(items, random = Math.random) {
         const copy = [...items];
@@ -14,17 +16,52 @@
     }
 
     /**
+     * Ajusta dinámicamente las referencias a letras de opciones en la explicación
+     * para que coincidan con la posición barajada real.
+     */
+    function adjustExplanation(text, mapping) {
+        if (!text || typeof text !== 'string') return text;
+        // Ajusta "opción B", "opciones A y C", etc.
+        let res = text.replace(/(\bopci[oó]n(?:es)?\s+)([A-F])(?:\s+(y|e|o)\s+([A-F]))?/gi, (match, prefix, l1, conj, l2) => {
+            const newL1 = mapping[l1.toUpperCase()] || l1;
+            if (conj && l2) {
+                const newL2 = mapping[l2.toUpperCase()] || l2;
+                return prefix + newL1 + ' ' + conj + ' ' + newL2;
+            }
+            return prefix + newL1;
+        });
+        // Ajusta "la C es un distractor", "la A desconoce...", etc.
+        res = res.replace(/(\bla\s+)([A-F])(\s+(?:es|desconoce|incurre|quebranta|no|constituye|omite|vulnera|carece|plantea)\b)/gi, (match, prefix, l, suffix) => {
+            const newL = mapping[l.toUpperCase()] || l;
+            return prefix + newL + suffix;
+        });
+        return res;
+    }
+
+    /**
      * Baraja las opciones y recalcula el índice correcto, sin mutar la pregunta original.
-     * (Antes la respuesta correcta era siempre la opción B.)
+     * Actualiza la explicación para que la letra mencionada coincida con la posición barajada.
      */
     function prepareQuestion(question, shuffle) {
         const indexed = question.options.map((text, originalIndex) => ({ text, originalIndex }));
         const shuffled = shuffle(indexed);
+        const correctIndex = shuffled.findIndex((o) => o.originalIndex === question.correct);
+
+        // Mapear cada letra original a su nueva letra barajada
+        const mapping = {};
+        shuffled.forEach((item, newIdx) => {
+            const origLetter = LETTERS[item.originalIndex] || String(item.originalIndex + 1);
+            const newLetter = LETTERS[newIdx] || String(newIdx + 1);
+            mapping[origLetter] = newLetter;
+        });
+
+        const adjustedExplanation = adjustExplanation(question.explanation, mapping);
+
         return {
             text: question.text,
-            explanation: question.explanation,
+            explanation: adjustedExplanation,
             options: shuffled.map((o) => o.text),
-            correct: shuffled.findIndex((o) => o.originalIndex === question.correct),
+            correct: correctIndex,
         };
     }
 
