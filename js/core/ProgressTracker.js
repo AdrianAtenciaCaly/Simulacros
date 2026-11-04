@@ -118,6 +118,17 @@
         }
 
         /**
+         * Reinicia el progreso de un conjunto específico de preguntas (por ejemplo, las de un bloque).
+         */
+        resetQuestions(moduleId, questionIds = []) {
+            if (!this.#cache[moduleId]) return;
+            questionIds.forEach((qId) => {
+                delete this.#cache[moduleId][qId];
+            });
+            this.#save();
+        }
+
+        /**
          * Reinicia el progreso de un módulo específico.
          */
         resetModule(moduleId) {
