@@ -791,6 +791,140 @@ body.dark-mode .theme-toggle-btn:hover {
   transform: translateY(-1px);
 }
 
+/* Estados de los Bloques de Preguntas */
+.block-btn.completed {
+  border-color: var(--success-border);
+  background: var(--surface);
+}
+
+.block-btn.in-progress {
+  border-color: #93c5fd;
+  background: var(--surface);
+}
+
+.block-status-tag {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.block-status-tag.completed {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.block-status-tag.in-progress {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.block-status-tag.untouched {
+  background: var(--surface-alt);
+  color: var(--text-muted);
+}
+
+/* Banner de Estadísticas del Módulo */
+.module-stats-banner {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin: 18px 0 24px 0;
+}
+
+.module-stats-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.module-stats-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.module-stats-subtitle {
+  margin: 4px 0 0 0;
+  font-size: .84rem;
+  color: var(--text-muted);
+}
+
+.module-stats-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-full);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.module-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.stat-mini-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: .78rem;
+}
+
+.stat-mini-pill strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.stat-mini-pill.good strong { color: var(--success); }
+.stat-mini-pill.bad strong { color: var(--danger); }
+.stat-mini-pill.pending strong { color: #b45309; }
+
+.stat-mini-label {
+  font-size: .72rem;
+  color: var(--text-muted);
+}
+
+.module-progress-chip {
+  margin: 6px 0 10px 0;
+  font-size: .84rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+body.dark-mode .module-stats-badge {
+  background: rgba(29, 78, 216, 0.25);
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.3);
+}
+
+body.dark-mode .block-status-tag.in-progress {
+  background: rgba(29, 78, 216, 0.25);
+  color: #93c5fd;
+}
+
+body.dark-mode .module-progress-chip {
+  color: #93c5fd;
+}
+
 .actions-row {
   display: flex;
   flex-wrap: wrap;

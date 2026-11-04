@@ -15,7 +15,8 @@
     const navigator = {
         goHome: () => viewManager.show('home'),
         openModule: (moduleIndex) => viewManager.show('blocks', { moduleIndex }),
-        startBlock: (moduleIndex, blockIndex) => viewManager.show('quiz', { moduleIndex, blockIndex }),
+        startBlock: (moduleIndex, blockIndex) => viewManager.show('quiz', { moduleIndex, blockIndex, mode: 'block' }),
+        startPending: (moduleIndex) => viewManager.show('quiz', { moduleIndex, mode: 'pending' }),
         showResults: (params) => viewManager.show('result', params),
         openTheory: (sectionId) => viewManager.show('theory', { sectionId }),
     };

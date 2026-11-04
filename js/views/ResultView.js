@@ -24,9 +24,10 @@
             return `module-${moduleIndex}`;
         }
 
-        render({ moduleIndex, blockIndex, summary }) {
+        render({ moduleIndex, blockIndex, summary, mode = 'block' }) {
             const { correct, total, percentage, passed, answers } = summary;
             const wrong = total - correct;
+            const modStats = this.#repository.getModuleStats(moduleIndex);
 
             // --- Banner de puntuacion ---
             const banner = h(
@@ -36,10 +37,11 @@
                     h('span', { class: 'score-pct-label' }, 'Puntaje')
                 ),
                 h('div', { class: 'score-info' },
-                    h('h3', {}, `Bloque ${blockIndex + 1} - ${this.#repository.getModule(moduleIndex).title}`),
-                    h('p', {}, `Respondiste ${total} preguntas en este bloque.`),
+                    h('h3', {}, `${this.#repository.getModule(moduleIndex).title}`),
+                    h('p', {}, `Respondiste ${total} preguntas en esta sesión.`),
+                    h('p', { class: 'module-progress-chip' }, `🎯 Avance del Módulo: ${modStats.answered}/${modStats.total} preguntas completadas (${modStats.pending} pendientes)`),
                     h('span', { class: `score-badge ${passed ? 'pass' : 'fail'}` },
-                        passed ? '🎉 ¡Bloque Superado!' : '⚠️ Necesitas Repasar'
+                        passed ? '🎉 ¡Sesión Superada!' : '⚠️ Necesitas Repasar'
                     )
                 )
             );
@@ -115,21 +117,30 @@
             );
 
             // --- Botones de accion ---
+            const nextPendingBtn = modStats.pending > 0
+                ? h('button', {
+                    type: 'button',
+                    class: 'btn btn-primary',
+                    onClick: () => this.#navigator.startPending(moduleIndex)
+                }, `🚀 Hacer Otras Preguntas (${modStats.pending} pendientes)`)
+                : h('button', {
+                    type: 'button',
+                    class: 'btn btn-secondary',
+                    onClick: () => {
+                        this.#repository.resetModuleProgress(moduleIndex);
+                        this.#navigator.startPending(moduleIndex);
+                    }
+                }, '🔄 Reiniciar Progreso del Módulo');
+
             const actions = h(
                 'div', { class: 'actions-row' },
+                nextPendingBtn,
                 h('button', { type: 'button', class: 'btn',
-                    onClick: () => this.#navigator.startBlock(moduleIndex, blockIndex) },
-                    '🔄 Reintentar Bloque'),
-                h('button', { type: 'button', class: 'btn btn-secondary',
-                    onClick: () => { this.#repository.shuffleModule(moduleIndex); this.#navigator.startBlock(moduleIndex, blockIndex); } },
-                    '🔀 Regenerar Preguntas'),
+                    onClick: () => this.#navigator.startBlock(moduleIndex, blockIndex ?? 0) },
+                    '🔄 Reintentar Sesión'),
                 h('button', { type: 'button', class: 'btn',
                     onClick: () => this.#navigator.openModule(moduleIndex) },
-                    '📚 Elegir Otro Bloque'),
-                // Nuevo botón: Simular todo el módulo desde el principio
-                h('button', { type: 'button', class: 'btn btn-primary',
-                    onClick: () => this.#navigator.startBlock(moduleIndex, 0) },
-                    '🔁 Simular Módulo'),
+                    '📚 Menú del Módulo'),
                 h('button', { type: 'button', class: 'btn',
                     onClick: () => {
                         const prev = moduleIndex - 1;

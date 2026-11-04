@@ -52,6 +52,13 @@
                         const icon = match ? match[1] : '📘';
                         const count = mod.questions.length;
                         const blocks = this.#repository.getBlockCount(index);
+                        const stats = this.#repository.getModuleStats(index);
+                        const badgeText = stats.pending === 0 && stats.answered > 0
+                            ? '✅ Completado'
+                            : stats.answered > 0
+                            ? `⏳ ${stats.answered}/${count} hechas`
+                            : '⚪ Sin iniciar';
+
                         return h(
                             'button',
                             {
@@ -61,7 +68,8 @@
                             },
                             h('div', { class: 'mod-icon' }, icon),
                             h('div', { class: 'mod-title' }, mod.homeLabel),
-                            h('div', { class: 'mod-count' }, `${count} preguntas · ${blocks} bloques`)
+                            h('div', { class: 'mod-count' }, `${count} preguntas · ${blocks} bloques`),
+                            h('div', { class: 'block-status-tag' + (stats.pending === 0 && stats.answered > 0 ? ' completed' : stats.answered > 0 ? ' in-progress' : ' untouched') }, badgeText)
                         );
                     })
                 )

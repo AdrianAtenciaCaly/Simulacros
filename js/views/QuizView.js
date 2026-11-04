@@ -24,9 +24,28 @@
             return `module-${moduleIndex}`;
         }
 
-        render({ moduleIndex, blockIndex }) {
+        render({ moduleIndex, blockIndex, mode = 'block' }) {
             const mod = this.#repository.getModule(moduleIndex);
-            const session = new QuizSession(this.#repository.getBlock(moduleIndex, blockIndex));
+
+            let questions;
+            let headerSubtitle;
+
+            if (mode === 'pending') {
+                const pending = this.#repository.getPendingQuestions(moduleIndex, this.#repository.blockSize);
+                if (pending.length > 0) {
+                    questions = pending;
+                    headerSubtitle = `Preguntas Pendientes (${questions.length} nuevas)`;
+                } else {
+                    questions = this.#repository.getBlock(moduleIndex, 0);
+                    headerSubtitle = `Repaso de Preguntas (Bloque 1)`;
+                }
+            } else {
+                const bIdx = typeof blockIndex === 'number' ? blockIndex : 0;
+                questions = this.#repository.getBlock(moduleIndex, bIdx);
+                headerSubtitle = `Bloque ${bIdx + 1}`;
+            }
+
+            const session = new QuizSession(questions);
             const card = h('section', { class: 'card' });
 
             const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
@@ -59,7 +78,7 @@
                         class: 'btn hidden',
                         onClick: () => {
                             if (session.next()) showQuestion();
-                            else this.#navigator.showResults({ moduleIndex, blockIndex, summary: session.getSummary() });
+                            else this.#navigator.showResults({ moduleIndex, blockIndex, summary: session.getSummary(), mode });
                         },
                     },
                     session.isLastQuestion ? '📊 Ver Resultados' : 'Siguiente Pregunta →'
@@ -82,6 +101,11 @@
                 const reveal = (selectedIndex) => {
                     if (session.isAnswered) return;
                     const result = session.answer(selectedIndex);
+
+                    // Registrar resultado en el ProgressTracker
+                    if (q.id) {
+                        this.#repository.recordAnswer(moduleIndex, q.id, result.isCorrect, selectedIndex);
+                    }
 
                     optionButtons.forEach((btn, idx) => {
                         btn.disabled = true;
@@ -121,7 +145,7 @@
                     h(
                         'div',
                         { class: 'quiz-header' },
-                        h('span', { class: 'quiz-module-name' }, `${mod.title} — Bloque ${blockIndex + 1}`),
+                        h('span', { class: 'quiz-module-name' }, `${mod.title} — ${headerSubtitle}`),
                         h('span', { class: 'question-number' }, `${session.currentNumber} / ${session.total}`)
                     ),
                     progressLabel,

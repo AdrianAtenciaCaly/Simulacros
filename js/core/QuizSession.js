@@ -58,6 +58,7 @@
         const adjustedExplanation = adjustExplanation(question.explanation, mapping);
 
         return {
+            id: question.id,
             text: question.text,
             explanation: adjustedExplanation,
             options: shuffled.map((o) => o.text),
@@ -110,6 +111,7 @@
             }
 
             const record = {
+                id: q.id,
                 question: q.text,
                 selected: q.options[selectedIndex],
                 selectedIndex,

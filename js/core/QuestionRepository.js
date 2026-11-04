@@ -56,6 +56,38 @@
         getTotalQuestions() {
             return this.#modules.reduce((sum, m) => sum + m.questions.length, 0);
         }
+
+        /**
+         * Obtiene estadísticas de avance del módulo (preguntas respondidas, correctas, pendientes).
+         */
+        getModuleStats(moduleIndex) {
+            const mod = this.getModule(moduleIndex);
+            return PM.progressTracker.getModuleStats(mod.id, mod.questions);
+        }
+
+        /**
+         * Obtiene las siguientes preguntas no respondidas aún en el módulo.
+         */
+        getPendingQuestions(moduleIndex, limit = this.#blockSize) {
+            const mod = this.getModule(moduleIndex);
+            return PM.progressTracker.getPendingQuestions(mod.id, mod.questions, limit);
+        }
+
+        /**
+         * Reinicia el progreso guardado para este módulo.
+         */
+        resetModuleProgress(moduleIndex) {
+            const mod = this.getModule(moduleIndex);
+            PM.progressTracker.resetModule(mod.id);
+        }
+
+        /**
+         * Registra el resultado de una pregunta en el tracker.
+         */
+        recordAnswer(moduleIndex, questionId, isCorrect, selectedIndex) {
+            const mod = this.getModule(moduleIndex);
+            PM.progressTracker.recordAnswer(mod.id, questionId, isCorrect, selectedIndex);
+        }
     }
 
     PM.QuestionRepository = QuestionRepository;
