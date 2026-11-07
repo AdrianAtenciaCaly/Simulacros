@@ -146,7 +146,8 @@
             const state = this.#loadFinalState();
             if (state.blocks && state.blocks[blockId]) delete state.blocks[blockId];
             this.#saveFinalState(state);
-            // regenerar bloque: nuevo orden y, cuando sea posible, preguntas diferentes
+            // Regenerar bloque SIN duplicados en el examen final:
+            // usa preguntas no usadas en otros bloques del área (si hay); si no, cambia el orden.
             if (this.#finalExamCache) {
                 const b = this.#finalExamCache.blocks.find(x => x.id === blockId);
                 if (b) {
@@ -154,10 +155,23 @@
                     let pool;
                     if (b.area === 'funcional') pool = all.filter(q => (q.examArea || 'funcional') === 'funcional');
                     else if (b.area === 'comportamental') pool = all.filter(q => q._moduleId === 'm7' && q.examSubArea === 'comportamental');
-                    else pool = all.filter(q => q._moduleId === 'm7' && (q.examSubArea === 'integridad' || q.examSubArea !== 'comportamental'));
-                    const picked = this.#shuffle(pool).slice(0, b.questions.length || this.#blockSize);
-                    if (picked.length) b.questions = picked;
-                    else b.questions = this.#shuffle(b.questions);
+                    else pool = all.filter(q => q._moduleId === 'm7' && q.examSubArea === 'integridad');
+                    const usedElsewhere = new Set(
+                        this.#finalExamCache.blocks
+                            .filter(x => x.id !== blockId && x.area === b.area)
+                            .flatMap(x => (x.questions || []).map(q => q.id))
+                    );
+                    const available = pool.filter(q => !usedElsewhere.has(q.id));
+                    const need = b.questions.length || this.#blockSize;
+                    if (available.length >= need) {
+                        b.questions = this.#shuffle(available).slice(0, need);
+                    } else if (available.length > 0) {
+                        // completar con preguntas actuales del bloque (sin duplicar en el examen)
+                        const keep = b.questions.filter(q => !available.some(a => a.id === q.id));
+                        b.questions = this.#shuffle([...available, ...keep]).slice(0, need);
+                    } else {
+                        b.questions = this.#shuffle(b.questions);
+                    }
                 }
             }
         }
@@ -169,10 +183,21 @@
         getFinalExam({ forceNew = false } = {}) {
             if (this.#finalExamCache && !forceNew) return this.#attachFinalStatuses(this.#finalExamCache);
             const all = this.#modules.flatMap(m => (m.questions || []).map(q => ({ ...q, _moduleId: m.id, _moduleTitle: m.title })));
-            const functional = this.#shuffle(all.filter(q => (q.examArea || 'funcional') === 'funcional')).slice(0, 150);
+            // Selección sin duplicados en todo el examen final
+            const seen = new Set();
+            const pickUnique = (pool, n) => {
+                const out = [];
+                for (const q of this.#shuffle(pool)) {
+                    if (seen.has(q.id)) continue;
+                    seen.add(q.id); out.push(q);
+                    if (out.length >= n) break;
+                }
+                return out;
+            };
+            const functional = pickUnique(all.filter(q => (q.examArea || 'funcional') === 'funcional'), 150);
             const m7 = all.filter(q => q._moduleId === 'm7');
-            const comportamental = this.#shuffle(m7.filter(q => q.examSubArea === 'comportamental')).slice(0, 25);
-            const integridad = this.#shuffle(m7.filter(q => q.examSubArea === 'integridad' || (q._moduleId === 'm7' && q.examSubArea !== 'comportamental'))).slice(0, 25);
+            const comportamental = pickUnique(m7.filter(q => q.examSubArea === 'comportamental'), 25);
+            const integridad = pickUnique(m7.filter(q => q.examSubArea === 'integridad'), 25);
             const sections = [
                 { key: 'funcional', label: 'Competencias Funcionales (70% eliminatorio)', questions: functional },
                 { key: 'comportamental', label: 'Competencias Comportamentales', questions: comportamental },

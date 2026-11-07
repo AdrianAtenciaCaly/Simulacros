@@ -191,7 +191,7 @@
                         h('p', { class: 'module-stats-subtitle' }, `Simulacro dividido e identificado por áreas: ${c.funcional} funcionales + ${c.comportamental} comportamentales + ${c.integridad} integridad = ${c.total} preguntas.`)
                     )
                 ),
-                h('p', { style: 'margin-top:8px;color:var(--text-muted,#555);' }, 'Cada bloque realizado guarda fecha/hora y resultado. Puedes rehacer un bloque con nuevo orden/preguntas.')
+                h('p', { style: 'margin-top:8px;color:var(--text-muted,#555);' }, 'Cada bloque realizado guarda fecha/hora y resultado. Las preguntas no se repiten dentro del examen final; al reiniciar un bloque se cambia el orden y, si el área tiene preguntas disponibles, se asignan nuevas.')
             );
             const blockButtons = finalExam.blocks.map((b, idx) => {
                 const done = b.completion;
@@ -207,7 +207,7 @@
                         h('button', { type: 'button', class: 'btn btn-outline', style: 'min-height:32px;padding:4px 10px;font-size:.78rem;',
                             onClick: (e) => { e.stopPropagation(); this.#navigator.startFinalExam(idx); } }, done ? 'Repetir' : 'Iniciar'),
                         h('button', { type: 'button', class: 'btn btn-secondary', style: 'min-height:32px;padding:4px 10px;font-size:.78rem;',
-                            onClick: (e) => { e.stopPropagation(); this.#repository.resetFinalBlock(b.id); this.#navigator.openFinalExam(); } }, 'Reiniciar (nuevo orden/preguntas)')
+                            onClick: (e) => { e.stopPropagation(); this.#repository.resetFinalBlock(b.id); this.#navigator.openFinalExam(); } }, 'Reiniciar (nuevo orden/nuevas, sin repetir)')
                     )
                 );
             });
