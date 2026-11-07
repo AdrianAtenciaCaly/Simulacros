@@ -5,7 +5,7 @@
      * BANCO DE PREGUNTAS DE JUICIO SITUACIONAL (CNSC / AREANDINA — DIAN 2676)
      * Convocatoria: Proceso de Selección DIAN 2676 | Operador: FUAA Areandina
      * Empleo: Gestor I (Código 301, Grado 01) — OPEC: 198476
-     * 215 casos tipo examen (Caso + Enunciado + 3 opciones A/B/C): 150 funcionales (m1-m6, 70% eliminatorio) + 65 comportamentales/integridad (m7, Res. 065/2024 y Código de Integridad DIAN). El simulacro final usa 150F + 25C + 25I en bloques identificados; el banco incluye preguntas comportamentales adicionales para práctica del puesto Gestor I (CC-AU-3008).
+     * 257 casos tipo examen (Caso + Enunciado + 3 opciones A/B/C), con nivel de dificultad progresivo y casos integrados: 186 funcionales (m1-m6, 70% eliminatorio) + 71 comportamentales/integridad (m7, Res. 065/2024 y Código de Integridad DIAN). El simulacro final usa 150F + 25C + 25I en bloques identificados, sin repetir preguntas; el banco ampliado permite práctica avanzada del puesto Gestor I (CC-AU-3008).
      * Fuentes de referencia: Diccionario de Competencias Comportamentales (Res. 065/2024) y
      * Guía de Orientación al Aspirante DIAN 2676 (incorporada en teoría; PDF guía imagen-base).
      */
@@ -292,6 +292,72 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es correcta: usar documentos desactualizados afecta la legalidad y calidad del servicio; el servidor debe detener el riesgo, escalarlo y asegurar orientación correcta. A traslada la carga al ciudadano y C altera controles documentales sin autorización."
+            },
+            {
+                "id": "m1_c26",
+                "text": "Caso: Un Gestor I en encargo provisional detecta que, por una instrucción verbal del jefe de área, se está priorizando la atención de trámites de contribuyentes remitidos por un gremio, desplazando a usuarios con turno y a personas con derecho a atención prioritaria.\n\nEnunciado: Considerando legalidad (Art. 6 y 209 C.P.), igualdad (Art. 13 C.P.), deberes del servidor y el régimen disciplinario, la decisión más ajustada es:",
+                "options": [
+                    "Cumplir la instrucción verbal mientras el jefe asume la responsabilidad, registrando solo en una nota personal el cambio en el orden de atención.",
+                    "Aplicar las reglas legales de turnos y prioridad, suspender la práctica irregular, documentar lo ocurrido y canalizar la instrucción por los medios formales correspondientes, sin ejecutar órdenes contrarias a derecho.",
+                    "Reorganizar la fila de forma discrecional para alternar entre remitidos del gremio y usuarios regulares, evitando reportar la situación para no afectar el clima laboral."
+                ],
+                "correct": 1,
+                "explanation": "La opción B integra legalidad, igualdad e integridad: no se ejecutan prácticas contrarias a derecho, se protege la atención prioritaria/turnos y se deja trazabilidad formal. A y C normalizan un trato desigual y omiten el deber de actuación ajustada a norma."
+            },
+            {
+                "id": "m1_c27",
+                "text": "Caso: En una actuación administrativa, el Gestor I recibe información sensible de un contribuyente y, además, un compañero le solicita acceso al expediente para \"agilizar\" una respuesta, sin que ese compañero participe formalmente en el trámite.\n\nEnunciado: Conforme a reserva, necesidad de conocimiento, seguridad de la información y principios de la función administrativa, el Gestor I debe:",
+                "options": [
+                    "Compartir el acceso porque ambos pertenecen a la misma dependencia y la rapidez del servicio prevalece sobre las restricciones internas.",
+                    "Limitar el acceso a quienes intervienen legítimamente en la actuación, verificar la finalidad, usar canales institucionales y negar accesos no autorizados, dejando trazabilidad cuando corresponda.",
+                    "Enviar copia del expediente por mensajería personal institucional externa al procedimiento, solicitando al compañero que borre la información tras usarla."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica reserva, finalidad y control: el acceso se restringe a necesidad legítima y canales formales. A amplía indebidamente el acceso y C expone información fuera de controles."
+            },
+            {
+                "id": "m1_c28",
+                "text": "Caso: Un ciudadano interpone queja disciplinaria y tutela contra una actuación en la que intervino el Gestor I. El supervisor le pide \"ajustar\" la versión de los hechos en el informe interno para reducir riesgo institucional.\n\nEnunciado: Frente a esta solicitud, y de acuerdo con ética pública, debido proceso, deber de verdad y responsabilidad disciplinaria, el Gestor I debe:",
+                "options": [
+                    "Modificar el informe para mantener coherencia institucional, siempre que los cambios no alteren datos numéricos del expediente.",
+                    "Rendir un informe veraz, completo y soportado en evidencias, abstenerse de falsear hechos y atender los requerimientos por los canales competentes.",
+                    "Presentar dos versiones: una interna ajustada y otra reservada con los hechos reales, sin remitir esta última a la autoridad competente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege la veracidad, el debido proceso y la integridad institucional. A y C implican falseamiento u ocultamiento de información, con riesgo disciplinario y jurídico."
+            },
+            {
+                "id": "m1_c29",
+                "text": "Caso: Durante una feria de servicios, un contratista de apoyo logístico solicita al Gestor I que valide datos de contacto de contribuyentes atendidos para una campaña comercial posterior.\n\nEnunciado: Considerando finalidad, protección de datos, reserva y uso debido de la información pública/administrativa, la actuación correcta es:",
+                "options": [
+                    "Entregar la base si los contribuyentes fueron atendidos en un evento público y el contratista firmó un compromiso de confidencialidad verbal.",
+                    "Negar el uso de datos para fines ajenos a la finalidad del servicio, abstenerse de entregar información sin autorización legal/procedimental y reportar la solicitud si vulnera controles.",
+                    "Compartir solo teléfonos y correos, excluyendo nombres, para reducir el riesgo de identificación."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica finalidad y protección de datos: la información obtenida en el servicio no puede usarse para fines comerciales no autorizados. A y C permiten un tratamiento indebido."
+            },
+            {
+                "id": "m1_c30",
+                "text": "Caso: Un Gestor I debe aplicar simultáneamente un procedimiento interno de atención, una petición con término de Ley 1755/2015 y una restricción de reserva sobre datos de tercero mencionados en la misma solicitud.\n\nEnunciado: La actuación profesionalmente correcta exige:",
+                "options": [
+                    "Responder dentro del término ignorando la reserva, porque el derecho de petición prevalece siempre sobre cualquier otra limitación.",
+                    "Tramitar la petición dentro del término legal, respondiendo de fondo lo procedente, aplicando la reserva cuando corresponda, motivando la decisión y usando el procedimiento interno aplicable.",
+                    "Suspender la respuesta hasta que todas las áreas internas emitan concepto, aunque se venzan los términos legales."
+                ],
+                "correct": 1,
+                "explanation": "La opción B armoniza derecho de petición, términos, debido proceso y reserva: se responde oportunamente, pero sin divulgar información protegida cuando la ley lo impide. A absolutiza un derecho y C vulnera oportunidad."
+            },
+            {
+                "id": "m1_c31",
+                "text": "Caso: Al revisar su gestión, el Gestor I advierte que un indicador de calidad se cumplió formalmente, pero las orientaciones entregadas generaron reprocesos por falta de verificación de soporte en casos complejos de RUT.\n\nEnunciado: Desde eficacia, mejora continua y control de primera línea (MIPG), debe:",
+                "options": [
+                    "Mantener la práctica porque el indicador fue cumplido y los reprocesos dependen de la conducta de los contribuyentes.",
+                    "Analizar causas, ajustar la verificación/orientación en casos complejos, proponer mejoras al procedimiento y priorizar resultados efectivos, no solo cumplimiento formal.",
+                    "Reducir la verificación documental en todos los casos para mejorar tiempos promedio de atención."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja eficacia sustancial y autocontrol: cumplir metas no justifica calidad deficiente; se corrigen causas y se mejora el servicio. A se queda en lo formal y C aumenta riesgo."
             }
         ]
     },
@@ -577,6 +643,72 @@
                 ],
                 "correct": 0,
                 "explanation": "La opción A es correcta: el término general es de 15 días hábiles para peticiones/quejas/reclamos (Art. 14, Ley 1755/2015). B y C señalan términos incorrectos."
+            },
+            {
+                "id": "m2_c26",
+                "text": "Caso: Un contribuyente radica por correo electrónico una petición ambigua que mezcla solicitud de copias, queja por atención y consulta sobre el término para responder un requerimiento tributario; no indica con claridad qué pretende en cada punto.\n\nEnunciado: Conforme a la Ley 1755 de 2015 y al deber de eficacia, el Gestor I debe:",
+                "options": [
+                    "Responder todo en 30 días hábiles por tratarse de una solicitud compleja con varios temas.",
+                    "Analizar el contenido, tramitar cada pretensión según su naturaleza y término aplicable (copias, queja, consulta), y si falta claridad esencial requerir una sola vez para precisar lo necesario sin dilatar injustificadamente.",
+                    "Rechazar la petición completa por falta de claridad, exigiendo que el ciudadano radique tres solicitudes independientes antes de cualquier trámite."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica trámite por naturaleza de la pretensión y eficacia; el requerimiento solo procede cuando es necesario y por una vez. A usa un término incorrecto y C impone barreras desproporcionadas."
+            },
+            {
+                "id": "m2_c27",
+                "text": "Caso: La DIAN notifica electrónicamente un acto a un contribuyente. El mensaje llega al buzón registrado, pero el apoderado alega que el poder fue revocado y que la notificación debió hacerse a una nueva dirección.\n\nEnunciado: Ante un caso que combina notificación electrónica (E.T. 566-1) y representación, la actuación más ajustada es:",
+                "options": [
+                    "Dar por inválida automáticamente la notificación solo con la afirmación del apoderado, sin verificar registros ni soportes.",
+                    "Verificar la dirección/canal válido en el RUT y los soportes de representación vigentes al momento de la actuación; responder y encauzar la corrección registral o procesal según corresponda, respetando las reglas de notificación.",
+                    "Repetir notificaciones por todos los canales posibles sin análisis jurídico, para evitar controversias."
+                ],
+                "correct": 1,
+                "explanation": "La opción B exige verificación de hechos registrales y de representación antes de concluir efectos jurídicos. A decide sin soporte y C no resuelve la validez jurídica."
+            },
+            {
+                "id": "m2_c28",
+                "text": "Caso: Un peticionario solicita documentos que contienen datos propios y, mezclados, datos tributarios de terceros no autorizados. El término de respuesta está próximo a vencer.\n\nEnunciado: Conforme a derecho de petición, transparencia y reserva legal, procede:",
+                "options": [
+                    "Entregar el expediente completo para cumplir el término, dejando que el peticionario filtre la información sensible.",
+                    "Responder oportunamente entregando la información procedente y aplicando reserva/tacha o supresión de datos protegidos de terceros, motivando la restricción cuando corresponda.",
+                    "Guardar silencio hasta obtener autorización de todos los terceros mencionados, aunque se supere el término legal."
+                ],
+                "correct": 1,
+                "explanation": "La opción B armoniza oportunidad y reserva: se cumple el deber de responder sin divulgar información protegida. A vulnera reserva y C incumple el término."
+            },
+            {
+                "id": "m2_c29",
+                "text": "Caso: Tras una respuesta de fondo, el contribuyente presenta recurso de reposición y, en el mismo escrito, formula una nueva petición sobre hechos distintos. La dependencia debe evitar confundir actuaciones.\n\nEnunciado: La gestión correcta es:",
+                "options": [
+                    "Resolver todo como recurso de reposición, aplicando un único término y una sola decisión.",
+                    "Tramitar el recurso contra el acto según el procedimiento/término de recursos y, si la nueva petición es autónoma, radicarla/tramitarla por la vía correspondiente con su término, informando claramente al interesado.",
+                    "Archivar la nueva petición por haberse presentado junto con un recurso."
+                ],
+                "correct": 1,
+                "explanation": "La opción B separa actuaciones con naturalezas distintas, preserva términos y claridad procesal. A mezcla vías y C desconoce el derecho de petición."
+            },
+            {
+                "id": "m2_c30",
+                "text": "Caso: Una petición incompleta fue requerida en término. El ciudadano aporta parte de los soportes al día 20 y los restantes al día 45, sin haber solicitado prórroga antes del vencimiento del mes.\n\nEnunciado: Conforme al CPACA (peticiones incompletas/desistimiento tácito), la decisión correcta es:",
+                "options": [
+                    "Admitir todos los soportes porque el ciudadano mostró voluntad de cumplir y responder de fondo.",
+                    "Evaluar la completitud dentro del término legal aplicable; si no se subsanó oportunamente, decretar desistimiento tácito mediante acto motivado cuando proceda, respetando recursos.",
+                    "Ignorar los soportes extemporáneos y mantener el expediente abierto indefinidamente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica el régimen de subsanación y desistimiento tácito con debido proceso. A desconoce el término y C deja la actuación sin decisión."
+            },
+            {
+                "id": "m2_c31",
+                "text": "Caso: El peticionario solicita que se le responda por un canal no autorizado y, además, pide copia de un acto que aún no ha sido notificado formalmente a su destinatario, quien es un tercero.\n\nEnunciado: La actuación más segura jurídicamente es:",
+                "options": [
+                    "Enviar el acto por el canal solicitado para agilizar, si quien pide demuestra interés legítimo verbalmente.",
+                    "Usar canales autorizados, verificar legitimación y estado de notificación del acto; solo entregar información/documentos cuando exista habilitación legal y sin vulnerar notificación, reserva o debido proceso.",
+                    "Publicar el acto en redes internas para que cualquier interesado lo consulte."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege canal, legitimación, notificación y reserva. A y C exponen la actuación a invalidez y divulgación indebida."
             }
         ]
     },
@@ -862,6 +994,72 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es correcta: la situación registral debe revisarse conforme a norma; el cierre de actividad no borra obligaciones previas y pueden existir restricciones o trámites específicos. A y C son afirmaciones absolutas incorrectas."
+            },
+            {
+                "id": "m3_c32",
+                "text": "Caso: Una persona natural aparece en bases informativas con actividad económica que no reconoce y solicita al Gestor I actualizar el RUT de inmediato para eliminarla, sin soportes y con señales de posible suplantación.\n\nEnunciado: Conforme a seguridad registral, verificación de identidad, soportes y procedimiento RUT, el Gestor I debe:",
+                "options": [
+                    "Eliminar la actividad de inmediato con base en la declaración verbal para proteger al ciudadano.",
+                    "Aplicar verificación reforzada de identidad, recibir/validar soportes, orientar la corrección por el trámite seguro correspondiente y escalar el caso ante sospecha de suplantación, sin hacer cambios no soportados.",
+                    "Crear un nuevo NIT para aislar el riesgo y cerrar el registro anterior sin análisis."
+                ],
+                "correct": 1,
+                "explanation": "La opción B prioriza integridad del registro y protección del titular: no se hacen cambios sin soporte/verificación y se activa ruta segura. A y C agravan el riesgo registral."
+            },
+            {
+                "id": "m3_c33",
+                "text": "Caso: Un contribuyente solicita estado \"No responsable de IVA\" aportando certificación de ingresos del año en curso, pero omite información de años anteriores exigidos por la norma para verificar topes.\n\nEnunciado: La decisión técnicamente correcta en el trámite RUT es:",
+                "options": [
+                    "Aprobar el cambio porque el año actual es el más relevante para la capacidad económica.",
+                    "Verificar el cumplimiento de condiciones en los períodos exigidos por el Art. 437 E.T. (según regla aplicable) y requerir/obtener la información o soportes necesarios antes de aprobar el cambio.",
+                    "Aprobar provisionalmente y revertir si una fiscalización posterior encuentra inconsistencias."
+                ],
+                "correct": 1,
+                "explanation": "La opción B exige verificación legal completa antes del cambio registral. A aplica un criterio incompleto y C traslada un error evitable al control posterior."
+            },
+            {
+                "id": "m3_c34",
+                "text": "Caso: Una sociedad actualiza representante legal en cámara de comercio, pero en el RUT aún figura el anterior. Un apoderado del representante saliente intenta radicar trámites urgentes.\n\nEnunciado: Para evitar suplantación o actuación sin legitimación, el Gestor I debe:",
+                "options": [
+                    "Atender al apoderado saliente si presenta copia del poder antiguo, para no afectar operaciones comerciales.",
+                    "Verificar la representación vigente con soportes idóneos y el estado registral; solo permitir actuaciones de quien acredite legitimación actual y orientar la actualización correspondiente.",
+                    "Permitir el trámite si el apoderado declara que el cambio en cámara aún no fue socializado internamente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege legitimación y seguridad jurídica: la actuación depende de representación vigente acreditada. A y C aceptan legitimación dudosa."
+            },
+            {
+                "id": "m3_c35",
+                "text": "Caso: En la inscripción RUT de una entidad sin ánimo de lucro, el solicitante entrega estatutos incompletos y no acredita con claridad la representación ni la dirección de notificación.\n\nEnunciado: El Gestor I debe:",
+                "options": [
+                    "Inscribir con datos parciales para asignar NIT rápidamente y completar la información después por teléfono.",
+                    "Exigir la documentación necesaria para identificar al sujeto, su representación, responsabilidades y datos de contacto/notificación; no formalizar un registro inconsistente.",
+                    "Registrar la dirección de un tercero conocido para asegurar que la DIAN pueda notificar."
+                ],
+                "correct": 1,
+                "explanation": "La opción B garantiza calidad registral y capacidad de notificación/identificación. A crea un registro defectuoso y C asigna datos falsos o no autorizados."
+            },
+            {
+                "id": "m3_c36",
+                "text": "Caso: Un contribuyente pide actualizar correo electrónico para notificaciones y, al mismo tiempo, solicita copia del RUT; el funcionario nota que la solicitud proviene de un canal con señales de suplantación.\n\nEnunciado: La respuesta más segura es:",
+                "options": [
+                    "Actualizar el correo de inmediato porque el dato es fácil de cambiar y luego entregar la copia.",
+                    "Aplicar controles de autenticación/verificación de identidad antes de cambiar datos de notificación o entregar información; orientar el canal seguro y documentar la alerta.",
+                    "Negarse a toda atención sin explicar canales alternos, cerrando el caso."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege contra redirección de notificaciones y fuga de información. A facilita fraude y C no presta orientación adecuada."
+            },
+            {
+                "id": "m3_c37",
+                "text": "Caso: Una sucesión ilíquida requiere actualización en RUT, pero existen discrepancias entre el documento de representación, el nombre del causante y los soportes aportados.\n\nEnunciado: El Gestor I debe:",
+                "options": [
+                    "Registrar el cambio usando el documento más reciente, ignorando las discrepancias menores de nombres.",
+                    "Hacer depuración documental: identificar la inconsistencia, solicitar aclaración/soportes idóneos y solo registrar cuando la representación y la identidad estén claramente acreditadas.",
+                    "Actualizar provisionalmente y dejar que el área jurídica valide después, sin informar al solicitante."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evita errores de identificación y representación en un caso sensible. A y C trasladan o consolidan inconsistencias."
             }
         ]
     },
@@ -1147,6 +1345,72 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es correcta: la actuación de terceros requiere legitimación idónea y verificación; la regla varía según el trámite. A compromete seguridad y C desconoce figuras válidas de representación."
+            },
+            {
+                "id": "m4_c26",
+                "text": "Caso: En hora pico, el sistema de turnos falla y confluyen usuarios con cita, adultos mayores sin cita, una persona con discapacidad y contribuyentes que exigen atención inmediata por vencimientos.\n\nEnunciado: La gestión más ajustada al servicio, enfoque diferencial y orden operativo es:",
+                "options": [
+                    "Atender estrictamente por orden de llegada de quienes alcancen a registrarse manualmente, sin aplicar criterios de prioridad.",
+                    "Aplicar un protocolo claro de contingencia: identificar prioridades legales, comunicar tiempos/criterios con lenguaje claro, organizar turnos alternos trazables y orientar a los demás sobre opciones de atención.",
+                    "Cerrar el punto de contacto hasta que el sistema vuelva, sin atención presencial."
+                ],
+                "correct": 1,
+                "explanation": "La opción B combina continuidad del servicio, prioridad legal, transparencia y trazabilidad. A ignora enfoque diferencial y C abandona la atención sin gestión de contingencia."
+            },
+            {
+                "id": "m4_c27",
+                "text": "Caso: Un ciudadano solicita orientación por videollamada institucional, pero su conexión es inestable y comparte pantalla con documentos que contienen datos de terceros.\n\nEnunciado: El Gestor I debe:",
+                "options": [
+                    "Continuar la videollamada para resolver rápido, aunque se visualicen datos de terceros.",
+                    "Proteger la confidencialidad: advertir sobre la exposición de datos, suspender o ajustar la interacción segura, orientar canales alternos y tratar solo información necesaria con verificación adecuada.",
+                    "Pedir que envíe todos los documentos por WhatsApp personal del funcionario para evitar fallas de conexión."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege datos y mantiene orientación segura. A expone terceros y C usa un canal no institucional e inseguro."
+            },
+            {
+                "id": "m4_c28",
+                "text": "Caso: Un usuario presenta una queja compleja que involucra una posible falla del canal web, un cobro informado por correspondencia y una duda de RUT. Exige respuesta inmediata y definitiva en ventanilla.\n\nEnunciado: La mejor actuación de Asistencia al Usuario es:",
+                "options": [
+                    "Dar una respuesta definitiva sobre todos los puntos con la información disponible, aunque parte no esté verificada.",
+                    "Delimitar cada asunto, brindar orientación verificada en lo que corresponde a su alcance, registrar la PQRSD/trámite pertinente, informar tiempos/canales y escalar los componentes especializados sin promesas falsas.",
+                    "Negarse a atender porque la solicitud mezcla varios temas."
+                ],
+                "correct": 1,
+                "explanation": "La opción B gestiona la complejidad con claridad, veracidad, trazabilidad y escalamiento. A arriesga desinformación y C niega el servicio."
+            },
+            {
+                "id": "m4_c29",
+                "text": "Caso: Un contribuyente con barrera idiomática comprende parcialmente el español. El trámite requiere consentimiento informado sobre uso de datos de contacto y validación de soportes.\n\nEnunciado: Para garantizar atención efectiva y comprensión real, el Gestor I debe:",
+                "options": [
+                    "Continuar si el usuario asiente con la cabeza, sin verificar comprensión específica.",
+                    "Usar lenguaje claro, apoyos disponibles, ejemplos sencillos y verificación de comprensión sobre los puntos críticos (datos, consentimiento, soportes), documentando adecuadamente la atención.",
+                    "Exigir que regrese con traductor privado y no prestar orientación mientras tanto."
+                ],
+                "correct": 1,
+                "explanation": "La opción B asegura comprensión efectiva y trato digno, especialmente en actos que requieren entendimiento. A asume consentimiento y C impone una barrera innecesaria."
+            },
+            {
+                "id": "m4_c30",
+                "text": "Caso: Tras una caída masiva del portal, decenas de usuarios llegan con la misma inquietud. El equipo responde con mensajes contradictorios por falta de información unificada.\n\nEnunciado: La conducta profesional más adecuada es:",
+                "options": [
+                    "Responder cada caso con la versión que cada funcionario recuerde para evitar demoras.",
+                    "Consultar/solicitar la instrucción oficial vigente, unificar el mensaje con lenguaje claro, informar alternativas y tiempos estimados cuando estén confirmados, y registrar la incidencia recurrente.",
+                    "Publicar en redes personales del equipo una explicación no oficial para calmar a los usuarios."
+                ],
+                "correct": 1,
+                "explanation": "La opción B prioriza información oficial, consistencia y transparencia. A genera desinformación y C usa canales no autorizados."
+            },
+            {
+                "id": "m4_c31",
+                "text": "Caso: Un usuario solicita ayuda para completar una actuación digital y ofrece su usuario/contraseña para que el Gestor I \"entre rápido\" desde el equipo institucional.\n\nEnunciado: La actuación correcta en atención digital segura es:",
+                "options": [
+                    "Aceptar las credenciales solo esta vez, sin guardarlas, para solucionar el problema del ciudadano.",
+                    "Rechazar el uso de credenciales del usuario, orientar el procedimiento seguro de acceso/recuperación con verificación de identidad y nunca capturar o reutilizar claves.",
+                    "Pedir que escriba la contraseña en un papel para destruirlo después de la atención."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege seguridad, privacidad y responsabilidad institucional. A y C exponen credenciales y crean riesgo grave."
             }
         ]
     },
@@ -1432,6 +1696,72 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es correcta: la conservación documental respalda cumplimiento, control y defensa del contribuyente. A y C desconocen su finalidad legal."
+            },
+            {
+                "id": "m5_c26",
+                "text": "Caso: Un pequeño contribuyente obligado a factura electrónica informa que, por falla eléctrica, expidió documentos de contingencia durante dos días y no sabe si debe transmitirlos ni qué soporte conservar.\n\nEnunciado: En orientación basada en la documentación (facturación electrónica/contingencia), el Gestor I debe:",
+                "options": [
+                    "Indicar que los documentos de contingencia reemplazan definitivamente la factura electrónica y no requieren transmisión posterior.",
+                    "Orientar que la contingencia es excepcional, debe cumplir condiciones y transmisión/regularización según la normativa vigente, conservar soportes y verificar requisitos aplicables al caso por canales oficiales.",
+                    "Recomendar anular las ventas y rehacerlas cuando el sistema funcione, sin revisar efectos tributarios o documentales."
+                ],
+                "correct": 1,
+                "explanation": "La opción B da orientación correcta y prudente: contingencia no elimina deberes de regularización/soporte; se remite a regla vigente. A y C desinforman."
+            },
+            {
+                "id": "m5_c27",
+                "text": "Caso: Un contribuyente pregunta si puede acogerse al RST porque \"sus ingresos son bajos\", pero también participa en estructuras societarias y tiene actividades que podrían generar incompatibilidades.\n\nEnunciado: La orientación profesional adecuada es:",
+                "options": [
+                    "Confirmar el ingreso al RST porque el único criterio relevante es el monto aproximado de ingresos.",
+                    "Explicar que el RST depende del cumplimiento integral de requisitos y ausencia de causales de exclusión/incompatibilidad según la norma; orientar verificación por fuentes oficiales sin afirmar elegibilidad sin revisión completa.",
+                    "Negar automáticamente por tener cualquier relación empresarial, sin revisar el tipo de participación o la norma aplicable."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evita afirmaciones absolutas y se ajusta al análisis normativo integral. A y C simplifican en exceso y pueden inducir error."
+            },
+            {
+                "id": "m5_c28",
+                "text": "Caso: Un comerciante recibe orientación contradictoria: un tercero le dijo que un ingreso no declarado \"no cuenta\" si no le emitieron factura. Consulta a la DIAN por el deber de cumplimiento.\n\nEnunciado: La orientación correcta de cultura de la contribución es:",
+                "options": [
+                    "Confirmar que sin factura no existe ingreso fiscal y por tanto no hay deber de declarar.",
+                    "Explicar que las obligaciones tributarias dependen de la realidad económica/normativa aplicable; la falta de factura puede ser incumplimiento formal, pero no elimina por sí sola la obligación sustancial o deberes de información cuando procedan.",
+                    "Aconsejar no mencionar el ingreso hasta que la DIAN lo detecte, para evitar ajustes."
+                ],
+                "correct": 1,
+                "explanation": "La opción B distingue forma y sustancia sin promover evasión: la ausencia de factura no borra automáticamente hechos económicos relevantes. A y C son incorrectos."
+            },
+            {
+                "id": "m5_c29",
+                "text": "Caso: Una persona natural pregunta por beneficios tributarios asociados a pagos electrónicos y soportes, pero mezcla conceptos de deducciones, costos y descuentos sin distinguirlos.\n\nEnunciado: El Gestor I debe:",
+                "options": [
+                    "Responder con un ejemplo genérico indicando que todos esos conceptos funcionan igual si hay factura.",
+                    "Aclarar, en lenguaje comprensible, que costos, deducciones y beneficios tienen requisitos legales distintos; orientar sobre la necesidad de soportes válidos y verificación normativa/canales oficiales sin asesoría particular vinculante.",
+                    "Evitar la explicación porque son temas contables que la DIAN no debe abordar en asistencia al ciudadano."
+                ],
+                "correct": 1,
+                "explanation": "La opción B brinda orientación útil y precisa, diferenciando conceptos sin invadir asesoría particular. A confunde categorías y C omite el deber de orientación."
+            },
+            {
+                "id": "m5_c30",
+                "text": "Caso: Un contribuyente en mora quiere \"ponerse al día\" pero desconoce si debe corregir declaraciones, presentar informativas, actualizar RUT o atender una comunicación electrónica vencida.\n\nEnunciado: La orientación más completa y segura es:",
+                "options": [
+                    "Indicarle que solo debe pagar el valor que recuerde y esperar que el sistema ajuste lo demás.",
+                    "Orientar una revisión por obligaciones (RUT actualizado, comunicaciones/notificaciones, declaraciones/informativas, soportes y pago), usando canales oficiales para verificar estado de cuenta y remitiendo a las dependencias competentes cuando el caso requiera actuación específica.",
+                    "Recomendar no actuar hasta recibir cobro coactivo, porque cualquier corrección genera más sanciones automáticamente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B promueve cumplimiento integral y verificación oficial, sin promesas ni omisiones. A y C son incompletos o contraproducentes."
+            },
+            {
+                "id": "m5_c31",
+                "text": "Caso: Un emprendedor pregunta si puede operar sin expedir factura electrónica porque sus ventas son \"esporádicas\" y cobra por transferencias personales.\n\nEnunciado: Conforme a deberes formales y cultura de cumplimiento, el Gestor I debe:",
+                "options": [
+                    "Confirmar que las ventas esporádicas y transferencias personales están exentas de facturación y registro.",
+                    "Orientar que la exigencia de facturar/soportar operaciones depende de la normativa aplicable, calidad del obligado y sistema de facturación; la informalidad o el medio de pago no elimina por sí sola los deberes formales.",
+                    "Sugerir emitir recibos informales mientras las ventas no superen un monto que el usuario estime razonable."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evita generalizaciones y orienta al cumplimiento según norma. A y C promueven informalidad."
             }
         ]
     },
@@ -1717,6 +2047,72 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es correcta: la protección de datos exige canales seguros, minimización y autorización. A y C exponen información sensible en canales o accesos no controlados."
+            },
+            {
+                "id": "m6_c26",
+                "text": "Caso: Un área solicita consolidar información para un informe de servicio usando datos de RUT, PQRSD y trazabilidad operativa. Parte de la información incluye datos personales no necesarios para el indicador.\n\nEnunciado: Conforme a MIPG, gobierno de datos, minimización y protección de información, el Gestor I debe:",
+                "options": [
+                    "Compartir toda la base para que el área de informes decida qué usar, agilizando la entrega.",
+                    "Entregar solo los datos mínimos necesarios para la finalidad legítima, usar canales autorizados, aplicar controles de acceso y evitar exponer información sensible innecesaria.",
+                    "Anonimizar manualmente eliminando nombres al azar, sin validar si otros campos permiten identificar al titular."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica minimización, finalidad y seguridad. A sobreexpone datos y C hace una anonimización insuficiente/no controlada."
+            },
+            {
+                "id": "m6_c27",
+                "text": "Caso: Un juez civil solicita información tributaria en un proceso distinto de los supuestos habilitados expresamente por la reserva tributaria; no se observa orden/competencia en los términos de la norma aplicable.\n\nEnunciado: La actuación correcta es:",
+                "options": [
+                    "Entregar la información por tratarse de una autoridad judicial, sin revisar la habilitación específica.",
+                    "Verificar la competencia, fundamento legal y alcance de la solicitud; si no encuadra en las excepciones/procedimiento aplicable, abstenerse de entregar datos reservados y encauzar por el canal institucional competente.",
+                    "Enviar un resumen informal por correo para colaborar, evitando registrar la entrega."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege la reserva legal tributaria (Art. 583/584 E.T. y reglas aplicables) y exige cauce formal. A asume una excepción inexistente y C evade controles."
+            },
+            {
+                "id": "m6_c28",
+                "text": "Caso: En una respuesta de transparencia, la entidad puede entregar estadísticas de atención, pero el solicitante también pide números de identificación de contribuyentes atendidos en casos específicos.\n\nEnunciado: La respuesta ajustada a Ley 1712 y protección/reserva de datos es:",
+                "options": [
+                    "Negar toda la solicitud por incluir un componente sensible.",
+                    "Entregar la información pública/estadística procedente y negar o restringir los datos personales/reservados, motivando la excepción y aplicando el principio de divisibilidad cuando corresponda.",
+                    "Entregar los números de identificación si el solicitante afirma que usará la información con fines académicos."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica divisibilidad: se entrega lo público y se protege lo reservado/personal. A es excesivo y C no constituye habilitación suficiente."
+            },
+            {
+                "id": "m6_c29",
+                "text": "Caso: Un equipo propone usar una herramienta de IA no autorizada para resumir expedientes con datos de contribuyentes y acelerar respuestas.\n\nEnunciado: Desde seguridad de la información, reserva y control institucional, el Gestor I debe:",
+                "options": [
+                    "Usarla si mejora la productividad, siempre que luego borre el historial.",
+                    "Abstenerse de cargar información sensible en herramientas no autorizadas, seguir los lineamientos institucionales de seguridad/gobierno de datos y reportar la necesidad por canales formales.",
+                    "Cargar solo fragmentos de expedientes, suponiendo que así desaparece el riesgo."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege confidencialidad y cumplimiento: herramientas no autorizadas pueden exponer datos reservados. A y C subestiman el riesgo."
+            },
+            {
+                "id": "m6_c30",
+                "text": "Caso: Se detecta un patrón de errores en validación documental que afecta varios Puntos de Contacto. Cada equipo lo corrige de forma distinta y no hay trazabilidad común.\n\nEnunciado: La respuesta alineada con MIPG (mejora continua, control y gestión del conocimiento) es:",
+                "options": [
+                    "Permitir que cada punto mantenga su criterio para respetar la autonomía operativa.",
+                    "Documentar el riesgo/causa, estandarizar la corrección con base en procedimiento vigente, comunicar la pauta, capacitar y hacer seguimiento con trazabilidad.",
+                    "Esperar la auditoría anual para que controle y defina la corrección."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica primera/segunda línea: estandariza, controla y mejora con evidencia. A genera inconsistencia y C es reactivo tardío."
+            },
+            {
+                "id": "m6_c31",
+                "text": "Caso: Un funcionario comparte por error un archivo con datos de contribuyentes en un repositorio de acceso amplio. El Gestor I lo detecta al buscar información para una respuesta.\n\nEnunciado: La actuación inmediata y responsable es:",
+                "options": [
+                    "Ignorar el hallazgo si el archivo no se relaciona con su trámite actual.",
+                    "Activar el manejo del incidente según procedimiento: limitar acceso/custodia por los canales autorizados, escalar al responsable de seguridad/información y evitar nuevas divulgaciones, preservando trazabilidad.",
+                    "Descargar el archivo para analizarlo y reenviarlo por correo a su jefe como evidencia."
+                ],
+                "correct": 1,
+                "explanation": "La opción B contiene el incidente y protege la información mediante canales formales. A omite el deber de protección y C puede ampliar la exposición."
             }
         ]
     },
@@ -2507,6 +2903,78 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B equilibra control y trato digno: comunica el propósito del procedimiento sin discriminar ni relajar verificaciones necesarias. A debilita controles y C es poco empático."
+            },
+            {
+                "id": "m7_c66",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un ciudadano llega frustrado tras varios intentos fallidos en canales digitales y desconfía de la orientación del Punto de Contacto. Necesita resolver una actualización sensible del RUT.\n\nEnunciado: La respuesta de mayor nivel comportamental (Orientación al Usuario, Comunicación Efectiva y Solución de Problemas) es:",
+                "options": [
+                    "Indicarle que repita el trámite digital porque es la única forma válida, sin revisar lo ocurrido.",
+                    "Reconocer su experiencia, revisar con él la evidencia disponible, explicar con claridad las opciones viables, verificar requisitos críticos y acordar un paso a paso realista dentro del procedimiento.",
+                    "Derivar el caso sin explicación, indicando que otro funcionario debe manejar usuarios inconformes."
+                ],
+                "correct": 1,
+                "explanation": "La opción B integra empatía, análisis, claridad y solución efectiva. A ignora el problema y C no gestiona la necesidad."
+            },
+            {
+                "id": "m7_c67",
+                "examSubArea": "comportamental",
+                "text": "Caso: En una atención compleja, el Gestor I advierte que la normativa aplicable cambió recientemente y su conocimiento puede estar desactualizado, mientras el usuario exige una respuesta inmediata.\n\nEnunciado: Conforme a Adaptabilidad, Aprendizaje/Comportamiento ético del servicio y Orientación al Logro, debe:",
+                "options": [
+                    "Responder con la regla anterior para no demorar, aclarando que podría haber cambios.",
+                    "Ser transparente sobre la necesidad de verificación, consultar la fuente vigente por el canal interno, dar una orientación precisa y gestionar el tiempo sin inventar información.",
+                    "Evitar responder y cerrar la atención para no asumir responsabilidad."
+                ],
+                "correct": 1,
+                "explanation": "La opción B privilegia información veraz y actualizada con gestión responsable del tiempo. A arriesga desinformación y C abandona el servicio."
+            },
+            {
+                "id": "m7_c68",
+                "examSubArea": "comportamental",
+                "text": "Caso: Dos áreas internas se contradicen sobre el trámite aplicable a un ciudadano. El usuario ya fue remitido varias veces y el plazo de su gestión personal es corto.\n\nEnunciado: La conducta más efectiva (Trabajo en Equipo, Solución de Problemas y Orientación al Usuario) es:",
+                "options": [
+                    "Remitirlo nuevamente a la última área mencionada para que ellos resuelvan la contradicción.",
+                    "Articular internamente la validación del procedimiento correcto, documentar el encauzamiento, entregar al usuario una orientación unificada y verificable, y darle seguimiento dentro de su competencia.",
+                    "Decirle que presente una queja contra ambas áreas antes de continuar."
+                ],
+                "correct": 1,
+                "explanation": "La opción B asume coordinación y enfoque en solución, evitando rebotar al ciudadano. A perpetúa la remisión y C no resuelve la necesidad urgente."
+            },
+            {
+                "id": "m7_c69",
+                "examSubArea": "integridad",
+                "text": "Caso: Un usuario influyente insinúa que puede facilitar una evaluación favorable para el Punto de Contacto si el Gestor I omite una inconsistencia documental y acelera su trámite.\n\nEnunciado: Ante esta presión, la respuesta íntegra es:",
+                "options": [
+                    "Aceptar la insinuación si la inconsistencia parece menor y no afecta recaudo inmediato.",
+                    "Rechazar cualquier condicionamiento indebido, mantener el procedimiento y la verificación documental, documentar la situación si corresponde y actuar con imparcialidad.",
+                    "Consultar informalmente al supervisor si conviene aceptar para proteger la imagen del equipo."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege imparcialidad, honestidad y debido procedimiento frente a presión indebida. A y C ceden al condicionamiento."
+            },
+            {
+                "id": "m7_c70",
+                "examSubArea": "integridad",
+                "text": "Caso: El Gestor I encuentra una forma de consultar masivamente datos para responder más rápido, pero el acceso no fue habilitado formalmente para esa finalidad y el uso masivo no está autorizado.\n\nEnunciado: La decisión alineada con diligencia, reserva y cumplimiento es:",
+                "options": [
+                    "Usar el acceso mientras nadie lo restrinja, porque mejora la productividad.",
+                    "No utilizar accesos no autorizados, limitarse a la finalidad/permiso vigente, solicitar habilitación formal si es necesaria y priorizar la protección de datos.",
+                    "Extraer los datos y guardarlos localmente para no consultar el sistema nuevamente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B respeta autorización, finalidad y seguridad de la información. A normaliza un acceso indebido y C crea una copia no controlada."
+            },
+            {
+                "id": "m7_c71",
+                "examSubArea": "integridad",
+                "text": "Caso: Un compañero comete un error que pudo exponer datos de contribuyentes, pero pide al Gestor I no reportarlo para evitar consecuencias disciplinarias.\n\nEnunciado: La actuación más íntegra y responsable es:",
+                "options": [
+                    "No reportar el hecho por lealtad al equipo, siempre que el compañero prometa corregirlo.",
+                    "Priorizar la protección de la información y el cumplimiento: promover/realizar la gestión de contención y reporte por los canales institucionales definidos, con objetividad y respeto.",
+                    "Difundir el error en grupos informales para advertir a otros, sin activar el protocolo."
+                ],
+                "correct": 1,
+                "explanation": "La opción B equilibra respeto con responsabilidad: ante riesgo de datos, prima la contención y el reporte institucional. A encubre el riesgo y C expone más la situación."
             }
         ]
     }
