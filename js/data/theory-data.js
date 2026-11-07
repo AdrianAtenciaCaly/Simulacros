@@ -114,7 +114,31 @@
                             },
                         ],
                     },
-                ],
+,
+                    {
+                        heading: '5. Estrategia real para el Examen Final (200 preguntas, bloques identificados)',
+                        blocks: [
+                            { type: 'p', text: 'El simulacro final se divide en bloques identificados por área: 150 Funcionales + 25 Comportamentales + 25 de Integridad (200). Las funcionales son eliminatorias (70%, mínimo 70.00), por eso prioriza RUT, CPACA/peticiones, atención TACI y obligaciones/facturación.' },
+                            { type: 'list', items: [
+                                { term: 'Método de caso real', text: 'Lee Caso y Enunciado. Descarta opciones que violen norma, omitan verificación, prometan beneficios automáticos o filtren datos reservados.' },
+                                { term: 'Prioridad funcional', text: 'Refuerza M3 RUT, M2 CPACA (términos/notificaciones/recursos), M4 TACI y M5 obligaciones/facturación/NAF.' },
+                                { term: 'Uso de bloques identificados', text: 'Practica funcionales primero; luego comportamentales e integridad. Convierte cada error en una regla aplicable.' },
+                            ]},
+                        ],
+                    },
+                    {
+                        heading: '6. Perfil del puesto: Gestor I (OPEC 198476, CC-AU-3008) — Asistencia al Usuario',
+                        blocks: [
+                            { type: 'p', text: 'Referencia DIAN 2676 (FUAA Areandina): Gestor I, Código 301, Grado 01, Nivel Profesional; ficha CC-AU-3008 (Cercanía con el Ciudadano / Asistencia al Usuario). Los casos del examen se ubican en Puntos de Contacto, orientación RUT, PQRSD, canales TACI, validación documental y aplicación de norma/procedimiento.' },
+                            { type: 'table', headers: ['Elemento del puesto', 'Aplicación real', 'Enfoque de examen'], rows: [
+                                ['Asistencia al Usuario', 'Orientar trámites con enfoque diferencial y lenguaje claro.', 'Verificar soportes/identidad, explicar ruta correcta y dar trazabilidad.'],
+                                ['Gestión normativa/procedimental', 'Aplicar C.P., E.T., CPACA/Ley 1755, RUT (D. 1625/2016) y lineamientos DIAN.', 'Sustentar en norma/términos; evitar atajos sin verificación.'],
+                                ['Integridad y reserva', 'Proteger datos, rechazar dádivas, evitar conflicto de interés y actuar con valores DIAN.', 'Negar accesos indebidos, no alterar registros, trato imparcial.'],
+                                ['Competencias Res. 065/2024', 'Orientación al usuario, comunicación efectiva, solución de problemas, adaptabilidad, trabajo en equipo, ética.', 'Empatía + procedimiento vigente + verificación + solución efectiva.'],
+                            ]},
+                            { type: 'callout', variant: 'tip', title: 'Lógica de respuesta (Gestor I)', text: '1) Entiende la necesidad, 2) verifica norma/soportes, 3) protege reserva/datos, 4) comunica con claridad, 5) asegura trazabilidad.' },
+                        ],
+                    }                ],
             },
 
             /* -------------------------------------------------------------------------
@@ -158,7 +182,16 @@
                             },
                         ],
                     },
-                ],
+,
+                    {
+                        heading: '1.4 Casos reales en la DIAN para Gestor I (función pública)',
+                        blocks: [{ type: 'list', items: [
+                            { term: 'Orden superior inconveniente o ilegal', text: 'Si la instrucción es verbal o contraria a norma/requisitos, explicar el fundamento legal y usar el derecho de representación cuando aplique; no ejecutar actos contrarios a la ley.' },
+                            { term: 'Conflicto de interés', text: 'Si el trámite involucra familiar, conocido con vínculo relevante o interés personal, declararse impedido y apartarse para proteger imparcialidad y transparencia.' },
+                            { term: 'Información y trazabilidad', text: 'Registrar actuaciones, usar canales institucionales y sustentar decisiones en norma/procedimiento; la improvisación en RUT, peticiones o atención genera riesgo disciplinario y para el ciudadano.' },
+                            { term: 'Servicio en contingencia', text: 'Ante falla de Muisca u otros sistemas, no emitir certificaciones sin respaldo oficial; informar con claridad, aplicar protocolo de contingencia y orientar alternativas.' },
+                        ]}],
+                    }                ],
             },
 
             /* -------------------------------------------------------------------------
@@ -198,7 +231,16 @@
                             },
                         ],
                     },
-                ],
+,
+                    {
+                        heading: '2.3 Casos reales CPACA/PQRSD en el concurso',
+                        blocks: [{ type: 'list', items: [
+                            { term: 'Conteo de términos', text: 'Identificar si es documento/información (10 días), petición/queja/reclamo general (15), consulta (30) o incompleta (requerir en 10, subsanar en 1 mes con riesgo de desistimiento tácito).' },
+                            { term: 'Notificación electrónica', text: 'Verificar canal autorizado/buzón y regla de sur-tición (E.T. 566-1). No confundir envío con apertura efectiva del mensaje.' },
+                            { term: 'Recurso extemporáneo', text: 'Si se presenta fuera de término, rechazar por extemporaneidad con acto motivado; no resolver de fondo por equidad cuando la ley fija plazo perentorio.' },
+                            { term: 'Traslado y competencia', text: 'Si no es competente, remitir al competente en término y comunicar al peticionario; evitar que el ciudadano reinicie el trámite injustificadamente.' },
+                        ]}],
+                    }                ],
             },
 
             /* -------------------------------------------------------------------------
@@ -249,7 +291,17 @@
                             },
                         ],
                     },
-                ],
+,
+                    {
+                        heading: '3.3 Casos reales de ventanilla RUT y errores frecuentes (Gestor I)',
+                        blocks: [{ type: 'list', items: [
+                            { term: 'Actualización sin soporte idóneo', text: 'Validar identidad y soportes antes de registrar cambios; orientar efectos en notificación.' },
+                            { term: 'Tercero sin legitimación', text: 'Exigir poder/autorización válida; proteger datos personales y reserva.' },
+                            { term: 'Retiro de IVA', text: 'Verificar topes legales en los períodos exigidos; no aprobar con información informal.' },
+                            { term: 'Sospecha de suplantación', text: 'Verificación reforzada, no modificar por versión verbal, escalar y dejar trazabilidad.' },
+                            { term: 'Inconsistencia CIIU/soporte', text: 'Sanear diferencias antes de registrar.' },
+                        ]}],
+                    }                ],
             },
 
             /* -------------------------------------------------------------------------
@@ -274,7 +326,17 @@
                             },
                         ],
                     },
-                ],
+,
+                    {
+                        heading: '4.2 Casos reales de atención TACI y manejo en Punto de Contacto',
+                        blocks: [{ type: 'list', items: [
+                            { term: 'Prioridad/enfoque diferencial', text: 'Aplicar atención prioritaria o ajustes razonables según reglas.' },
+                            { term: 'Información contradictoria', text: 'Verificar fuente oficial, responder con lenguaje claro y reportar inconsistencia.' },
+                            { term: 'Autogestión sin abandono', text: 'Acompañar al usuario en canales digitales; confirmar pasos y soportes.' },
+                            { term: 'Conflicto en ventanilla', text: 'Asertividad, desescalamiento, protocolo de seguridad y registro objetivo.' },
+                            { term: 'Credenciales', text: 'Nunca pedir claves; usar canales institucionales y verificación prevista.' },
+                        ]}],
+                    }                ],
             },
 
             /* -------------------------------------------------------------------------
@@ -301,7 +363,17 @@
                             },
                         ],
                     },
-                ],
+,
+                    {
+                        heading: '5.2 Casos reales de cultura contributiva y obligaciones',
+                        blocks: [{ type: 'list', items: [
+                            { term: 'Formal vs sustancial', text: 'Declarar/facturar/informar/soportes vs pagar el tributo debido.' },
+                            { term: 'Factura electrónica/contingencia', text: 'Orientar mecanismos de contingencia y regularización según norma; no comprobantes informales.' },
+                            { term: 'NAF', text: 'Orientación pedagógica general; no sustituye responsabilidad del obligado.' },
+                            { term: 'Costos/deducciones', text: 'No hay procedencia automática por tener recibo; verificar requisitos legales.' },
+                            { term: 'Dificultad de pago', text: 'No prometer condonaciones automáticas; orientar canales oficiales y alternativas legales.' },
+                        ]}],
+                    }                ],
             },
 
             /* -------------------------------------------------------------------------
@@ -327,7 +399,17 @@
                             },
                         ],
                     },
-                ],
+,
+                    {
+                        heading: '6.2 Casos reales de MIPG, reserva, transparencia y datos',
+                        blocks: [{ type: 'list', items: [
+                            { term: 'Reserva tributaria', text: 'Negar consultas no autorizadas sobre terceros; usar mecanismos formales.' },
+                            { term: 'Transparencia vs reserva', text: 'Distinguir información pública agregada de datos protegidos.' },
+                            { term: 'Primera línea MIPG', text: 'Verificación de soportes, registro correcto, protección de información y reporte de riesgos.' },
+                            { term: 'Gestión documental', text: 'Orden, foliación, trazabilidad y tablas de retención.' },
+                            { term: 'Canales seguros', text: 'No compartir datos sensibles por canales no institucionales; minimización y finalidad.' },
+                        ]}],
+                    }                ],
             },
 
             /* -------------------------------------------------------------------------
@@ -436,6 +518,30 @@
                                 title: '🎯 El Secreto de las Subescalas de Control en Areandina',
                                 text: 'La prueba de Areandina incluye subescalas de deseabilidad social. Si una afirmación dice: "Nunca he sentido cansancio en mi trabajo" o "Jamás he cometido un error", marcar "Totalmente de acuerdo" te penaliza por fingimiento de perfección. La clave es ser genuino pero coherente con los niveles 3 y 4 de las conductas observables de la Resolución 065 de 2024.',
                             },
+                        ],
+
+                    },
+                    {
+                        heading: '7.5 Casos reales para Comportamentales e Integridad (simulacro y preparación)',
+                        blocks: [{ type: 'list', items: [
+                            { term: 'Comportamental', text: 'Busca opciones que escuchen, verifiquen comprensión, coordinen, se adapten y den solución efectiva dentro del procedimiento.' },
+                            { term: 'Integridad', text: 'Rechaza dádivas, omisión de controles, filtración de datos, favores a conocidos, alteración de registros o accesos no autorizados.' },
+                            { term: 'Dilema típico', text: 'La respuesta correcta suele ser: trato respetuoso + negativa a la irregularidad + orientación por el camino legal/procedimental.' },
+                            { term: 'Uso del Examen Final', text: 'Practica bloques identificados (150 funcionales, 25 comportamentales, 25 integridad). Convierte cada error en regla aplicable.' },
+                        ]}],
+                    },
+                    {
+                        heading: '7.6 Competencias Res. 065/2024 más relevantes para Gestor I (Asistencia al Usuario)',
+                        blocks: [
+                            { type: 'p', text: 'Con base en el Diccionario de Competencias Comportamentales (Resolución DIAN 065 de 2024), para el Gestor I en asistencia al ciudadano son críticas estas competencias, aplicadas con el Código de Integridad DIAN.' },
+                            { type: 'list', items: [
+                                { term: 'Orientación al Usuario y al Ciudadano', text: 'Escuchar activamente, entender necesidades y dar soluciones oportunas con respeto y empatía. Elige opciones que atienden la necesidad real sin omitir requisitos legales.' },
+                                { term: 'Comunicación Efectiva', text: 'Información clara y precisa, verificación de comprensión y lenguaje claro con ruta concreta.' },
+                                { term: 'Solución de Problemas', text: 'Analizar el caso, verificar norma vigente y aplicar la solución adecuada sin improvisar.' },
+                                { term: 'Adaptabilidad', text: 'Responder a cambios, contingencias y herramientas nuevas manteniendo calidad del servicio.' },
+                                { term: 'Trabajo en Equipo', text: 'Coordinar, compartir criterios y articular dependencias sin abandonar al ciudadano.' },
+                                { term: 'Comportamiento Ético / Integridad', text: 'Honestidad, respeto, compromiso, diligencia y justicia; protege reserva y recursos. Rechaza dádivas, favores, accesos indebidos y alteración de información.' },
+                            ]},
                         ],
                     },
                 ],

@@ -85,8 +85,67 @@
          * Registra el resultado de una pregunta en el tracker.
          */
         recordAnswer(moduleIndex, questionId, isCorrect, selectedIndex) {
+            if (moduleIndex == null || moduleIndex < 0) {
+                // Examen final: ubicar módulo por prefijo de id o omitir tracking granular por módulo
+                const mod = this.#modules.find(m => questionId && questionId.startsWith(m.id + '_'));
+                if (mod) PM.progressTracker.recordAnswer(mod.id, questionId, isCorrect, selectedIndex);
+                return;
+            }
             const mod = this.getModule(moduleIndex);
             PM.progressTracker.recordAnswer(mod.id, questionId, isCorrect, selectedIndex);
+        }
+
+        getAreaStats(area) {
+            const mods = this.#modules.filter(m => (m.examArea || 'funcional') === area);
+            return mods.reduce((acc, m, i) => {
+                const idx = this.#modules.indexOf(m);
+                const st = PM.progressTracker.getModuleStats(m.id, m.questions);
+                acc.total += st.total; acc.answered += st.answered; acc.correct += st.correct;
+                acc.incorrect += st.incorrect; acc.pending += st.pending;
+                return acc;
+            }, { total: 0, answered: 0, correct: 0, incorrect: 0, pending: 0 });
+        }
+
+        /**
+         * Examen final simulado: 150 funcionales + 25 comportamentales + 25 integridad (200 total),
+         * separados en bloques identificados por área.
+         */
+        getFinalExam() {
+            const shuffle = PM.shuffleArray || ((a) => a);
+            const all = this.#modules.flatMap(m => (m.questions || []).map(q => ({ ...q, _moduleId: m.id, _moduleTitle: m.title })));
+            const functional = shuffle(all.filter(q => (q.examArea || 'funcional') === 'funcional')).slice(0, 150);
+            const m7 = all.filter(q => q._moduleId === 'm7');
+            const comportamental = shuffle(m7.filter(q => q.examSubArea === 'comportamental')).slice(0, 25);
+            const integridad = shuffle(m7.filter(q => q.examSubArea === 'integridad' || (q._moduleId === 'm7' && q.examSubArea !== 'comportamental'))).slice(0, 25);
+            const sections = [
+                { key: 'funcional', label: 'Competencias Funcionales (70% eliminatorio)', questions: functional },
+                { key: 'comportamental', label: 'Competencias Comportamentales', questions: comportamental },
+                { key: 'integridad', label: 'Prueba de Integridad (Código DIAN)', questions: integridad },
+            ];
+            const blocks = [];
+            const bs = this.#blockSize;
+            sections.forEach(sec => {
+                const totalB = Math.ceil(sec.questions.length / bs) || 1;
+                for (let b = 0; b < totalB; b++) {
+                    const qs = sec.questions.slice(b * bs, (b + 1) * bs);
+                    blocks.push({
+                        id: `${sec.key}-${b + 1}`,
+                        label: `${sec.label} — Bloque ${b + 1}/${totalB}`,
+                        area: sec.key,
+                        areaLabel: sec.label,
+                        questions: qs,
+                        from: b * bs + 1,
+                        to: b * bs + qs.length,
+                    });
+                }
+            });
+            return {
+                title: 'Examen Final Simulado DIAN 2676 — Gestor I',
+                composition: { funcional: functional.length, comportamental: comportamental.length, integridad: integridad.length, total: functional.length + comportamental.length + integridad.length },
+                sections,
+                blocks,
+                questions: [...functional, ...comportamental, ...integridad],
+            };
         }
     }
 

@@ -19,19 +19,24 @@
         startPending: (moduleIndex) => viewManager.show('quiz', { moduleIndex, mode: 'pending' }),
         showResults: (params) => viewManager.show('result', params),
         openTheory: (sectionId) => viewManager.show('theory', { sectionId }),
+        openFinalExam: () => viewManager.show('final-blocks', { mode: 'final' }),
+        startFinalExam: (finalBlockIndex = 0) => viewManager.show('quiz', { mode: 'final', finalBlockIndex }),
     };
 
     const deps = { repository, navigator };
+    const blockSelect = new BlockSelectView(deps);
     viewManager
         .register('home', new HomeView(deps))
-        .register('blocks', new BlockSelectView(deps))
+        .register('blocks', blockSelect)
+        .register('final-blocks', blockSelect)
         .register('quiz', new QuizView(deps))
         .register('result', new ResultView(deps))
         .register('theory', new TheoryView({ theory: THEORY, navigator }));
-        navigator.goHome();
+    navigator.goHome();
 
     const sidebar = new SidebarView(document.getElementById('nav-menu'), [
     { id: 'home', label: '🏠 Tablero Principal', onSelect: () => navigator.goHome() },
+    { id: 'final-exam', label: '📝 Examen Final (150F + 25C + 25I)', onSelect: () => navigator.openFinalExam() },
     { id: 'theory', label: '📚 Teoría', onSelect: () => navigator.openTheory() },
     ...repository.getModules().map((mod, index) => ({
         id: `module-${index}`,

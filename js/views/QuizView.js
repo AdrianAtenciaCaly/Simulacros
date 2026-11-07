@@ -16,33 +16,43 @@
             this.#navigator = navigator;
         }
 
-        title({ moduleIndex }) {
+        title({ moduleIndex, mode } = {}) {
+            if (mode === 'final') return 'Examen Final Simulado DIAN 2676';
             return this.#repository.getModule(moduleIndex).title;
         }
 
-        navId({ moduleIndex }) {
+        navId({ moduleIndex, mode } = {}) {
+            if (mode === 'final') return 'final-exam';
             return `module-${moduleIndex}`;
         }
 
-        render({ moduleIndex, blockIndex, mode = 'block' }) {
-            const mod = this.#repository.getModule(moduleIndex);
-
+        render({ moduleIndex, blockIndex, mode = 'block', finalBlockIndex = 0 } = {}) {
             let questions;
             let headerSubtitle;
+            let mod = null;
+            let finalMeta = null;
 
-            if (mode === 'pending') {
-                const pending = this.#repository.getPendingQuestions(moduleIndex, this.#repository.blockSize);
-                if (pending.length > 0) {
-                    questions = pending;
-                    headerSubtitle = `Preguntas Pendientes (${questions.length} nuevas)`;
-                } else {
-                    questions = this.#repository.getBlock(moduleIndex, 0);
-                    headerSubtitle = `Repaso de Preguntas (Bloque 1)`;
-                }
+            if (mode === 'final') {
+                finalMeta = this.#repository.getFinalExam();
+                const fb = finalMeta.blocks[Math.max(0, Math.min(finalBlockIndex, finalMeta.blocks.length - 1))];
+                questions = fb.questions;
+                headerSubtitle = `${fb.label} · ${fb.questions.length} preguntas`;
             } else {
-                const bIdx = typeof blockIndex === 'number' ? blockIndex : 0;
-                questions = this.#repository.getBlock(moduleIndex, bIdx);
-                headerSubtitle = `Bloque ${bIdx + 1}`;
+                mod = this.#repository.getModule(moduleIndex);
+                if (mode === 'pending') {
+                    const pending = this.#repository.getPendingQuestions(moduleIndex, this.#repository.blockSize);
+                    if (pending.length > 0) {
+                        questions = pending;
+                        headerSubtitle = `Preguntas Pendientes (${questions.length} nuevas)`;
+                    } else {
+                        questions = this.#repository.getBlock(moduleIndex, 0);
+                        headerSubtitle = `Repaso de Preguntas (Bloque 1)`;
+                    }
+                } else {
+                    const bIdx = typeof blockIndex === 'number' ? blockIndex : 0;
+                    questions = this.#repository.getBlock(moduleIndex, bIdx);
+                    headerSubtitle = `Bloque ${bIdx + 1}`;
+                }
             }
 
             const session = new QuizSession(questions);
@@ -78,7 +88,7 @@
                         class: 'btn hidden',
                         onClick: () => {
                             if (session.next()) showQuestion();
-                            else this.#navigator.showResults({ moduleIndex, blockIndex, summary: session.getSummary(), mode });
+                            else this.#navigator.showResults({ moduleIndex, blockIndex, summary: session.getSummary(), mode, finalBlockIndex, finalMeta });
                         },
                     },
                     session.isLastQuestion ? '📊 Ver Resultados' : 'Siguiente Pregunta →'
@@ -104,7 +114,7 @@
 
                     // Registrar resultado en el ProgressTracker
                     if (q.id) {
-                        this.#repository.recordAnswer(moduleIndex, q.id, result.isCorrect, selectedIndex);
+                        this.#repository.recordAnswer(mode === 'final' ? -1 : moduleIndex, q.id, result.isCorrect, selectedIndex);
                     }
 
                     optionButtons.forEach((btn, idx) => {
@@ -141,11 +151,12 @@
                     nextButton.focus();
                 };
 
+                const headerTitle = mode === 'final' ? `Examen Final DIAN 2676 — ${headerSubtitle}` : `${mod.title} — ${headerSubtitle}`;
                 card.replaceChildren(
                     h(
                         'div',
                         { class: 'quiz-header' },
-                        h('span', { class: 'quiz-module-name' }, `${mod.title} — ${headerSubtitle}`),
+                        h('span', { class: 'quiz-module-name' }, headerTitle),
                         h('span', { class: 'question-number' }, `${session.currentNumber} / ${session.total}`)
                     ),
                     progressLabel,
@@ -158,8 +169,8 @@
                         { class: 'actions-row between' },
                         h(
                             'button',
-                            { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.openModule(moduleIndex) },
-                            '← Salir al Menú de Bloques'
+                            { type: 'button', class: 'btn btn-outline', onClick: () => mode === 'final' ? this.#navigator.openFinalExam() : this.#navigator.openModule(moduleIndex) },
+                            mode === 'final' ? '← Volver al Examen Final' : '← Salir al Menú de Bloques'
                         ),
                         nextButton
                     )

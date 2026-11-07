@@ -29,6 +29,14 @@ Abre `index.html` con doble clic en tu navegador. No necesita servidor ni instal
 7. **Módulo 6: MIPG, Reserva Legal Tributaria y Transparencia:** Decreto 1499 de 2017 (7 dimensiones del MIPG y Tres Líneas de Defensa), Reserva Legal Tributaria (Art. 583 y 584 E.T. y causales de destitución), Ley de Transparencia (Ley 1712 de 2014) y gestión documental (Ley 594 de 2000).
 8. **Módulo 7: Competencias Comportamentales e Integridad (DIAN):** Decreto 815 de 2018 y los 5 valores del Código de Integridad de la DIAN (Honestidad, Respeto, Compromiso, Diligencia, Justicia), evaluados en la prueba escrita del 10%.
 
+## Examen Final Simulado
+- **Simulacro final** en **bloques identificados por área**:
+  - **150 Funcionales** (M1–M6) — foco principal (70% eliminatorio, mínimo 70.00).
+  - **25 Comportamentales** (Res. 065/2024, competencias del puesto).
+  - **25 Integridad** (Código de Integridad DIAN).
+- **Banco total: 215 preguntas** (150 funcionales + 65 comportamentales/integridad en M7) para práctica adicional, con énfasis en competencias comportamentales del **Gestor I (OPEC 198476, CC-AU-3008 — Asistencia al Usuario)**.
+- Acceso desde el tablero, menú lateral o `Examen Final por Bloques`.
+
 ## Estructura Técnica del Proyecto
 
 ```
@@ -40,19 +48,19 @@ Simulacros/
     ├── app.js                 # Composition root: ensambla módulos, vistas y navegación
     ├── config.js              # BLOCK_SIZE (10), PASS_PERCENTAGE (70), QUESTIONS_PER_MODULE (100)
     ├── data/
-    │   ├── question-bank.js   # 70 casos de juicio situacional proyectados a 700 preguntas
-    │   └── theory-data.js     # Compendio teórico maestro con tablas, listas y alertas
+    │   ├── question-bank.js   # 200 casos (150 funcionales + 25 comportamentales + 25 integridad)
+    │   └── theory-data.js     # Compendio teórico + casos reales/tips por módulo
     ├── core/
     │   ├── dom.js             # Helper funcional h() para manipulación segura del DOM
-    │   ├── QuestionRepository.js  # Acceso desacoplado al banco de preguntas
+    │   ├── QuestionRepository.js  # Acceso a preguntas, módulos y armado de Examen Final
     │   ├── QuizSession.js     # Motor del simulacro (respuestas, retroalimentación, score)
     │   ├── ViewManager.js     # Enrutador y gestor de pantallas SPA
     │   └── SidebarView.js     # Menú lateral dinámico y colapsable
     └── views/
-        ├── HomeView.js        # Tablero del aspirante con tarjetas de módulos
-        ├── BlockSelectView.js # Selección de bloques de 10 preguntas
-        ├── QuizView.js        # Interfaz de examen con timer, barra de progreso y letras
-        ├── ResultView.js      # Resumen de desempeño y retroalimentación pedagógica
-        ├── TheoryView.js      # Visor de teoría con pestañas y paginador
-        └── theory-renderer.js # Renderizador de bloques de teoría (p, list, callout, table)
+        ├── HomeView.js        # Tablero + acceso a Examen Final
+        ├── BlockSelectView.js # Bloques por módulo y bloques identificados del Examen Final
+        ├── QuizView.js        # Interfaz de examen (módulo o examen final)
+        ├── ResultView.js      # Resumen y retroalimentación
+        ├── TheoryView.js      # Visor de teoría
+        └── theory-renderer.js # Renderizador de teoría
 ```

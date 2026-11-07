@@ -16,34 +16,42 @@
             this.#navigator = navigator;
         }
 
-        title({ moduleIndex }) {
+        title({ moduleIndex, mode } = {}) {
+            if (mode === 'final') return 'Resultados — Examen Final Simulado';
             return this.#repository.getModule(moduleIndex).title;
         }
 
-        navId({ moduleIndex }) {
+        navId({ moduleIndex, mode } = {}) {
+            if (mode === 'final') return 'final-exam';
             return `module-${moduleIndex}`;
         }
 
-        render({ moduleIndex, blockIndex, summary, mode = 'block' }) {
+        render({ moduleIndex, blockIndex, summary, mode = 'block', finalBlockIndex = 0, finalMeta = null } = {}) {
             const { correct, total, percentage, passed, answers } = summary;
             const wrong = total - correct;
-            const modStats = this.#repository.getModuleStats(moduleIndex);
+            const isFinal = mode === 'final';
+            const modStats = !isFinal && moduleIndex != null && moduleIndex >= 0 ? this.#repository.getModuleStats(moduleIndex) : null;
 
             // --- Banner de puntuacion ---
+            const infoChildren = [
+                h('h3', {}, isFinal ? 'Examen Final Simulado DIAN 2676' : `${this.#repository.getModule(moduleIndex).title}`),
+                h('p', {}, `Respondiste ${total} preguntas en esta sesión.`),
+            ];
+            if (isFinal && finalMeta && finalMeta.composition) {
+                const c = finalMeta.composition;
+                infoChildren.push(h('p', { class: 'module-progress-chip' }, `Composición: ${c.funcional} funcionales · ${c.comportamental} comportamentales · ${c.integridad} integridad = ${c.total}`));
+            } else if (modStats) {
+                infoChildren.push(h('p', { class: 'module-progress-chip' }, `🎯 Avance del Módulo: ${modStats.answered}/${modStats.total} preguntas completadas (${modStats.pending} pendientes)`));
+            }
+            infoChildren.push(h('span', { class: `score-badge ${passed ? 'pass' : 'fail'}` }, passed ? '🎉 ¡Sesión Superada!' : '⚠️ Necesitas Repasar'));
+
             const banner = h(
                 'div', { class: 'score-banner' },
                 h('div', { class: 'score-circle' },
                     h('span', { class: 'score-percent' }, `${percentage}%`),
                     h('span', { class: 'score-pct-label' }, 'Puntaje')
                 ),
-                h('div', { class: 'score-info' },
-                    h('h3', {}, `${this.#repository.getModule(moduleIndex).title}`),
-                    h('p', {}, `Respondiste ${total} preguntas en esta sesión.`),
-                    h('p', { class: 'module-progress-chip' }, `🎯 Avance del Módulo: ${modStats.answered}/${modStats.total} preguntas completadas (${modStats.pending} pendientes)`),
-                    h('span', { class: `score-badge ${passed ? 'pass' : 'fail'}` },
-                        passed ? '🎉 ¡Sesión Superada!' : '⚠️ Necesitas Repasar'
-                    )
-                )
+                h('div', { class: 'score-info' }, ...infoChildren)
             );
 
             // --- Barra visual de puntaje ---
@@ -117,55 +125,51 @@
             );
 
             // --- Botones de accion ---
-            const nextPendingBtn = modStats.pending > 0
-                ? h('button', {
-                    type: 'button',
-                    class: 'btn btn-primary',
-                    onClick: () => this.#navigator.startPending(moduleIndex)
-                }, `🚀 Hacer Otras Preguntas (${modStats.pending} pendientes)`)
-                : h('button', {
-                    type: 'button',
-                    class: 'btn btn-secondary',
-                    onClick: () => {
-                        this.#repository.resetModuleProgress(moduleIndex);
-                        this.#navigator.startPending(moduleIndex);
-                    }
-                }, '🔄 Reiniciar Progreso del Módulo');
-
-            const actions = h(
-                'div', { class: 'actions-row' },
-                nextPendingBtn,
-                h('button', { type: 'button', class: 'btn',
-                    onClick: () => this.#navigator.startBlock(moduleIndex, blockIndex ?? 0) },
-                    '🔄 Reintentar Sesión'),
-                h('button', { type: 'button', class: 'btn',
-                    onClick: () => this.#navigator.openModule(moduleIndex) },
-                    '📚 Menú del Módulo'),
-                h('button', { type: 'button', class: 'btn',
-                    onClick: () => {
-                        const prev = moduleIndex - 1;
-                        if (prev >= 0) {
-                            this.#navigator.openModule(prev);
-                        } else {
-                            this.#navigator.goHome();
-                        }
-                    } },
-                    '⬅️ Módulo Anterior'),
-                h('button', { type: 'button', class: 'btn',
-                    onClick: () => {
-                        const next = moduleIndex + 1;
-                        const modulesCount = this.#repository.getModules().length;
-                        if (next < modulesCount) {
-                            this.#navigator.openModule(next);
-                        } else {
-                            this.#navigator.goHome();
-                        }
-                    } },
-                    '➡️ Siguiente Módulo'),
-                h('button', { type: 'button', class: 'btn btn-outline',
-                    onClick: () => this.#navigator.goHome() },
-                    '🏠 Ir al Tablero')
-            );
+            let actions;
+            if (isFinal) {
+                const blocks = (finalMeta && finalMeta.blocks) ? finalMeta.blocks : [];
+                const hasNext = finalBlockIndex + 1 < blocks.length;
+                actions = h('div', { class: 'actions-row' },
+                    hasNext ? h('button', { type: 'button', class: 'btn btn-primary',
+                        onClick: () => this.#navigator.startFinalExam(finalBlockIndex + 1) },
+                        `➡️ Siguiente bloque (${finalBlockIndex + 2}/${blocks.length})`) : null,
+                    h('button', { type: 'button', class: 'btn',
+                        onClick: () => this.#navigator.startFinalExam(finalBlockIndex) },
+                        '🔄 Reintentar este bloque'),
+                    h('button', { type: 'button', class: 'btn',
+                        onClick: () => this.#navigator.openFinalExam() },
+                        '📑 Bloques del Examen Final'),
+                    h('button', { type: 'button', class: 'btn btn-outline',
+                        onClick: () => this.#navigator.goHome() },
+                        '🏠 Ir al Tablero')
+                );
+            } else {
+                const nextPendingBtn = modStats && modStats.pending > 0
+                    ? h('button', { type: 'button', class: 'btn btn-primary',
+                        onClick: () => this.#navigator.startPending(moduleIndex) },
+                        `🚀 Hacer Otras Preguntas (${modStats.pending} pendientes)`)
+                    : h('button', { type: 'button', class: 'btn btn-secondary',
+                        onClick: () => { this.#repository.resetModuleProgress(moduleIndex); this.#navigator.startPending(moduleIndex); } },
+                        '🔄 Reiniciar Progreso del Módulo');
+                actions = h('div', { class: 'actions-row' },
+                    nextPendingBtn,
+                    h('button', { type: 'button', class: 'btn',
+                        onClick: () => this.#navigator.startBlock(moduleIndex, blockIndex ?? 0) },
+                        '🔄 Reintentar Sesión'),
+                    h('button', { type: 'button', class: 'btn',
+                        onClick: () => this.#navigator.openModule(moduleIndex) },
+                        '📚 Menú del Módulo'),
+                    h('button', { type: 'button', class: 'btn',
+                        onClick: () => { const prev = moduleIndex - 1; if (prev >= 0) this.#navigator.openModule(prev); else this.#navigator.goHome(); } },
+                        '⬅️ Módulo Anterior'),
+                    h('button', { type: 'button', class: 'btn',
+                        onClick: () => { const next = moduleIndex + 1; const modulesCount = this.#repository.getModules().length; if (next < modulesCount) this.#navigator.openModule(next); else this.#navigator.goHome(); } },
+                        '➡️ Siguiente Módulo'),
+                    h('button', { type: 'button', class: 'btn btn-outline',
+                        onClick: () => this.#navigator.goHome() },
+                        '🏠 Ir al Tablero')
+                );
+            }
 
             return h('section', { class: 'card' },
                 h('h2', {}, '📊 Resultados del Bloque'),

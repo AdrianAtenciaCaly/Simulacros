@@ -2,14 +2,17 @@
     'use strict';
 
     /**
-     * BANCO OFICIAL DE PREGUNTAS DE JUICIO SITUACIONAL (CNSC / AREANDINA — DIAN 2676)
+     * BANCO DE PREGUNTAS DE JUICIO SITUACIONAL (CNSC / AREANDINA — DIAN 2676)
      * Convocatoria: Proceso de Selección DIAN 2676 | Operador: FUAA Areandina
      * Empleo: Gestor I (Código 301, Grado 01) — OPEC: 198476
-     * 105 Casos Únicos Calibrados (15 por módulo) con distractores técnicos y longitudes equilibradas.
+     * 215 casos tipo examen (Caso + Enunciado + 3 opciones A/B/C): 150 funcionales (m1-m6, 70% eliminatorio) + 65 comportamentales/integridad (m7, Res. 065/2024 y Código de Integridad DIAN). El simulacro final usa 150F + 25C + 25I en bloques identificados; el banco incluye preguntas comportamentales adicionales para práctica del puesto Gestor I (CC-AU-3008).
+     * Fuentes de referencia: Diccionario de Competencias Comportamentales (Res. 065/2024) y
+     * Guía de Orientación al Aspirante DIAN 2676 (incorporada en teoría; PDF guía imagen-base).
      */
     const MODULE_DEFINITIONS = [
     {
         "id": "m1",
+        "examArea": "funcional",
         "title": "Módulo 1: Función Pública y Estructura DIAN",
         "navLabel": "🏛️ M.1: Función Pública",
         "homeLabel": "Módulo 1: Función Pública y Estructura DIAN",
@@ -179,11 +182,122 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es la correcta. La Ley 1952 de 2019 tipifica como falta gravísima utilizar bienes, software o información del Estado para beneficio propio o de terceros. Las opciones A y C pretenden legalizar conductas corruptas expresamente sancionadas por el ordenamiento."
+            },
+            {
+                "id": "m1_c16",
+                "text": "Caso: Un Gestor I advierte que una orientación informal difundida por un compañero en el Punto de Contacto contradice un concepto vigente de la Subdirección de Normativa y Doctrina de la DIAN sobre actualización del RUT.\n\nEnunciado: Conforme al principio de legalidad (Art. 6 y 209 C.P.) y al deber funcional de observancia de la doctrina institucional, el Gestor I debe:",
+                "options": [
+                    "Mantener la orientación del compañero para no generar confusión entre los usuarios, aclarando que cada funcionario interpreta los conceptos según la complejidad del caso atendido.",
+                    "Corregir la información con sustento en la norma y el concepto vigente, informando al usuario de manera clara y oportuna, y comunicar la inconsistencia por el canal interno correspondiente.",
+                    "Evitar intervenir en la atención de otro servidor, limitándose a registrar la situación en su informe mensual de actividades para que sea evaluada en la auditoría de gestión."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el servidor debe actuar conforme a la Constitución, la ley y la doctrina institucional, garantizando información veraz al ciudadano y reportando inconsistencias por los canales internos. A afecta la legalidad y C omite el deber inmediato de corrección y protección del usuario."
+            },
+            {
+                "id": "m1_c17",
+                "text": "Caso: Durante una jornada de alta afluencia, el sistema Muisca presenta intermitencia y un usuario exige que el Gestor I le expida manualmente un certificado del RUT sin validación en la base oficial.\n\nEnunciado: Frente a la solicitud y de acuerdo con los principios de eficacia, legalidad y responsabilidad administrativa, el Gestor I debe:",
+                "options": [
+                    "Expedir un certificado provisional firmado en físico para atender la urgencia del ciudadano, comprometiéndose a registrar la operación cuando el sistema se normalice.",
+                    "Informar con transparencia la contingencia tecnológica, abstenerse de emitir certificaciones sin soporte oficial y orientar al usuario sobre los canales alternos y el momento para retomar el trámite.",
+                    "Suspender toda la atención en ventanilla hasta el restablecimiento total del sistema, sin ofrecer alternativas ni registrar las solicitudes recibidas durante la falla."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: no se pueden expedir actos o certificaciones sin respaldo en la información oficial; el servidor debe informar con claridad, aplicar protocolos de contingencia y orientar alternativas. A genera riesgo jurídico y C vulnera el deber de servicio."
+            },
+            {
+                "id": "m1_c18",
+                "text": "Caso: Un Gestor I recibe una instrucción escrita de su coordinador para priorizar la validación de expedientes de un contribuyente específico, omitiendo el orden de turnos establecido en el Punto de Contacto.\n\nEnunciado: Conforme al principio de igualdad (Art. 13 C.P.), moralidad administrativa y deberes del servidor público, la actuación ajustada a derecho es:",
+                "options": [
+                    "Cumplir la instrucción por tratarse de una orden escrita de un superior jerárquico, dejando constancia interna de que el cambio de orden obedeció a una directriz operativa.",
+                    "Aplicar el criterio de turnos y reglas de priorización legal (personas con discapacidad, adultos mayores u otros casos previstos), explicando que no es procedente favorecer a un usuario por fuera de la norma.",
+                    "Atender al contribuyente indicado fuera de turno solo si el coordinador asume por correo electrónico la responsabilidad, sin comunicar la situación a los demás usuarios en sala."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el trato igualitario y la prioridad solo proceden por causales legales o de política pública, no por discrecionalidad. A y C convalidan un favorecimiento indebido contrario a la moralidad e igualdad."
+            },
+            {
+                "id": "m1_c19",
+                "text": "Caso: En el marco de una evaluación de desempeño, el jefe inmediato le exige al Gestor I modificar indicadores reportados en el sistema interno para mejorar los resultados del área.\n\nEnunciado: De acuerdo con el Código General Disciplinario (Ley 1952 de 2019), el Código de Integridad de la DIAN y el deber de objetividad, el Gestor I debe:",
+                "options": [
+                    "Ajustar los indicadores según lo solicitado para proteger la calificación del equipo, siempre que el cambio no afecte directamente el recaudo o derechos de terceros.",
+                    "Negarse a alterar información oficial, sustentar la veracidad de los datos y reportar la solicitud por los canales de integridad o control interno competentes.",
+                    "Modificar únicamente los indicadores de gestión interna no auditables y conservar una copia privada de los datos reales para usarla en caso de una revisión posterior."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: falsear información institucional vulnera la honestidad, objetividad y puede configurar faltas disciplinarias. A y C normalizan la manipulación de datos y exponen al servidor y a la entidad."
+            },
+            {
+                "id": "m1_c20",
+                "text": "Caso: Un ciudadano presenta una tutela alegando vulneración del derecho de petición por falta de respuesta a una solicitud radicada en la DIAN, y el Gestor I es requerido para aportar información sobre el trámite.\n\nEnunciado: Conforme al artículo 86 de la Constitución y al deber de colaboración con la administración de justicia, el Gestor I debe:",
+                "options": [
+                    "Suministrar de inmediato, completa y veraz la información solicitada por la autoridad judicial dentro del término señalado, con los soportes del expediente que obren en su poder.",
+                    "Responder únicamente si el Director Seccional autoriza expresamente la entrega, aun cuando ello implique vencer el término perentorio fijado por el juez constitucional.",
+                    "Remitir una respuesta general indicando que el trámite se encuentra en gestión, sin anexar soportes ni fechas verificables de la actuación administrativa."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta en el sentido de cumplir oportunamente: en tutela los términos son perentorios y el servidor debe colaborar con información veraz y completa. A retrasa injustificadamente y C incumple el deber de colaboración y puede agravar la vulneración alegada."
+            },
+            {
+                "id": "m1_c21",
+                "text": "Caso: La DIAN implementa un nuevo procedimiento digital para agendamiento y validación biométrica en los Puntos de Contacto, y el Gestor I debe aplicarlo desde la fecha señalada en la circular interna.\n\nEnunciado: En aplicación del principio de eficacia y del deber de actualización funcional, la conducta más adecuada del Gestor I es:",
+                "options": [
+                    "Continuar aplicando el procedimiento anterior hasta dominar completamente el nuevo, para evitar errores durante la atención al ciudadano en la primera semana.",
+                    "Capacitarse con los lineamientos oficiales, aplicar el nuevo procedimiento desde su vigencia y orientar a los usuarios sobre los cambios con lenguaje claro.",
+                    "Delegar la aplicación del nuevo procedimiento en compañeros con mayor experiencia tecnológica mientras atiende solo trámites manuales conocidos."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el servidor debe cumplir los procedimientos vigentes, actualizarse y garantizar continuidad del servicio con orientación clara. A posterga indebidamente la norma interna aplicable y C evade responsabilidades propias del cargo."
+            },
+            {
+                "id": "m1_c22",
+                "text": "Caso: Un usuario solicita al Gestor I información sobre el estado de un proceso de fiscalización de un tercero, aportando únicamente el nombre comercial de la empresa.\n\nEnunciado: Conforme a los deberes de reserva, protección de datos y debido proceso, el Gestor I debe:",
+                "options": [
+                    "Consultar el expediente del tercero y entregar un resumen verbal del estado del proceso para satisfacer la solicitud ciudadana, siempre que no se entregue copia física.",
+                    "Abstenerse de suministrar información sobre terceros sin legitimación legal, explicar las restricciones de reserva y orientar al solicitante sobre los mecanismos válidos cuando procedan.",
+                    "Solicitar al usuario que radique una petición anónima para que el área de fiscalización le responda con el detalle del proceso en curso."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la información de terceros, especialmente en actuaciones tributarias, está protegida por reserva y normas de datos; el servidor debe negar información no autorizada y orientar adecuadamente. A vulnera la reserva y C propone un cauce improcedente."
+            },
+            {
+                "id": "m1_c23",
+                "text": "Caso: En una auditoría interna se detecta que un trámite de actualización del RUT fue gestionado sin el soporte documental completo por presión de tiempo en ventanilla.\n\nEnunciado: Desde el enfoque de autocontrol y las Tres Líneas de Defensa del MIPG, la actuación esperada del Gestor I como primera línea es:",
+                "options": [
+                    "Justificar la omisión señalando la alta demanda del servicio, sin revisar el expediente, porque el control posterior corresponde exclusivamente a la Oficina de Control Interno.",
+                    "Reconocer el hallazgo, revisar el caso, aportar los soportes o gestionar la corrección conforme al procedimiento y aplicar medidas para evitar la recurrencia.",
+                    "Solicitar que el hallazgo se reclasifique como observación menor para no afectar los indicadores del área, aun cuando falten documentos habilitantes."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la primera línea ejecuta controles y corrige desviaciones en su operación diaria. A y C trasladan indebidamente la responsabilidad y debilitan el control institucional."
+            },
+            {
+                "id": "m1_c24",
+                "text": "Caso: Un contribuyente ofrece al Gestor I un obsequio de bajo valor al finalizar una orientación, insistiendo en que es una muestra cultural sin intención indebida.\n\nEnunciado: Conforme al régimen disciplinario, las políticas de integridad y prevención de conflicto de intereses, el Gestor I debe:",
+                "options": [
+                    "Aceptar el obsequio si su valor es mínimo y registrarlo verbalmente con un compañero, para evitar incomodar al ciudadano en el Punto de Contacto.",
+                    "Rechazar cortésmente cualquier obsequio, explicar que los servidores públicos no reciben dádivas por sus funciones y mantener el trato respetuoso con el usuario.",
+                    "Recibir el obsequio y entregarlo al final del día al coordinador para que decida su destino, sin dejar registro formal en el sistema de integridad."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: aceptar dádivas, incluso de bajo valor, puede afectar la imparcialidad y generar riesgo disciplinario; la conducta íntegra es rechazar con respeto y claridad. A y C no eliminan el riesgo ni garantizan trazabilidad adecuada."
+            },
+            {
+                "id": "m1_c25",
+                "text": "Caso: El Gestor I identifica que un formato físico utilizado en el Punto de Contacto no corresponde a la versión vigente publicada por la DIAN, lo que puede inducir errores en los trámites del RUT.\n\nEnunciado: De acuerdo con el principio de eficacia, la gestión documental y el deber de calidad del servicio, el Gestor I debe:",
+                "options": [
+                    "Continuar usando el formato hasta agotar las existencias impresas, informando a los usuarios que verifiquen por su cuenta la versión correcta en la página web.",
+                    "Suspender el uso del formato desactualizado, informar al responsable del proceso, solicitar la versión vigente y orientar a los usuarios con la información correcta.",
+                    "Modificar manualmente los campos del formato antiguo en cada atención, sin reportar la situación, para agilizar la atención mientras llega la nueva versión."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: usar documentos desactualizados afecta la legalidad y calidad del servicio; el servidor debe detener el riesgo, escalarlo y asegurar orientación correcta. A traslada la carga al ciudadano y C altera controles documentales sin autorización."
             }
         ]
     },
     {
         "id": "m2",
+        "examArea": "funcional",
         "title": "Módulo 2: Procedimiento Administrativo y CPACA",
         "navLabel": "⚖️ M.2: CPACA y Peticiones",
         "homeLabel": "Módulo 2: Procedimiento CPACA, Peticiones y PQRSD",
@@ -353,11 +467,122 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es la correcta. Los conceptos de la DIAN no obligan a los contribuyentes (Art. 28 CPACA), pero su observancia sí es obligatoria para los funcionarios de la DIAN (Art. 131 Ley 2010/2019). Las opciones A y C desconocen el régimen jurídico de los conceptos tributarios."
+            },
+            {
+                "id": "m2_c16",
+                "text": "Caso: Un contribuyente radica en el portal web de la DIAN una petición solicitando copia de su historial de direcciones registradas en el RUT para un trámite bancario.\n\nEnunciado: De conformidad con la Ley 1755 de 2015, el término máximo para resolver esta petición de documentos e información es de:",
+                "options": [
+                    "Diez (10) días hábiles contados desde la radicación, debiendo la entidad entregar la información o responder de fondo dentro de dicho plazo.",
+                    "Quince (15) días hábiles por tratarse de una solicitud presentada por medios electrónicos que requiere validación de identidad del titular.",
+                    "Tres (3) días hábiles, porque el historial del RUT es información automatizada que el sistema Muisca debe generar de forma inmediata."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: las peticiones de documentos e información se resuelven en 10 días hábiles (Art. 14, Ley 1755/2015). B confunde con el término general y C desconoce el término legal."
+            },
+            {
+                "id": "m2_c17",
+                "text": "Caso: El Gestor I recibe en el Punto de Contacto a un ciudadano que desea formular una queja por la atención recibida, pero manifiesta no saber cómo radicarla por escrito.\n\nEnunciado: Conforme al derecho de petición y a los deberes de orientación, el Gestor I debe:",
+                "options": [
+                    "Negar la recepción indicando que toda queja debe presentarse exclusivamente por el portal web sin apoyo presencial de la entidad.",
+                    "Orientar al ciudadano sobre los canales habilitados, facilitar el registro de la queja y garantizar que quede radicada con trazabilidad para su trámite competente.",
+                    "Registrar la inconformidad solo de manera verbal ante el coordinador, sin generar radicado ni entregar constancia al usuario."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la administración debe facilitar el ejercicio efectivo del derecho de petición/queja y asegurar trazabilidad. A crea barrera indebida y C impide seguimiento."
+            },
+            {
+                "id": "m2_c18",
+                "text": "Caso: Una sociedad recibe en su buzón electrónico del RUT la notificación de un requerimiento de la DIAN, pero el representante legal afirma no haber abierto el mensaje.\n\nEnunciado: De conformidad con el artículo 566-1 del Estatuto Tributario, la notificación electrónica se entiende surtida para el cómputo de términos:",
+                "options": [
+                    "Únicamente cuando el destinatario abre el mensaje y descarga el acto administrativo en el portal.",
+                    "Cuando el acto se pone a disposición en el buzón electrónico y se cumplen las condiciones legales de sur-tición, con independencia de la apertura efectiva.",
+                    "Solo si la DIAN envía además una copia física por correo certificado a la dirección registrada en el RUT."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el 566-1 E.T. regula la notificación electrónica y el inicio de términos sin depender de la apertura efectiva. A y C no reflejan la regla legal."
+            },
+            {
+                "id": "m2_c19",
+                "text": "Caso: Un apoderado interpone recurso de reposición contra un acto de la DIAN tres días hábiles después de vencido el término legal.\n\nEnunciado: Conforme al artículo 76 del CPACA, la administración debe:",
+                "options": [
+                    "Admitir el recurso por razones de equidad si el contribuyente alega dificultades técnicas en la radicación.",
+                    "Rechazar el recurso por extemporaneidad mediante acto motivado, respetando los términos perentorios del procedimiento administrativo.",
+                    "Trasladar el escrito como consulta interna para que otra dependencia decida de fondo si resulta conveniente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: los recursos deben presentarse en término; la extemporaneidad implica rechazo por improcedencia temporal. A y C flexibilizan indebidamente plazos legales."
+            },
+            {
+                "id": "m2_c20",
+                "text": "Caso: Al estudiar una petición, el Gestor I determina que la decisión compete a una dependencia diferente de la misma seccional.\n\nEnunciado: Conforme al CPACA y la Ley 1755 de 2015, la actuación correcta es:",
+                "options": [
+                    "Responder al peticionario que radique nuevamente ante la dependencia competente, sin remitir internamente la solicitud.",
+                    "Remitir la petición al competente dentro del término legal y comunicar al peticionario el traslado efectuado.",
+                    "Retener la solicitud hasta obtener un concepto informal y responder sin formalizar el traslado ni informar al ciudadano."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la administración debe garantizar continuidad del trámite y comunicar el traslado. A genera carga injustificada y C afecta transparencia y oportunidad."
+            },
+            {
+                "id": "m2_c21",
+                "text": "Caso: Un ciudadano solicita revocatoria directa de un acto particular que negó una actualización en el RUT, aportando nuevos soportes.\n\nEnunciado: De acuerdo con los artículos 93 y siguientes del CPACA, frente a esta solicitud la DIAN debe:",
+                "options": [
+                    "Tramitarla cuando cumpla requisitos de oportunidad y fundamento, verificando causales y el respeto de derechos adquiridos cuando aplique.",
+                    "Rechazar automáticamente toda revocatoria directa porque los actos del RUT solo admiten reposición dentro de diez días.",
+                    "Suspender indefinidamente los efectos del acto sin adoptar decisión formal mientras el solicitante reúne documentos."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: la revocatoria directa procede según causales, oportunidad y límites legales. B desconoce la figura y C omite el deber de decidir."
+            },
+            {
+                "id": "m2_c22",
+                "text": "Caso: El área competente requiere información adicional para responder una consulta tributaria compleja y advierte que no alcanzará el término ordinario.\n\nEnunciado: Conforme al artículo 14 de la Ley 1755 de 2015, la entidad puede:",
+                "options": [
+                    "Prorrogar el término de respuesta hasta por treinta (30) días hábiles adicionales, informando al peticionario antes del vencimiento e indicando los motivos.",
+                    "Extender el plazo indefinidamente mientras consolida la información interna, sin comunicar una nueva fecha de respuesta.",
+                    "Responder parcialmente dentro del término y exigir que el ciudadano radique una nueva petición por los aspectos pendientes."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: la Ley 1755 permite prórroga justificada en consultas, informada antes del vencimiento. B y C vulneran el derecho a respuesta oportuna."
+            },
+            {
+                "id": "m2_c23",
+                "text": "Caso: Un contribuyente solicita que la respuesta a su petición sea enviada al canal electrónico autorizado.\n\nEnunciado: De acuerdo con las normas de derecho de petición y notificación aplicables, la administración debe:",
+                "options": [
+                    "Usar el medio solicitado cuando sea procedente y esté habilitado, dejando constancia del envío y cumpliendo las formalidades legales.",
+                    "Exigir siempre comparecencia personal en el Punto de Contacto, aun cuando el peticionario haya autorizado un canal electrónico válido.",
+                    "Responder únicamente mediante publicación genérica en la página web, sin comunicación directa al canal autorizado."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: se deben respetar canales autorizados cuando procedan, con trazabilidad. B impone carga innecesaria y C no garantiza comunicación efectiva."
+            },
+            {
+                "id": "m2_c24",
+                "text": "Caso: Antes de notificar un acto que resuelve una petición, el Gestor I detecta un error mecanográfico en el nombre del solicitante, aunque el NIT y la decisión son correctos.\n\nEnunciado: Conforme al artículo 45 del CPACA, procede:",
+                "options": [
+                    "Revocar totalmente el acto y emitir uno nuevo, porque cualquier error de identificación invalida la decisión.",
+                    "Corregir el error formal mediante aclaración o corrección, siempre que no se altere el sentido sustancial de la decisión.",
+                    "Notificar el acto sin corregirlo, indicando al ciudadano que aclare el error en sus gestiones externas."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el Art. 45 CPACA permite corregir errores formales sin modificar el fondo. A es desproporcionado y C afecta eficacia."
+            },
+            {
+                "id": "m2_c25",
+                "text": "Caso: Un usuario radica una queja por demora en la actualización de su RUT y solicita información sobre las actuaciones adelantadas.\n\nEnunciado: De conformidad con la Ley 1755 de 2015, el término general para resolver quejas y reclamos es de:",
+                "options": [
+                    "Quince (15) días hábiles siguientes a la radicación, salvo norma especial que disponga un término distinto.",
+                    "Diez (10) días hábiles, por asimilarse a una solicitud de documentos del expediente.",
+                    "Treinta (30) días calendario, prorrogables automáticamente cuando intervengan varias dependencias."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: el término general es de 15 días hábiles para peticiones/quejas/reclamos (Art. 14, Ley 1755/2015). B y C señalan términos incorrectos."
             }
         ]
     },
     {
         "id": "m3",
+        "examArea": "funcional",
         "title": "Módulo 3: Registro Único Tributario (RUT)",
         "navLabel": "📋 M.3: Registro Único (RUT)",
         "homeLabel": "Módulo 3: Registro Único Tributario (RUT) y Obligaciones",
@@ -527,11 +752,122 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es la correcta. El principio de unicidad del RUT (Art. 555-2 E.T.) exige que cada persona tenga un único NIT, correspondiendo a la DIAN sanear y unificar de oficio las duplicidades. Las opciones A y C vulneran la seguridad y certeza del registro fiscal."
+            },
+            {
+                "id": "m3_c16",
+                "text": "Caso: Un profesional independiente solicita al Gestor I orientación para inscribirse en el RUT por primera vez, indicando que desarrollará actividades económicas como servicios profesionales y también venderá productos ocasionalmente.\n\nEnunciado: Conforme al Decreto 1625 de 2016 y a los procedimientos del RUT, el Gestor I debe:",
+                "options": [
+                    "Inscribirlo únicamente con la actividad de mayores ingresos, indicando que las demás actividades se registran solo cuando genere declaraciones por cada impuesto.",
+                    "Orientarlo para registrar todas las responsabilidades y actividades económicas que correspondan según su realidad, verificando soportes y la correcta clasificación en el formulario del RUT.",
+                    "Exigir que primero constituya una persona jurídica, porque el RUT no permite registrar simultáneamente actividades de servicios y de venta para personas naturales."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el RUT debe reflejar la situación real del obligado (responsabilidades, actividades CIIU y datos de ubicación/contacto) con validación de soportes. A genera información incompleta y C es falso."
+            },
+            {
+                "id": "m3_c17",
+                "text": "Caso: Una persona natural inscrita en el RUT cambia su dirección de notificación y correo electrónico, pero continúa recibiendo comunicaciones de la DIAN en la dirección anterior.\n\nEnunciado: De acuerdo con el artículo 555-2 del E.T. y el deber de actualización del RUT, la actuación correcta es:",
+                "options": [
+                    "Mantener la dirección anterior mientras la DIAN no confirme la actualización, porque el cambio solo produce efectos al inicio del siguiente año gravable.",
+                    "Actualizar oportunamente los datos de ubicación y notificación en el RUT, aportando los soportes cuando apliquen, para que las comunicaciones se surtan en los canales vigentes.",
+                    "Solicitar que las notificaciones se suspendan temporalmente hasta que el contribuyente presente una escritura pública que acredite el cambio de domicilio."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el obligado debe mantener actualizado el RUT; los datos de notificación son críticos para comunicaciones y términos. A desconoce el deber de actualización y C exige un requisito no aplicable de forma general."
+            },
+            {
+                "id": "m3_c18",
+                "text": "Caso: El representante legal de una sucesión ilíquida acude al Punto de Contacto para actualizar responsabilidades en el RUT, pero presenta copia simple del documento que lo acredita.\n\nEnunciado: Conforme a los procedimientos de validación documental del RUT, el Gestor I debe:",
+                "options": [
+                    "Aceptar la copia simple si el representante declara bajo juramento que el documento es auténtico, para evitar reprocesos al contribuyente.",
+                    "Verificar la calidad del representante y exigir el soporte idóneo conforme al procedimiento aplicable, orientando sobre la forma correcta de acreditar la representación.",
+                    "Actualizar provisionalmente el RUT y dejar una nota interna para que el contribuyente aporte el documento original dentro de los seis meses siguientes."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: los trámites del RUT requieren validación de identidad y representación con soportes válidos según el caso. A y C debilitan controles y pueden generar inconsistencias registrales."
+            },
+            {
+                "id": "m3_c19",
+                "text": "Caso: Un comerciante inscrito como responsable de IVA solicita su retiro de dicha responsabilidad en el RUT, alegando disminución de ventas en el último trimestre.\n\nEnunciado: De conformidad con el parágrafo 3 del artículo 437 del E.T. y la verificación registral, el Gestor I debe:",
+                "options": [
+                    "Aprobar el retiro de inmediato si el contribuyente presenta una certificación privada de ingresos del último trimestre, sin revisar períodos anteriores.",
+                    "Verificar el cumplimiento de los topes legales en los períodos exigidos por la norma antes de registrar el cambio, y orientar al contribuyente sobre los soportes y efectos tributarios.",
+                    "Negar toda solicitud de retiro de responsabilidad de IVA en el Punto de Contacto, indicando que solo procede mediante proceso de fiscalización."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el retiro de la responsabilidad de IVA exige verificar condiciones legales en los períodos previstos (no solo un trimestre), con aplicación correcta del procedimiento. A es insuficiente y C es improcedente."
+            },
+            {
+                "id": "m3_c20",
+                "text": "Caso: Un usuario solicita la inscripción en el RUT de un consorcio que ejecutará un contrato estatal, pero los integrantes no han definido quién actuará como representante para efectos tributarios.\n\nEnunciado: Conforme a las reglas del RUT para estructuras sin personería jurídica y a los requisitos de formalización, el Gestor I debe:",
+                "options": [
+                    "Inscribir el consorcio con los datos de cualquiera de los integrantes, aclarando que la representación podrá definirse después ante la entidad contratante.",
+                    "Orientar que el trámite requiere la documentación que acredite la existencia del consorcio y la representación/atribuciones para efectos del RUT, validando la información de los integrantes.",
+                    "Crear dos inscripciones independientes, una por cada integrante, para evitar demoras mientras se define la representación del consorcio."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el registro debe corresponder a la figura contractual y su representación, con soportes que permitan identificar responsabilidades. A y C generan registros inexactos o duplicados."
+            },
+            {
+                "id": "m3_c21",
+                "text": "Caso: Al revisar una solicitud de actualización, el Gestor I detecta diferencias entre la actividad económica declarada y el soporte de cámara de comercio aportado por una persona jurídica.\n\nEnunciado: Conforme al deber de calidad de la información registral del RUT, el Gestor I debe:",
+                "options": [
+                    "Registrar la actividad económica indicada verbalmente por el contribuyente para agilizar el trámite y sugerirle actualizar la cámara de comercio posteriormente.",
+                    "Confrontar la información con los soportes idóneos, solicitar aclaración o corrección documental y registrar la actividad acorde con la evidencia válida.",
+                    "Mantener la actividad anterior sin cambios, aunque el soporte demuestre una modificación, para evitar inconsistencias con declaraciones ya presentadas."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la información del RUT debe ser consistente con los soportes; ante inconsistencias se debe sanear antes de registrar. A y C perpetúan errores registrales."
+            },
+            {
+                "id": "m3_c22",
+                "text": "Caso: Un ciudadano reporta que su NIT aparece asociado en el RUT a una dirección que nunca ha utilizado, sospechando suplantación en la actualización de datos.\n\nEnunciado: Frente a esta situación, y de acuerdo con los protocolos de seguridad y corrección registral, el Gestor I debe:",
+                "options": [
+                    "Indicarle que solicite una nueva inscripción en el RUT para obtener un NIT distinto, evitando usar el registro comprometido.",
+                    "Orientar la activación de los mecanismos de verificación de identidad, recepción de soportes y trámite de corrección/bloqueo según procedimiento, escalando el caso a las áreas competentes.",
+                    "Actualizar de inmediato la dirección con la información verbal del ciudadano, sin validar identidad ni soportes, para cerrar rápidamente el reporte."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: ante posible suplantación se requiere verificación reforzada, trazabilidad y aplicación de protocolos de seguridad/corrección. A no resuelve el riesgo y C puede agravar el fraude."
+            },
+            {
+                "id": "m3_c23",
+                "text": "Caso: Un contribuyente solicita copia del certificado del RUT, pero el documento solicitado corresponde a información con datos sensibles de contacto que serán usados por un tercero no autorizado.\n\nEnunciado: Conforme a la reserva, protección de datos personales y reglas de acceso a la información tributaria, el Gestor I debe:",
+                "options": [
+                    "Entregar la copia completa del RUT a cualquier solicitante que conozca el NIT, porque el registro es público para efectos comerciales.",
+                    "Suministrar la información únicamente al titular o a quien acredite legitimación, aplicando las restricciones legales sobre datos y reserva cuando corresponda.",
+                    "Publicar el certificado en el expediente físico del Punto de Contacto para consulta abierta, facilitando la transparencia de la información registral."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el acceso a información del RUT debe respetar legitimación, protección de datos y reservas legales aplicables. A y C exponen datos indebidamente."
+            },
+            {
+                "id": "m3_c24",
+                "text": "Caso: Una persona jurídica formaliza su inscripción en el RUT y pregunta al Gestor I cuál es la utilidad de mantener actualizada la casilla de responsabilidades, calidades y atributos.\n\nEnunciado: La orientación correcta del Gestor I es explicar que esta información:",
+                "options": [
+                    "Es meramente informativa y no afecta el cumplimiento de obligaciones tributarias, aduaneras o cambiarias mientras se presenten las declaraciones a tiempo.",
+                    "Permite a la DIAN identificar obligaciones, clasificar al administrado y dirigir comunicaciones y controles conforme a su situación fiscal real.",
+                    "Solo se utiliza para fines estadísticos internos y puede permanecer desactualizada hasta que la entidad requiera una actualización masiva."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: las responsabilidades/calidades determinan obligaciones formales y sustanciales, clasificación y gestión de comunicaciones/controles. A y C minimizan efectos jurídicos y operativos relevantes."
+            },
+            {
+                "id": "m3_c25",
+                "text": "Caso: Un contribuyente persona natural solicita cancelar su inscripción en el RUT porque cerró su actividad económica, pero aún tiene obligaciones tributarias pendientes de periodos anteriores.\n\nEnunciado: Conforme al artículo 555-2 del E.T. y a los procedimientos registrales, el Gestor I debe:",
+                "options": [
+                    "Cancelar la inscripción de forma inmediata, ya que el cese de actividades extingue automáticamente cualquier obligación formal o sustancial anterior.",
+                    "Orientar que la cancelación/suspensión del RUT está sujeta a verificación de requisitos legales y que el cese de actividades no elimina por sí solo obligaciones pendientes.",
+                    "Rechazar definitivamente la solicitud sin análisis, indicando que ninguna inscripción en el RUT puede cancelarse una vez asignado el NIT."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la situación registral debe revisarse conforme a norma; el cierre de actividad no borra obligaciones previas y pueden existir restricciones o trámites específicos. A y C son afirmaciones absolutas incorrectas."
             }
         ]
     },
     {
         "id": "m4",
+        "examArea": "funcional",
         "title": "Módulo 4: Atención al Ciudadano y Canales TACI",
         "navLabel": "🤝 M.4: Atención y Canales",
         "homeLabel": "Módulo 4: Atención al Ciudadano y Canales TACI",
@@ -701,11 +1037,122 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es la correcta. La Resolución 065 de 2024 consagra el trato respetuoso, empático y humanizado, orientando al ciudadano en situación de vulnerabilidad con claridad y disposición de servicio. Las opciones A y C carecen de sensibilidad ética y profesional."
+            },
+            {
+                "id": "m4_c16",
+                "text": "Caso: Un adulto mayor con dificultad para usar medios digitales llega al Punto de Contacto sin cita previa para obtener orientación sobre la actualización de su RUT.\n\nEnunciado: Conforme a los principios de atención al ciudadano, enfoque diferencial y canales TACI, el Gestor I debe:",
+                "options": [
+                    "Indicarle que todos los trámites deben gestionarse exclusivamente por autogestión web y que regrese cuando un familiar pueda diligenciar el formulario en línea.",
+                    "Brindar orientación clara y prioritaria según las reglas de atención diferencial, explicarle las opciones presenciales y digitales disponibles y apoyarlo en el encauzamiento del trámite.",
+                    "Entregarle un instructivo general impreso sin verificar si comprende los pasos, para mantener el tiempo promedio de atención de la ventanilla."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el servicio debe ser accesible, con enfoque diferencial y lenguaje claro, orientando al usuario según su necesidad y capacidad. A crea una barrera injustificada y C incumple el deber de orientación efectiva."
+            },
+            {
+                "id": "m4_c17",
+                "text": "Caso: Un contribuyente manifiesta inconformidad porque recibió información diferente en el contact center telefónico y en el Punto de Contacto sobre el mismo trámite del RUT.\n\nEnunciado: Desde la perspectiva de gestión de servicio y confiabilidad de la información institucional, el Gestor I debe:",
+                "options": [
+                    "Sostener la información dada en ventanilla sin verificar fuentes, indicando que los canales telefónicos suelen cometer errores de interpretación.",
+                    "Verificar el procedimiento vigente en las fuentes oficiales, aclarar la información correcta al ciudadano con lenguaje claro y reportar la inconsistencia por el mecanismo interno definido.",
+                    "Sugerir al ciudadano que presente una tutela de inmediato, ya que la contradicción entre canales constituye una vulneración automática de sus derechos."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la DIAN debe ofrecer información consistente y verificable; el servidor corrige con base en fuentes oficiales y gestiona la mejora. A no resuelve el problema y C es desproporcionado sin agotar la gestión de servicio."
+            },
+            {
+                "id": "m4_c18",
+                "text": "Caso: Durante la atención, el Gestor I identifica que el usuario puede completar parte de su solicitud mediante autogestión guiada en un kiosco digital del Punto de Contacto.\n\nEnunciado: Conforme a la estrategia de canales de atención y promoción de la autogestión, la actuación adecuada es:",
+                "options": [
+                    "Realizar todo el trámite en ventanilla sin mencionar el kiosco, para evitar que el usuario cometa errores en la plataforma digital.",
+                    "Orientar al usuario sobre el uso del kiosco de autogestión guiada, verificar si requiere apoyo y asegurar que comprenda los pasos y soportes necesarios.",
+                    "Exigir que el usuario utilice el kiosco sin asistencia, aun cuando manifieste no entender el proceso, para reducir la fila de atención presencial."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: promover autogestión no significa abandonar al ciudadano; se debe orientar y acompañar según necesidad, garantizando eficacia y comprensión. A desaprovecha el canal y C traslada indebidamente el riesgo al usuario."
+            },
+            {
+                "id": "m4_c19",
+                "text": "Caso: Un ciudadano solicita ayuda para recuperar el acceso a su cuenta en el portal transaccional y habilitar mecanismos de firma/autenticación electrónica para trámites ante la DIAN.\n\nEnunciado: En el marco de los servicios digitales y de seguridad de la información, el Gestor I debe:",
+                "options": [
+                    "Solicitar al usuario sus claves personales para ingresarlas desde el equipo de ventanilla y resolver rápidamente el problema de acceso.",
+                    "Orientar el procedimiento oficial de recuperación/habilitación, verificar identidad por los medios previstos y remitir al canal técnico competente cuando el caso lo requiera, sin solicitar contraseñas.",
+                    "Crear una nueva cuenta con datos alternos para evitar el proceso de recuperación, informando al usuario que podrá unificarla más adelante."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: los mecanismos de autenticación/firma exigen protección de credenciales y verificación de identidad; el servidor nunca debe pedir claves. A y C comprometen la seguridad y la integridad del registro."
+            },
+            {
+                "id": "m4_c20",
+                "text": "Caso: En una jornada de atención masiva, varios usuarios se quejan por la falta de claridad en los requisitos para formalizar una inscripción en el RUT.\n\nEnunciado: Aplicando la política de lenguaje claro y mejora del servicio, el Gestor I debe:",
+                "options": [
+                    "Mantener la explicación técnica habitual, ya que los requisitos tributarios no pueden simplificarse sin perder precisión jurídica.",
+                    "Explicar los requisitos con lenguaje claro, confirmar la comprensión del usuario, entregar orientación consistente y comunicar la necesidad recurrente a su coordinador para ajustar la información al ciudadano.",
+                    "Responder únicamente remitiendo al usuario a la norma general, sin traducir los requisitos al caso concreto ni verificar si entendió el procedimiento."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: lenguaje claro mejora acceso efectivo al servicio sin sacrificar corrección; además, identificar patrones permite mejorar la atención. A y C dificultan la comprensión y aumentan reprocesos."
+            },
+            {
+                "id": "m4_c21",
+                "text": "Caso: Una persona en condición de discapacidad auditiva requiere orientación para radicar una solicitud relacionada con su RUT y manifiesta barreras de comunicación en el Punto de Contacto.\n\nEnunciado: Conforme al enfoque diferencial y a los deberes de servicio incluyente, el Gestor I debe:",
+                "options": [
+                    "Atender la solicitud solo si el usuario acude con un intérprete particular, debido a que la DIAN no realiza ajustes en la atención presencial.",
+                    "Aplicar los ajustes razonables y apoyos disponibles en el punto, comunicar la información por medios accesibles y garantizar la comprensión y el trámite efectivo de la solicitud.",
+                    "Limitar la atención a la entrega de un formato físico para que el usuario lo diligencie en casa, sin verificar si puede acceder a la información requerida."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el servicio debe ser incluyente y efectivo, con ajustes razonables y comunicación accesible. A y C generan barreras discriminatorias."
+            },
+            {
+                "id": "m4_c22",
+                "text": "Caso: Un usuario agenda una cita virtual para orientación, pero el día de la atención no puede conectarse por fallas de conectividad en su zona.\n\nEnunciado: De acuerdo con la gestión de canales y continuidad del servicio, el Gestor I debe:",
+                "options": [
+                    "Cerrar la cita como inasistencia sin ofrecer alternativas, indicando que la responsabilidad técnica del canal es exclusiva del ciudadano.",
+                    "Orientar sobre la reprogramación y los canales alternos disponibles (presencial, telefónico u otros habilitados), registrando la novedad según el procedimiento.",
+                    "Realizar la orientación por un canal personal no institucional del funcionario para evitar la reprogramación, sin dejar trazabilidad del servicio."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la entidad debe facilitar continuidad del servicio por canales oficiales y con trazabilidad. A ignora el deber de orientación y C afecta seguridad y registro institucional."
+            },
+            {
+                "id": "m4_c23",
+                "text": "Caso: Al finalizar una atención, el Gestor I debe registrar la tipificación del trámite y el resultado de la orientación brindada en el sistema de gestión del Punto de Contacto.\n\nEnunciado: Esta práctica es importante principalmente porque:",
+                "options": [
+                    "Permite medir tiempos, calidad y trazabilidad del servicio, generando información para la gestión, seguimiento y mejora institucional.",
+                    "Sirve únicamente para cumplir un requisito formal sin impacto en la planeación, estadísticas o mejora de los canales de atención.",
+                    "Faculta al funcionario para modificar posteriormente los datos del usuario en el RUT sin soportes, siempre que la tipificación quede completa."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: la tipificación y registro soportan trazabilidad, indicadores y mejora del servicio. B desconoce su utilidad y C atribuye una facultad indebida sobre datos registrales."
+            },
+            {
+                "id": "m4_c24",
+                "text": "Caso: Un ciudadano llega alterado por una devolución de documentos y utiliza un tono ofensivo contra el Gestor I en el Punto de Contacto.\n\nEnunciado: Conforme a los protocolos de servicio, respeto y seguridad, la actuación más adecuada es:",
+                "options": [
+                    "Responder con el mismo tono para imponer autoridad y demostrar que el funcionario no acepta faltas de respeto en la ventanilla.",
+                    "Mantener una comunicación respetuosa y asertiva, explicar con claridad las razones del procedimiento, intentar desescalar la situación y acudir al protocolo de apoyo si hay riesgo.",
+                    "Suspender la atención de inmediato sin explicación y ordenar el retiro del ciudadano, sin activar ningún protocolo ni registrar lo ocurrido."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el servidor debe preservar el respeto, la claridad y la seguridad, aplicando protocolos ante conductas disruptivas. A escala el conflicto y C omite deberes de atención y registro."
+            },
+            {
+                "id": "m4_c25",
+                "text": "Caso: Un usuario pregunta si puede autorizar a otra persona para consultar información y adelantar gestiones en su nombre ante la DIAN.\n\nEnunciado: En materia de atención y seguridad del trámite, el Gestor I debe:",
+                "options": [
+                    "Permitir que cualquier tercero actúe con una autorización verbal del titular, siempre que conozca el número de documento y el NIT.",
+                    "Orientar sobre los requisitos de representación o autorización válidos según el trámite, verificando identidad y soportes antes de permitir actuaciones de terceros.",
+                    "Negar toda posibilidad de representación, indicando que los trámites ante la DIAN son siempre personales e indelegables."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la actuación de terceros requiere legitimación idónea y verificación; la regla varía según el trámite. A compromete seguridad y C desconoce figuras válidas de representación."
             }
         ]
     },
     {
         "id": "m5",
+        "examArea": "funcional",
         "title": "Módulo 5: Cultura Tributaria y Obligaciones TACI",
         "navLabel": "💡 M.5: Cultura y Obligaciones",
         "homeLabel": "Módulo 5: Cultura Tributaria y Obligaciones TACI",
@@ -875,11 +1322,122 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es la correcta. La retención en la fuente de IVA (Art. 437-1 E.T.) consiste en retener hasta el 15% del valor del impuesto generado en la operación para transferirlo a la DIAN como recaudo anticipado. Las opciones A y C desconocen el mecanismo de retención."
+            },
+            {
+                "id": "m5_c16",
+                "text": "Caso: Un pequeño comerciante consulta al Gestor I por qué debe expedir factura electrónica y qué riesgo corre si continúa entregando comprobantes informales.\n\nEnunciado: De acuerdo con la cultura de la contribución y las obligaciones formales (Art. 615 y 616-1 E.T.), la orientación correcta es:",
+                "options": [
+                    "Indicar que la factura electrónica es opcional para pequeños comercios y solo se exige cuando el cliente la solicita expresamente para efectos contables.",
+                    "Explicar que la facturación electrónica es un mecanismo de soporte de operaciones sujeto a requisitos legales, y que su incumplimiento puede generar sanciones conforme a la normativa tributaria.",
+                    "Señalar que basta con registrar las ventas en un cuaderno interno, porque la DIAN valida las operaciones únicamente a través de la declaración anual."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el Gestor I debe orientar sobre la obligación formal y sus efectos, sin reemplazar asesoría particular pero dando información precisa. A y C minimizan obligaciones y riesgos legales."
+            },
+            {
+                "id": "m5_c17",
+                "text": "Caso: Durante una feria de formalización, un emprendedor pregunta la diferencia entre obligaciones sustanciales y obligaciones formales.\n\nEnunciado: La explicación ajustada que debe brindar el Gestor I es:",
+                "options": [
+                    "Las obligaciones sustanciales se refieren al pago del tributo debido, mientras que las formales comprenden deberes como inscribirse, declarar, facturar, informar y conservar soportes.",
+                    "Las obligaciones formales son las únicas exigibles a personas naturales, y las sustanciales aplican exclusivamente a grandes contribuyentes y personas jurídicas.",
+                    "No existe diferencia práctica entre ambas, porque el incumplimiento de cualquier deber tributario siempre se sanciona de la misma manera."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: distingue el deber material de pagar del conjunto de deberes instrumentales/procedimentales. B y C contienen errores conceptuales que afectan la orientación al ciudadano."
+            },
+            {
+                "id": "m5_c18",
+                "text": "Caso: Un responsable obligado a facturar electrónicamente sufre una falla tecnológica y no puede transmitir facturas al sistema autorizado durante algunas horas.\n\nEnunciado: En orientación general sobre facturación electrónica, el Gestor I debe indicar que:",
+                "options": [
+                    "Puede suspender todas las ventas hasta que el sistema se restablezca, porque no existe ningún mecanismo alterno para soportar operaciones en contingencia.",
+                    "Debe atender los procedimientos de contingencia previstos en la normativa de facturación electrónica y posteriormente cumplir la transmisión/regularización según las reglas aplicables.",
+                    "Puede emitir comprobantes informales sin requisitos y reportarlos acumulados al final del año, sin aplicar los esquemas de contingencia definidos por la DIAN."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la normativa prevé mecanismos de contingencia con condiciones y deberes posteriores; la orientación debe ser prudente y remitir a la regla vigente. A y C son inexactos."
+            },
+            {
+                "id": "m5_c19",
+                "text": "Caso: Un ciudadano consulta en un Núcleo de Apoyo Contable y Fiscal (NAF) cómo organizar sus soportes de ingresos y gastos para cumplir sus deberes tributarios.\n\nEnunciado: Conforme al propósito de los NAF y a la cultura de la contribución, el Gestor I debe:",
+                "options": [
+                    "Elaborar la contabilidad completa del ciudadano y firmar sus declaraciones, asumiendo la representación tributaria como parte del servicio NAF.",
+                    "Brindar orientación pedagógica sobre organización de soportes, deberes formales y uso de canales oficiales, sin sustituir la responsabilidad del obligado ni emitir asesoría particular vinculante.",
+                    "Indicar que los NAF solo atienden a grandes contribuyentes y remitir al ciudadano a un proceso de fiscalización para resolver sus dudas básicas."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: los NAF promueven cultura contributiva y orientación general; no reemplazan la responsabilidad del contribuyente ni funciones reservadas. A excede el alcance y C desconoce el propósito del programa."
+            },
+            {
+                "id": "m5_c20",
+                "text": "Caso: Un contribuyente manifiesta dificultad económica para cumplir una obligación en mora y pregunta qué opciones existen antes de enfrentar medidas de cobro.\n\nEnunciado: En una orientación inicial desde asistencia al usuario, el Gestor I debe:",
+                "options": [
+                    "Garantizar que la DIAN condonará automáticamente intereses y sanciones si el contribuyente explica verbalmente su situación económica en ventanilla.",
+                    "Informar de manera general sobre la importancia de atender la obligación, los canales oficiales para conocer el estado de cuenta y las alternativas previstas en la normativa, remitiendo a la dependencia competente cuando aplique.",
+                    "Aconsejar no presentar declaraciones ni realizar pagos hasta recibir una notificación de cobro coactivo, para evitar generar nuevos soportes en el sistema."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el Gestor I orienta con información general, verificable y por canales oficiales, sin prometer beneficios no automáticos. A crea falsas expectativas y C incentiva incumplimiento."
+            },
+            {
+                "id": "m5_c21",
+                "text": "Caso: Un microempresario pregunta si puede acogerse al Régimen Simple de Tributación (RST) y cuáles son las ventajas generales frente a su situación actual.\n\nEnunciado: La actuación adecuada del Gestor I es:",
+                "options": [
+                    "Confirmar de inmediato su inclusión en el RST porque todo microempresario califica automáticamente por tener bajos ingresos.",
+                    "Orientar sobre la existencia del RST (Art. 903 E.T. y normas reglamentarias), explicar que su procedencia depende del cumplimiento de requisitos y remitir a las fuentes oficiales para validar su caso.",
+                    "Negar la posibilidad sin revisar criterios generales, indicando que el RST fue eliminado y que todos los contribuyentes deben tributar por el régimen ordinario."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la orientación debe ser precisa, condicionada a requisitos legales y basada en fuentes oficiales. A y C entregan información incorrecta."
+            },
+            {
+                "id": "m5_c22",
+                "text": "Caso: Un contribuyente consulta si puede descontar cualquier gasto personal en sus obligaciones tributarias solo por contar con un recibo de pago.\n\nEnunciado: En el marco de la cultura de la contribución y la correcta orientación, el Gestor I debe:",
+                "options": [
+                    "Afirmar que todo recibo permite disminuir impuestos, porque el soporte de pago demuestra automáticamente la procedencia fiscal del gasto.",
+                    "Explicar que los beneficios, costos o deducciones dependen de requisitos legales específicos y de la correcta sustentación, orientando a revisar la norma y canales oficiales aplicables.",
+                    "Indicar que la procedencia de costos y deducciones es una decisión discrecional del funcionario que atiende, según la apariencia razonable del soporte."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: no todo pago es deducible/procedente; la orientación debe evitar afirmaciones absolutas y remitir a requisitos normativos. A y C inducen error."
+            },
+            {
+                "id": "m5_c23",
+                "text": "Caso: En una actividad de pedagogía tributaria, varios asistentes confunden el deber de presentar una declaración informativa con el pago efectivo de un impuesto.\n\nEnunciado: La orientación más clara del Gestor I es:",
+                "options": [
+                    "Explicar que una declaración informativa comunica datos a la administración y no siempre implica pagar, mientras que la obligación sustancial consiste en pagar el tributo cuando exista.",
+                    "Indicar que toda declaración, sin excepción, genera un valor a pagar y que las declaraciones informativas solo cambian el nombre del impuesto.",
+                    "Señalar que las declaraciones informativas son opcionales y pueden omitirse si el contribuyente no tiene recursos para cumplir obligaciones formales."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: diferencia entre deberes formales de información y obligaciones de pago. B y C confunden conceptos y pueden generar incumplimiento."
+            },
+            {
+                "id": "m5_c24",
+                "text": "Caso: Un comerciante pregunta qué debe hacer si la DIAN establece la exigencia de facturación electrónica para su actividad y aún no ha adoptado el sistema.\n\nEnunciado: La orientación inicial adecuada del Gestor I es:",
+                "options": [
+                    "Recomendar esperar un requerimiento sancionatorio para iniciar la implementación, ya que las obligaciones tecnológicas solo se vuelven exigibles tras una fiscalización.",
+                    "Informar sobre la obligación de adoptar el mecanismo de facturación electrónica conforme a la normativa, consultar el calendario/condiciones aplicables y usar los canales oficiales y guías de habilitación.",
+                    "Sugerir continuar con facturación manual indefinidamente si el volumen de ventas es bajo, registrando las operaciones solo en medios privados."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la orientación debe promover cumplimiento oportuno, remitiendo a reglas, habilitación y canales oficiales. A y C promueven mora e incumplimiento."
+            },
+            {
+                "id": "m5_c25",
+                "text": "Caso: Un contribuyente pregunta por qué la DIAN insiste en conservar soportes de operaciones y declaraciones durante los plazos legales.\n\nEnunciado: La respuesta correcta del Gestor I es que la conservación de soportes:",
+                "options": [
+                    "Es un trámite opcional útil solo para estadísticas internas del contribuyente, sin relación con procesos de verificación o fiscalización.",
+                    "Permite acreditar la veracidad de las operaciones, atender requerimientos, ejercer el derecho de defensa y cumplir deberes formales dentro de los términos legales.",
+                    "Solo es necesaria cuando el contribuyente prevé solicitar una devolución, pudiendo eliminar los demás documentos al cierre de cada mes."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la conservación documental respalda cumplimiento, control y defensa del contribuyente. A y C desconocen su finalidad legal."
             }
         ]
     },
     {
         "id": "m6",
+        "examArea": "funcional",
         "title": "Módulo 6: MIPG, Reserva Legal y Transparencia",
         "navLabel": "🔒 M.6: MIPG y Reserva",
         "homeLabel": "Módulo 6: MIPG, Reserva Legal y Transparencia",
@@ -1049,11 +1607,122 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es la correcta. El artículo 90 de la C.P. impone al Estado el deber de repetir contra el servidor que con dolo o culpa grave haya causado una condena judicial en contra de la entidad. Las opciones A y C plantean la impunidad fiscal contraria a la Carta."
+            },
+            {
+                "id": "m6_c16",
+                "text": "Caso: En una revisión de procesos del Punto de Contacto, el Gestor I detecta que se reciben documentos sin lista de verificación estandarizada, lo que genera reprocesos frecuentes.\n\nEnunciado: Desde el Modelo Integrado de Planeación y Gestión (MIPG) y la cultura de control, la acción más apropiada es:",
+                "options": [
+                    "Continuar con la práctica actual porque cada funcionario puede definir su propio método de revisión según la experiencia adquirida en ventanilla.",
+                    "Proponer y aplicar, según el procedimiento, un control operativo sencillo (como lista de verificación) para prevenir errores y reportar la mejora al responsable del proceso.",
+                    "Trasladar la responsabilidad a la Oficina de Control Interno para que diseñe todos los controles operativos, sin intervenir en la mejora del proceso."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la primera línea de defensa gestiona riesgos y controles diarios; MIPG promueve mejora continua y autocontrol. A perpetúa el riesgo y C desconoce la corresponsabilidad operativa."
+            },
+            {
+                "id": "m6_c17",
+                "text": "Caso: Un contratista solicita acceso a una base de datos con información tributaria de contribuyentes para cruzar estadísticas de atención, sin que ello esté previsto en el objeto contractual.\n\nEnunciado: Conforme a la reserva legal tributaria (Arts. 583 y 584 E.T.) y al principio de finalidad, el Gestor I debe:",
+                "options": [
+                    "Autorizar el acceso si el contratista firma un acuerdo de confidencialidad verbal, porque la información se usará solo con fines estadísticos.",
+                    "Negar el acceso no autorizado y orientar que cualquier tratamiento de información reservada debe contar con habilitación legal, necesidad funcional y controles formales.",
+                    "Entregar la información anonimizada por iniciativa propia, sin validación institucional, para apoyar la elaboración de estadísticas externas."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la información tributaria está protegida por reserva; su acceso exige sustento legal y controles. A y C exponen datos sin autorización válida."
+            },
+            {
+                "id": "m6_c18",
+                "text": "Caso: Un ciudadano presenta una solicitud de acceso a información pública sobre estadísticas agregadas de atención en los Puntos de Contacto, sin pedir datos personales de contribuyentes.\n\nEnunciado: De acuerdo con la Ley 1712 de 2014 (Transparencia y Acceso a la Información Pública), la DIAN debe:",
+                "options": [
+                    "Entregar la información pública disponible en los términos legales, siempre que no esté sujeta a reserva o excepción constitucional/legal.",
+                    "Negar toda solicitud de información estadística porque la DIAN maneja datos tributarios y toda su información es reservada.",
+                    "Responder únicamente si el solicitante demuestra un interés directo y acredita la finalidad judicial de la solicitud."
+                ],
+                "correct": 0,
+                "explanation": "La opción A es correcta: la transparencia es la regla general para información pública no reservada; la reserva tributaria protege datos específicos, no impide estadísticas agregadas públicas. B y C aplican excepciones de forma indebida."
+            },
+            {
+                "id": "m6_c19",
+                "text": "Caso: En la gestión de un expediente físico de trámites del RUT, el Gestor I encuentra documentos sin foliar y sin clasificación clara en la serie documental correspondiente.\n\nEnunciado: Conforme a la gestión documental y archivo (Ley 594 de 2000 y lineamientos institucionales), la actuación correcta es:",
+                "options": [
+                    "Archivar los documentos tal como se encuentran para no alterar el orden en que fueron recibidos, aunque no exista foliado ni clasificación.",
+                    "Organizar el expediente conforme a los principios de orden, procedencia y foliación, aplicando las tablas de retención/documentales y reportando la novedad si afecta el control del archivo.",
+                    "Digitalizar los documentos y destruir los soportes físicos de inmediato para ahorrar espacio, sin validar tablas de retención ni autorización."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la gestión documental exige organización, trazabilidad y cumplimiento de instrumentos archivísticos. A mantiene el desorden y C puede vulnerar reglas de conservación/eliminación."
+            },
+            {
+                "id": "m6_c20",
+                "text": "Caso: El equipo del Punto de Contacto recibe resultados de una medición de experiencia del ciudadano que evidencian demoras en la orientación inicial.\n\nEnunciado: En el marco de MIPG (gestión por resultados y mejora continua), el Gestor I debe:",
+                "options": [
+                    "Desestimar la medición porque la percepción ciudadana es subjetiva y no se relaciona con el cumplimiento de metas institucionales.",
+                    "Analizar las causas operativas de la demora, participar en acciones de mejora dentro de su rol y aplicar ajustes que favorezcan oportunidad y calidad del servicio.",
+                    "Aumentar el ritmo de atención omitiendo explicaciones necesarias, para mejorar el indicador de tiempo sin considerar la efectividad de la orientación."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: MIPG impulsa decisiones basadas en información y mejora continua; el servicio debe ser oportuno y efectivo. A ignora evidencia útil y C sacrifica calidad."
+            },
+            {
+                "id": "m6_c21",
+                "text": "Caso: Un funcionario de otra entidad solicita por teléfono información puntual de la declaración de renta de un contribuyente para una verificación interna.\n\nEnunciado: Conforme al artículo 583 del E.T. y a los procedimientos de intercambio de información, el Gestor I debe:",
+                "options": [
+                    "Suministrar la información por teléfono para colaborar con la otra entidad, siempre que el solicitante indique su cargo y la finalidad de la consulta.",
+                    "Abstenerse de entregar información reservada por canales no formales y orientar que el intercambio debe tramitarse por los mecanismos legales e institucionales autorizados.",
+                    "Enviar una captura de pantalla del sistema al correo personal del solicitante para agilizar la cooperación interinstitucional."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la reserva tributaria exige canales formales y habilitación legal para cualquier acceso o intercambio. A y C violan la reserva y controles de seguridad."
+            },
+            {
+                "id": "m6_c22",
+                "text": "Caso: La dirección de la seccional define una acción preventiva para reducir el riesgo de suplantación en trámites del RUT, asignando responsabilidades a los Gestores I.\n\nEnunciado: Dentro del esquema de gestión de riesgos de MIPG, esta actuación corresponde principalmente a:",
+                "options": [
+                    "La tercera línea de defensa, porque toda medida preventiva debe ser ejecutada únicamente por la Oficina de Control Interno.",
+                    "La primera y segunda línea según sus roles: operación y supervisión/asesoría implementan controles, mientras la auditoría interna evalúa independientemente.",
+                    "Un mecanismo ajeno a MIPG, dado que la gestión de riesgos solo aplica a procesos financieros y de recaudo."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el modelo de tres líneas distribuye responsabilidades entre gestión operativa, funciones de soporte/riesgo y aseguramiento independiente. A y C interpretan erróneamente el modelo."
+            },
+            {
+                "id": "m6_c23",
+                "text": "Caso: Un ciudadano solicita conocer qué datos personales asociados a su RUT conserva la DIAN y pide corrección de uno de ellos por estar desactualizado.\n\nEnunciado: En coordinación con las normas de protección de datos y atención al ciudadano, el Gestor I debe:",
+                "options": [
+                    "Negar la solicitud indicando que los datos del RUT no pueden ser consultados ni corregidos por el titular una vez inscritos.",
+                    "Orientar al titular sobre los canales y requisitos para el ejercicio de sus derechos y gestionar la corrección registral cuando proceda, previa verificación de identidad y soportes.",
+                    "Modificar el dato sin verificación para atender rápidamente al ciudadano, asumiendo que el titular siempre conoce la información correcta."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: el titular puede solicitar acceso/corrección por canales definidos, con verificación y soportes para proteger la integridad del registro. A y C son incorrectos y riesgosos."
+            },
+            {
+                "id": "m6_c24",
+                "text": "Caso: Al preparar un informe de gestión, el Gestor I identifica que un indicador fue calculado con datos incompletos por un error en la fuente de información.\n\nEnunciado: Conforme a los principios de transparencia, integridad de la información y control, el Gestor I debe:",
+                "options": [
+                    "Mantener el indicador publicado para no afectar la imagen del área, esperando corregirlo en el siguiente periodo de reporte.",
+                    "Informar oportunamente la inconsistencia, corregir el dato con sustento verificable y dejar trazabilidad del ajuste realizado.",
+                    "Eliminar el indicador del informe sin explicación, evitando referencias a la fuente o al método de cálculo utilizado."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la información de gestión debe ser veraz y trazable; corregir transparentemente fortalece el control y la confianza. A y C afectan la integridad institucional."
+            },
+            {
+                "id": "m6_c25",
+                "text": "Caso: Un líder de proceso solicita al Gestor I compartir por un grupo de mensajería no institucional el listado de contribuyentes citados para una jornada de asistencia, para agilizar la logística.\n\nEnunciado: Conforme a la seguridad de la información, reserva y gobierno de datos, el Gestor I debe:",
+                "options": [
+                    "Compartir el listado por el canal solicitado, siempre que los participantes del grupo sean funcionarios o contratistas de la entidad.",
+                    "Usar únicamente canales institucionales autorizados y verificar que la información compartida sea la mínima necesaria conforme a la finalidad y permisos aplicables.",
+                    "Publicar el listado en un archivo accesible para todo el equipo sin controles, para facilitar la consulta durante la jornada."
+                ],
+                "correct": 1,
+                "explanation": "La opción B es correcta: la protección de datos exige canales seguros, minimización y autorización. A y C exponen información sensible en canales o accesos no controlados."
             }
         ]
     },
     {
         "id": "m7",
+        "examArea": "comportamental_integridad",
         "title": "Módulo 7: Competencias Res. 065 de 2024",
         "navLabel": "⭐ M.7: Competencias 065",
         "homeLabel": "Módulo 7: Competencias Comportamentales Res. 065 de 2024",
@@ -1061,6 +1730,7 @@
         "cases": [
             {
                 "id": "m7_c1",
+                "examSubArea": "comportamental",
                 "text": "Caso: Faltando diez minutos para concluir la jornada de atención presencial en el Punto de Contacto, ingresa un ciudadano de la tercera edad con un turno prioritario para tramitar el RUT.\n\nEnunciado: Demostrando la competencia de \"Orientación al Usuario y al Ciudadano\" (Nivel Profesional - Res. 065 de 2024), el Gestor I debe:",
                 "options": [
                     "Indicarle con firmeza que la jornada laboral está a punto de culminar y que debe regresar a primera hora del día siguiente para ser atendido sin afán.",
@@ -1072,6 +1742,7 @@
             },
             {
                 "id": "m7_c2",
+                "examSubArea": "comportamental",
                 "text": "Caso: Durante una contingencia por caída temporal de los servidores del Muisca, varios usuarios en la sala de espera manifiestan exasperación y desconfianza en el servicio.\n\nEnunciado: Demostrando la competencia de \"Comunicación Efectiva\" (Nivel Profesional - Res. 065 de 2024), al Gestor I le corresponde:",
                 "options": [
                     "Permanecer en silencio en su puesto de trabajo con la mirada fija en el monitor a la espera de que los ingenieros de sistemas informáticos resuelvan la falla.",
@@ -1083,6 +1754,7 @@
             },
             {
                 "id": "m7_c3",
+                "examSubArea": "comportamental",
                 "text": "Caso: Un funcionario nuevo con nombramiento en período de prueba se incorpora al equipo de asistencia en el Punto de Contacto y muestra dudas en el manejo del módulo de RUT.\n\nEnunciado: Demostrando la competencia de \"Trabajo en Equipo\" (Nivel Profesional - Res. 065 de 2024), el Gestor I con mayor experiencia debe:",
                 "options": [
                     "Dejar que el nuevo servidor resuelva solo sus dudas operativas, en consideración a que la superación del período de prueba es una responsabilidad exclusivamente individual.",
@@ -1094,6 +1766,7 @@
             },
             {
                 "id": "m7_c4",
+                "examSubArea": "comportamental",
                 "text": "Caso: La DIAN expide una nueva resolución que modifica integralmente el trámite de retiro de responsabilidades tributarias en el RUT mediante un nuevo procedimiento digital.\n\nEnunciado: Demostrando la competencia de \"Adaptabilidad\" (Nivel Profesional - Res. 065 de 2024), el Gestor I debe:",
                 "options": [
                     "Manifestar inconformidad ante el cambio y continuar aplicando el procedimiento anterior argumentando que el nuevo sistema digital es dispendioso y poco intuitivo.",
@@ -1105,6 +1778,7 @@
             },
             {
                 "id": "m7_c5",
+                "examSubArea": "comportamental",
                 "text": "Caso: Al finalizar el trimestre, la Subdirección asigna una meta exigente de atención y depuración de radicados acumulados en el Punto de Contacto de la seccional.\n\nEnunciado: Demostrando la competencia de \"Orientación al Logro\" (Nivel Profesional - Res. 065 de 2024), el Gestor I debe:",
                 "options": [
                     "Rechazar la meta asignada manifestando al superior que no asumirá más trabajo del habitual sin la expedición previa de una resolución de horas extras remuneradas.",
@@ -1116,6 +1790,7 @@
             },
             {
                 "id": "m7_c6",
+                "examSubArea": "integridad",
                 "text": "Caso: Durante la verificación de una solicitud de actualización del RUT, el Gestor I advierte que el peticionario es un amigo de infancia que le pide omitir un requisito reglamentario menor.\n\nEnunciado: Demostrando la competencia de \"Comportamiento Ético\" (Nivel Profesional - Res. 065 de 2024), el servidor debe:",
                 "options": [
                     "Acceder a la solicitud del amigo en virtud del principio de confianza legítima, considerando que la omisión de un documento formal no genera un perjuicio económico al Estado.",
@@ -1127,6 +1802,7 @@
             },
             {
                 "id": "m7_c7",
+                "examSubArea": "comportamental",
                 "text": "Caso: En el Punto de Contacto se presentan fallas recurrentes en el agendamiento presencial de citas, provocando congestiones imprevistas en la recepción de la sede.\n\nEnunciado: Demostrando la competencia de \"Iniciativa\" (Nivel Profesional - Res. 065 de 2024), al Gestor I le corresponde:",
                 "options": [
                     "Limitarse a atender exclusivamente los turnos que logren ingresar a su ventanilla, sin proponer ninguna acción frente al desorden que se observa en la sala de espera.",
@@ -1138,6 +1814,7 @@
             },
             {
                 "id": "m7_c8",
+                "examSubArea": "comportamental",
                 "text": "Caso: El Gestor I nota que muchos ciudadanos adultos mayores no logran descargar la copia de su RUT desde los kioscos de autogestión por dificultades de lectura digital.\n\nEnunciado: Demostrando la competencia de \"Innovación\" (Nivel Profesional - Res. 065 de 2024), el funcionario debe:",
                 "options": [
                     "Proponer que se eliminen los kioscos de autogestión de la seccional y se regrese a la entrega exclusiva de formularios de papel litográfico impreso.",
@@ -1149,6 +1826,7 @@
             },
             {
                 "id": "m7_c9",
+                "examSubArea": "comportamental",
                 "text": "Caso: En una auditoría de calidad se identifican inconsistencias en varios trámites de suspensión del RUT por falta de uniformidad en los criterios de los funcionarios de ventanilla.\n\nEnunciado: Demostrando la competencia de \"Solución de Problemas\" (Nivel Profesional - Res. 065 de 2024), el Gestor I debe:",
                 "options": [
                     "Atribuir la responsabilidad de las fallas a los funcionarios de la jornada vespertina, deslindándose de cualquier compromiso en la corrección de los procesos.",
@@ -1160,6 +1838,7 @@
             },
             {
                 "id": "m7_c10",
+                "examSubArea": "integridad",
                 "text": "Caso: Un Gestor I desempeña sus funciones en la modalidad de teletrabajo o esquema híbrido en el subproceso de Asistencia al Usuario de la Dirección Seccional.\n\nEnunciado: Conforme a la competencia de \"Autogestión del Trabajo\" (Nivel Profesional - Capítulo V Res. 065 de 2024), el servidor debe:",
                 "options": [
                     "Desconectarse de los canales de comunicación institucional y atender las solicitudes únicamente cuando su disponibilidad personal se lo permita.",
@@ -1171,6 +1850,7 @@
             },
             {
                 "id": "m7_c11",
+                "examSubArea": "comportamental",
                 "text": "Caso: En una reunión de grupo se genera un desacuerdo entre dos compañeros sobre la interpretación de un decreto reglamentario sobre retención en la fuente.\n\nEnunciado: Aplicando la competencia de \"Liderazgo de Servicio y Clima Laboral\" (Res. 065 de 2024), el Gestor I debe:",
                 "options": [
                     "Tomar partido de manera agresiva por uno de los compañeros, desacreditando públicamente los conocimientos técnicos del otro funcionario ante el coordinador.",
@@ -1182,6 +1862,7 @@
             },
             {
                 "id": "m7_c12",
+                "examSubArea": "integridad",
                 "text": "Caso: Un contribuyente se niega a firmar el acuse de recibo de una orientación en ventanilla y acusa al funcionario de incompetencia profesional sin fundamento objetivo.\n\nEnunciado: Conforme a la competencia de \"Negociación y Manejo de Conflictos\" (Res. 065 de 2024), el servidor público debe:",
                 "options": [
                     "Romper el formulario del trámite frente al contribuyente y negarle cualquier otra atención en el Punto de Contacto de la seccional.",
@@ -1193,6 +1874,7 @@
             },
             {
                 "id": "m7_c13",
+                "examSubArea": "integridad",
                 "text": "Caso: En época de vencimiento de declaraciones de renta, el Punto de Contacto atiende a más de 500 personas diarias, generando un ambiente de alta tensión y fatiga en el personal.\n\nEnunciado: Demostrando la competencia de \"Resiliencia y Control Emocional\" (Res. 065 de 2024), el Gestor I debe:",
                 "options": [
                     "Manifestar su frustración quejándose continuamente ante los usuarios para que estos comprendan el sacrificio que hacen los funcionarios públicos al atenderlos.",
@@ -1204,6 +1886,7 @@
             },
             {
                 "id": "m7_c14",
+                "examSubArea": "integridad",
                 "text": "Caso: Al revisar la documentación aportada para registrar una nueva empresa, el Gestor I nota que el certificado de existencia de Cámara de Comercio tiene sellos borrosos e indicios de alteración.\n\nEnunciado: Demostrando la competencia de \"Rigor Técnico y Minuciosidad\" (Res. 065 de 2024), el servidor debe:",
                 "options": [
                     "Ignorar los sellos borrosos y aprobar el trámite para no afectar los tiempos promedio de espera de la ventanilla ni generar molestias al usuario en sala.",
@@ -1215,6 +1898,7 @@
             },
             {
                 "id": "m7_c15",
+                "examSubArea": "integridad",
                 "text": "Caso: Un Gestor I es consultado por un usuario sobre cómo evadir legalmente el pago de una sanción tributaria en firme mediante maniobras de ocultamiento de bienes.\n\nEnunciado: Conforme a la competencia de \"Compromiso Institucional y Ética Pública\" (Res. 065 de 2024), el servidor debe:",
                 "options": [
                     "Brindarle la asesoría solicitada a título personal y confidencial fuera del Punto de Contacto, cobrándole honorarios profesionales privados como contador.",
@@ -1223,6 +1907,606 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B es la correcta. El compromiso institucional y la ética pública exigen actuar como guardianes de la legalidad y el recaudo público, rechazando cualquier forma de evasión o fraude fiscal. Las opciones A y C son conductas corruptas o evasivas."
+            },
+            {
+                "id": "m7_c16",
+                "examSubArea": "comportamental",
+                "text": "Caso: La DIAN actualiza el procedimiento para validar documentos en la inscripción del RUT y el Gestor I debe aplicar la nueva guía desde el día siguiente, aunque aún no domina todos los cambios.\n\nEnunciado: De acuerdo con la competencia de Adaptabilidad (Res. 065 de 2024), la conducta más alineada es:",
+                "options": [
+                    "Solicitar que se suspenda la aplicación del nuevo procedimiento hasta recibir una capacitación completa, manteniendo la práctica anterior durante varias semanas.",
+                    "Revisar la guía vigente, consultar las dudas por los canales internos, aplicar los cambios con disposición y ajustar su práctica para asegurar un servicio correcto.",
+                    "Aplicar el procedimiento anterior cuando haya fila, porque la adaptación solo es exigible en jornadas de baja demanda de usuarios."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Adaptabilidad: comprender el cambio, integrarlo oportunamente y ajustar la conducta para cumplir objetivos institucionales. A posterga indebidamente y C condiciona el cambio a la conveniencia operativa."
+            },
+            {
+                "id": "m7_c17",
+                "examSubArea": "integridad",
+                "text": "Caso: Un usuario insiste en que el Gestor I le \"ayude\" omitiendo un requisito documental para agilizar la actualización de su RUT, afirmando que otros funcionarios lo han hecho antes.\n\nEnunciado: Según la competencia de Comportamiento ético (Res. 065 de 2024) y el Código de Integridad DIAN, el Gestor I debe:",
+                "options": [
+                    "Omitir el requisito en esta ocasión para resolver la necesidad del ciudadano, siempre que el caso no genere un impacto inmediato en el recaudo.",
+                    "Actuar con integridad, explicar que no es posible omitir requisitos legales, aplicar el procedimiento correcto y ofrecer orientación clara sobre cómo cumplirlo.",
+                    "Trasladar al usuario a otra ventanilla sin explicación, evitando responder directamente a la solicitud de omitir el requisito."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra Comportamiento ético: coherencia entre principios y actuación, respeto por la norma y trato claro al ciudadano. A compromete la integridad y C no gestiona adecuadamente la situación."
+            },
+            {
+                "id": "m7_c18",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un contribuyente no comprende la explicación técnica sobre una inconsistencia en su RUT y manifiesta frustración porque ha recibido respuestas confusas.\n\nEnunciado: En aplicación de la competencia de Comunicación efectiva (Res. 065 de 2024), el Gestor I debe:",
+                "options": [
+                    "Repetir la misma explicación técnica con mayor velocidad para concluir la atención, asumiendo que el usuario entenderá si escucha nuevamente.",
+                    "Escuchar activamente, reformular la información con lenguaje claro, verificar la comprensión del ciudadano y confirmar los pasos concretos que debe seguir.",
+                    "Entregarle un enlace normativo sin contexto y dar por terminada la orientación, ya que la interpretación de las normas corresponde al usuario."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Comunicación efectiva: escucha, claridad, adaptación del mensaje y verificación de comprensión. A y C no aseguran que el mensaje sea entendido."
+            },
+            {
+                "id": "m7_c19",
+                "examSubArea": "comportamental",
+                "text": "Caso: El Gestor I tiene una meta diaria de orientaciones y, además, detecta errores recurrentes en la documentación presentada por los usuarios que retrasan los trámites.\n\nEnunciado: Conforme a la competencia de Orientación al logro (Res. 065 de 2024), la conducta más adecuada es:",
+                "options": [
+                    "Concentrarse solo en aumentar el número de atenciones, reduciendo las explicaciones para cumplir la meta aunque los usuarios cometan los mismos errores.",
+                    "Organizar su trabajo para cumplir las metas con calidad, identificar acciones que prevengan reprocesos y proponer mejoras que favorezcan resultados sostenibles.",
+                    "Suspender la atención cuando se presenten errores documentales, argumentando que los reprocesos impiden alcanzar los indicadores asignados."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evidencia Orientación al logro: cumplir objetivos con calidad, uso eficiente de recursos y responsabilidad por resultados. A prioriza cantidad sobre efectividad y C evade el problema."
+            },
+            {
+                "id": "m7_c20",
+                "examSubArea": "integridad",
+                "text": "Caso: Al final de la jornada, llega una usuaria que ha tenido dificultades para completar un trámite del RUT por falta de claridad en los requisitos y se encuentra preocupada por un vencimiento próximo.\n\nEnunciado: Según la competencia de Orientación al usuario y al ciudadano (Res. 065 de 2024), el Gestor I debe:",
+                "options": [
+                    "Indicarle que regrese otro día con todos los documentos, sin revisar su caso, porque la explicación detallada puede extender la jornada laboral.",
+                    "Atenderla con respeto y empatía, identificar su necesidad específica, brindarle información precisa y orientarla sobre la ruta más efectiva para cumplir el trámite.",
+                    "Remitirla a consultar la página web sin explicar los pasos aplicables a su situación, dado que la orientación personalizada no aplica ante vencimientos cercanos."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Orientación al usuario y al ciudadano: escucha, trato respetuoso y solución oportuna dentro de las competencias del cargo. A y C no responden efectivamente a la necesidad."
+            },
+            {
+                "id": "m7_c21",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un compañero nuevo del Punto de Contacto comete errores al orientar sobre canales digitales y solicita apoyo al Gestor I en medio de una jornada con alta demanda.\n\nEnunciado: De acuerdo con la competencia de Trabajo en equipo (Res. 065 de 2024), la conducta más apropiada es:",
+                "options": [
+                    "Evitar intervenir para no afectar su propio rendimiento, indicando que cada funcionario debe responder individualmente por sus atenciones.",
+                    "Brindar apoyo puntual y coordinado, compartir la información correcta y acordar mecanismos de consulta que ayuden al equipo a mantener la calidad del servicio.",
+                    "Corregir al compañero frente a los usuarios con un tono descalificador, para que los ciudadanos adviertan quién tiene mayor experiencia."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra Trabajo en equipo: colaboración, cumplimiento de objetivos comunes y comunicación respetuosa. A fragmenta el servicio y C afecta el clima laboral y la confianza ciudadana."
+            },
+            {
+                "id": "m7_c22",
+                "examSubArea": "integridad",
+                "text": "Caso: Dos usuarios presentan situaciones similares de actualización del RUT; uno es conocido de un funcionario del área y solicita ser atendido con mayor flexibilidad en la revisión documental.\n\nEnunciado: Alineado con los valores de Justicia y Honestidad del Código de Integridad DIAN, el Gestor I debe:",
+                "options": [
+                    "Aplicar criterios flexibles al usuario conocido para mantener una buena relación institucional, siempre que la diferencia no se registre formalmente.",
+                    "Tratar ambos casos con imparcialidad, aplicar los mismos requisitos y procedimientos, y explicar las decisiones con base en la norma y los soportes.",
+                    "Remitir ambos casos a otro día para evitar tomar una decisión, sin informar los criterios aplicables ni verificar la documentación presentada."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Justicia y Honestidad: imparcialidad, igualdad de trato y decisiones basadas en normas. A favorece indebidamente y C omite el deber de servicio."
+            },
+            {
+                "id": "m7_c23",
+                "examSubArea": "integridad",
+                "text": "Caso: Un Gestor I recibe retroalimentación sobre demoras en el registro de orientaciones y oportunidades de mejora en la calidad de sus respuestas.\n\nEnunciado: Conforme a las competencias de Compromiso con la organización y Orientación al logro, la respuesta más adecuada es:",
+                "options": [
+                    "Justificar las demoras atribuyéndolas exclusivamente a la alta demanda y continuar con la misma práctica de trabajo.",
+                    "Analizar la retroalimentación, ajustar su organización y tiempos de registro, y buscar apoyo o aprendizaje para mejorar la calidad y oportunidad del servicio.",
+                    "Solicitar que no se le asignen tareas de registro para concentrarse solo en la atención verbal a los ciudadanos."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evidencia compromiso y mejora continua: acepta retroalimentación, corrige y fortalece resultados. A niega la oportunidad de mejora y C desconoce responsabilidades del rol."
+            },
+            {
+                "id": "m7_c24",
+                "examSubArea": "integridad",
+                "text": "Caso: En el Punto de Contacto, un conocido le pide al Gestor I consultar en Muisca información tributaria de un tercero para \"verificar un negocio\", sin orden judicial ni autorización del titular.\n\nEnunciado: Conforme al valor de Honestidad y a la reserva legal tributaria, el Gestor I debe:",
+                "options": [
+                    "Realizar la consulta porque se trata de un conocido y compartir solo la información que considere no sensible.",
+                    "Negarse a consultar o divulgar información reservada, explicar los límites legales y proteger la confidencialidad de los datos del contribuyente.",
+                    "Consultar la información pero pedir al conocido que no la divulgue, dejando la gestión sin registro formal."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica Honestidad y cumplimiento de la reserva: los datos tributarios de terceros no se consultan ni divulgan sin habilitación legal. A y C vulneran la confidencialidad y exponen al servidor a sanciones."
+            },
+            {
+                "id": "m7_c25",
+                "examSubArea": "integridad",
+                "text": "Caso: Al recibir documentos para un trámite del RUT, el Gestor I detecta que un soporte parece alterado, pero el usuario presiona para que el trámite se acepte \"como está\".\n\nEnunciado: Desde el valor de Diligencia e integridad pública, la actuación correcta es:",
+                "options": [
+                    "Aceptar el documento para no afectar el tiempo de atención, asumiendo que el usuario responderá si hay alguna verificación posterior.",
+                    "Aplicar la verificación con debida diligencia, abstenerse de tramitar con soportes inconsistentes y orientar al ciudadano sobre los documentos válidos requeridos.",
+                    "Devolver todos los documentos sin explicación y cerrar la atención para evitar una discusión en ventanilla."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Diligencia e integridad: el servidor verifica soportes, protege la validez del trámite y orienta con claridad. A sacrifica el control y C omite el deber de orientación."
+            },
+            {
+                "id": "m7_c26",
+                "examSubArea": "integridad",
+                "text": "Caso: Un compañero sugiere registrar como atendidos a usuarios que se retiraron de la fila para mejorar los indicadores del Punto de Contacto.\n\nEnunciado: Conforme al valor de Honestidad y al compromiso con la información pública, el Gestor I debe:",
+                "options": [
+                    "Aceptar la sugerencia si el impacto es pequeño, porque los indicadores ayudan a mostrar la gestión del equipo.",
+                    "Rechazar el registro falso, mantener datos veraces y, si es necesario, reportar la práctica por los canales de integridad o control interno.",
+                    "Registrar solo una parte de los casos para no afectar tanto el indicador, compensando con atenciones reales del día siguiente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege la veracidad de la información institucional, pilar de la integridad pública. A y C manipulan indicadores y pueden configurar faltas."
+            },
+            {
+                "id": "m7_c27",
+                "examSubArea": "integridad",
+                "text": "Caso: Durante una orientación, un contribuyente hace un comentario discriminatorio sobre otro usuario en sala. El Gestor I debe continuar la atención.\n\nEnunciado: Alineado con el valor de Respeto, la conducta más adecuada es:",
+                "options": [
+                    "Ignorar el comentario para evitar retrasos y concentrarse únicamente en el trámite solicitado.",
+                    "Mantener un trato respetuoso y digno hacia todas las personas, no convalidar expresiones discriminatorias y asegurar que la atención se preste sin sesgos.",
+                    "Responder con un comentario similar para neutralizar la situación y mostrar cercanía con el usuario atendido."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica Respeto: reconoce la dignidad de todas las personas y evita conductas discriminatorias en el servicio público. A tolera la falta de respeto y C la reproduce."
+            },
+            {
+                "id": "m7_c28",
+                "examSubArea": "integridad",
+                "text": "Caso: El Gestor I recibe por error acceso a una carpeta compartida con información que no corresponde a sus funciones. Nadie más ha notado la situación.\n\nEnunciado: Conforme a Honestidad, Diligencia y seguridad de la información, debe:",
+                "options": [
+                    "Explorar la carpeta para conocer su contenido, ya que el acceso fue habilitado por el sistema.",
+                    "Abstenerse de consultar información no autorizada, reportar el acceso indebido por el canal correspondiente y proteger la confidencialidad.",
+                    "Descargar la información para tener evidencia personal antes de informar, guardándola en un dispositivo externo."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra integridad y cuidado de la información: no usar accesos indebidos y reportarlos oportunamente. A y C incrementan el riesgo de fuga o uso inapropiado."
+            },
+            {
+                "id": "m7_c29",
+                "examSubArea": "integridad",
+                "text": "Caso: Un usuario ofrece pagar \"por fuera\" para que su trámite del RUT sea gestionado el mismo día, saltando la validación completa de soportes.\n\nEnunciado: Frente a este ofrecimiento, el valor de Justicia y Honestidad exige que el Gestor I:",
+                "options": [
+                    "Rechazar el ofrecimiento, mantener el trámite bajo las reglas aplicables a todos los usuarios y actuar conforme al procedimiento y a la ley.",
+                    "Aceptar solo si el usuario tiene una urgencia demostrable, aplicando después la validación cuando haya menor demanda.",
+                    "Negociar una atención más rápida sin pago, pero omitiendo verificaciones menores para compensar el favor."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica Justicia y Honestidad: igualdad de trato, rechazo a beneficios indebidos y respeto del procedimiento. A y C introducen arbitrariedad o favorecimiento."
+            },
+            {
+                "id": "m7_c30",
+                "examSubArea": "integridad",
+                "text": "Caso: Al finalizar el día, el Gestor I advierte que olvidó registrar una actuación en el sistema, lo que puede afectar la trazabilidad del trámite de un contribuyente.\n\nEnunciado: Conforme al valor de Compromiso y responsabilidad, la conducta íntegra es:",
+                "options": [
+                    "Omitir el registro para no dejar evidencia del retraso y esperar que el caso no sea revisado.",
+                    "Registrar la actuación con veracidad tan pronto sea posible, siguiendo el procedimiento aplicable, e informar si se requiere corrección formal.",
+                    "Pedir a un compañero que registre la actuación con una hora diferente para que coincida con el flujo normal de atención."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Compromiso y Honestidad: corrige con transparencia y protege la trazabilidad. A y C encubren el error y afectan la confiabilidad institucional."
+            },
+            {
+                "id": "m7_c31",
+                "examSubArea": "integridad",
+                "text": "Caso: Un proveedor externo solicita al Gestor I información interna sobre tiempos de atención y debilidades operativas del Punto de Contacto para \"ajustar una propuesta comercial\".\n\nEnunciado: Desde la integridad y el debido uso de la información institucional, el Gestor I debe:",
+                "options": [
+                    "Compartir la información porque puede ayudar a mejorar el servicio, siempre que sea en una conversación informal.",
+                    "Abstenerse de entregar información interna no pública y remitir cualquier solicitud a los canales oficiales autorizados por la entidad.",
+                    "Enviar únicamente datos críticos por mensajería personal para evitar dejar rastro en los sistemas institucionales."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege la información institucional y evita conflictos de interés o uso indebido. A y C exponen datos sin autorización ni controles."
+            },
+            {
+                "id": "m7_c32",
+                "examSubArea": "integridad",
+                "text": "Caso: En una situación de alta presión, un usuario exige trato preferencial alegando influencia en la entidad. El Gestor I sabe que no existe causal legal de prioridad.\n\nEnunciado: Conforme a Justicia e imparcialidad, debe:",
+                "options": [
+                    "Ceder parcialmente a la exigencia para evitar una queja formal contra el Punto de Contacto.",
+                    "Aplicar las reglas de atención con imparcialidad, explicar con respeto los criterios de prioridad legal y mantener el orden del servicio.",
+                    "Trasladar al usuario a otra dependencia sin explicación, esperando que allí reciba el trato preferencial solicitado."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra Justicia: decisiones neutrales, basadas en reglas y sin favoritismos. A cede a presión indebida y C evade la responsabilidad."
+            },
+            {
+                "id": "m7_c33",
+                "examSubArea": "integridad",
+                "text": "Caso: El Gestor I identifica que un trámite propio de un familiar fue asignado a su ventanilla por distribución automática del turno.\n\nEnunciado: La actuación más íntegra es:",
+                "options": [
+                    "Atender el trámite con especial cuidado para demostrar que no habrá favoritismo, sin informar la relación familiar.",
+                    "Declarar el posible conflicto de interés/impedimento según corresponda y gestionar que el trámite sea atendido por otro funcionario imparcial.",
+                    "Acelerar el trámite para finalizarlo rápido y evitar cuestionamientos sobre el parentesco."
+                ],
+                "correct": 1,
+                "explanation": "La opción B previene el conflicto de interés y protege la imparcialidad del servicio. A mantiene la intervención en una situación riesgosa y C puede generar favoritismo o apariencia de irregularidad."
+            },
+            {
+                "id": "m7_c34",
+                "examSubArea": "integridad",
+                "text": "Caso: Un ciudadano entrega dinero adicional \"para agilizar fotocopias\" en el Punto de Contacto, aunque el servicio no tiene costo.\n\nEnunciado: Conforme a Honestidad y transparencia, el Gestor I debe:",
+                "options": [
+                    "Recibir el dinero si es un valor bajo y usarlo para materiales de oficina cuando falten insumos.",
+                    "Rechazar el pago indebido, informar con claridad que el servicio no tiene costo y orientar por el canal correcto si existe algún trámite legítimo asociado.",
+                    "Aceptar el dinero y devolverlo después, sin dejar registro ni informar a ningún responsable."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evita cualquier percepción o práctica de pago indebido y refuerza la transparencia. A y C no son compatibles con la integridad en el servicio público."
+            },
+            {
+                "id": "m7_c35",
+                "examSubArea": "comportamental",
+                "text": "Caso: A mitad de la mañana cambian las prioridades de atención por una jornada especial de RUT y el Gestor I debe apoyar una tarea distinta a la habitual.\n\nEnunciado: Según Adaptabilidad (Res. 065/2024), la conducta más efectiva es:",
+                "options": [
+                    "Mantenerse solo en su tarea habitual para evitar errores, aunque el equipo requiera apoyo en la nueva prioridad.",
+                    "Comprender la nueva prioridad, ajustar su organización, solicitar las orientaciones necesarias y apoyar con actitud flexible el objetivo de la jornada.",
+                    "Cumplir la nueva tarea con desinterés, limitándose al mínimo para que le reasignen rápidamente su función anterior."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Adaptabilidad: respuesta oportuna al cambio y alineación con objetivos institucionales. A y C dificultan la gestión de la jornada."
+            },
+            {
+                "id": "m7_c36",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un contribuyente entrega información incompleta y el Gestor I debe explicarle varias veces qué soporte falta para formalizar el trámite.\n\nEnunciado: En la competencia de Comunicación efectiva, el Gestor I debe:",
+                "options": [
+                    "Usar términos técnicos para que el usuario entienda la seriedad del requisito, aunque no verifique si la explicación fue clara.",
+                    "Explicar con lenguaje claro, confirmar qué entendió el ciudadano, señalar exactamente el soporte faltante y resumir los próximos pasos.",
+                    "Entregar un listado genérico de requisitos sin relacionarlo con el caso concreto del usuario."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evidencia Comunicación efectiva: claridad, verificación de comprensión y orientación concreta. A y C pueden generar confusión y reprocesos."
+            },
+            {
+                "id": "m7_c37",
+                "examSubArea": "comportamental",
+                "text": "Caso: El equipo del Punto de Contacto debe atender una fila mayor a la habitual y un compañero queda rezagado por un caso complejo.\n\nEnunciado: Según Trabajo en equipo, la mejor actuación del Gestor I es:",
+                "options": [
+                    "Enfocarse solo en sus propios turnos para mantener su rendimiento individual, sin apoyar al compañero.",
+                    "Coordinar apoyo cuando sea posible, compartir criterios claros y contribuir a que el equipo mantenga la calidad y oportunidad del servicio.",
+                    "Asumir el caso complejo sin coordinar con nadie, interrumpiendo otros procesos y sin comunicar el estado de la atención."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Trabajo en equipo: cooperación coordinada orientada al resultado común. A prioriza lo individual y C actúa sin articulación."
+            },
+            {
+                "id": "m7_c38",
+                "examSubArea": "comportamental",
+                "text": "Caso: El Gestor I identifica que muchos usuarios llegan sin el certificado correcto para un trámite recurrente del RUT.\n\nEnunciado: Desde Orientación al logro e Iniciativa, la conducta más valiosa es:",
+                "options": [
+                    "Continuar atendiendo caso por caso sin proponer cambios, porque la orientación previa no hace parte de sus metas.",
+                    "Proponer una mejora simple (mensaje claro, lista de verificación o pauta de orientación) para reducir reprocesos y apoyar el cumplimiento de metas de servicio.",
+                    "Suspender la atención de esos casos hasta que la dirección emita una instrucción formal sobre el requisito."
+                ],
+                "correct": 1,
+                "explanation": "La opción B combina iniciativa y orientación al logro: busca mejorar resultados y prevenir errores recurrentes. A y C no aportan solución."
+            },
+            {
+                "id": "m7_c39",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un usuario llega ansioso por un vencimiento cercano y tiene dificultad para entender el canal digital recomendado.\n\nEnunciado: Conforme a Orientación al usuario y al ciudadano, el Gestor I debe:",
+                "options": [
+                    "Remitirlo inmediatamente al canal digital sin evaluar su dificultad, para cumplir la política de autogestión.",
+                    "Escuchar su necesidad, explicarle con empatía las opciones disponibles y acompañarlo en la ruta más viable según su situación y capacidades.",
+                    "Indicarle que los vencimientos son responsabilidad exclusiva del contribuyente y continuar con el siguiente turno."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica orientación al usuario: empatía, claridad y solución efectiva. A aplica la autogestión sin apoyo y C carece de trato de servicio."
+            },
+            {
+                "id": "m7_c40",
+                "examSubArea": "comportamental",
+                "text": "Caso: Dos orientaciones previas de distintos canales generaron confusión en un contribuyente sobre el mismo trámite.\n\nEnunciado: Desde Solución de problemas, el Gestor I debe:",
+                "options": [
+                    "Elegir una de las versiones al azar para responder rápido y cerrar la atención.",
+                    "Analizar el caso, verificar la fuente normativa/procedimental vigente, explicar la respuesta correcta y orientar los pasos concretos para resolver la situación.",
+                    "Indicar al usuario que presente quejas contra ambos canales antes de recibir cualquier orientación adicional."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra Solución de problemas: análisis, verificación y respuesta fundamentada. A improvisa y C no resuelve la necesidad."
+            },
+            {
+                "id": "m7_c41",
+                "examSubArea": "comportamental",
+                "text": "Caso: Durante la atención, un usuario cuestiona con molestia los tiempos de espera, pero el Gestor I necesita obtener información para completar el trámite.\n\nEnunciado: La conducta que mejor integra Comunicación efectiva y control emocional es:",
+                "options": [
+                    "Responder con firmeza cortante para imponer respeto, evitando explicar los tiempos o el procedimiento.",
+                    "Mantener un tono respetuoso, escuchar la inquietud, explicar con claridad lo que se puede hacer y continuar con las preguntas necesarias para el trámite.",
+                    "Suspender la atención hasta que el usuario se disculpe, sin brindar alternativas de orientación."
+                ],
+                "correct": 1,
+                "explanation": "La opción B combina asertividad, respeto y enfoque en la solución. A escala la tensión y C interrumpe el servicio sin manejo adecuado."
+            },
+            {
+                "id": "m7_c42",
+                "examSubArea": "comportamental",
+                "text": "Caso: El Gestor I recibe retroalimentación porque sus explicaciones son correctas pero demasiado largas para usuarios con trámites simples.\n\nEnunciado: Desde Adaptabilidad y Comunicación efectiva, debe:",
+                "options": [
+                    "Mantener el mismo estilo porque la información técnica no debe simplificarse.",
+                    "Ajustar su comunicación al contexto, priorizando claridad y datos relevantes, sin perder precisión ni verificación de comprensión.",
+                    "Reducir la explicación al mínimo posible omitiendo pasos importantes para acortar el tiempo."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja ajuste comunicativo y flexibilidad con calidad. A no mejora y C sacrifica información esencial."
+            },
+            {
+                "id": "m7_c43",
+                "examSubArea": "comportamental",
+                "text": "Caso: En una capacitación interna, el Gestor I aprende un atajo válido en el sistema para orientar mejor a los usuarios en un trámite frecuente.\n\nEnunciado: Conforme a Aprendizaje/Innovación aplicada al servicio (Res. 065/2024) y Trabajo en equipo, debe:",
+                "options": [
+                    "Reservar el conocimiento para mejorar solo su propio desempeño.",
+                    "Aplicar el aprendizaje cuando corresponda y compartirlo con el equipo por los canales adecuados para mejorar la consistencia del servicio.",
+                    "Usar el atajo sin validar si está autorizado por el procedimiento vigente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B fortalece resultados individuales y colectivos con aprendizaje compartido. A limita el beneficio y C asume riesgo sin validación."
+            },
+            {
+                "id": "m7_c44",
+                "examSubArea": "integridad",
+                "text": "Caso: Un usuario adulto mayor no recuerda su correo registrado y necesita orientación para avanzar en un trámite digital.\n\nEnunciado: La respuesta más alineada con Orientación al usuario y Respeto es:",
+                "options": [
+                    "Indicarle que vuelva cuando recuerde la información, ya que no es posible apoyarlo sin esos datos.",
+                    "Tratarlo con paciencia, verificar su identidad por los medios previstos y orientarlo paso a paso sobre las alternativas válidas para recuperar o actualizar el acceso.",
+                    "Realizar la gestión usando datos supuestos para evitar demoras, sin completar la verificación."
+                ],
+                "correct": 1,
+                "explanation": "La opción B combina trato digno, paciencia y orientación efectiva dentro del procedimiento. A y C afectan el servicio o la seguridad."
+            },
+            {
+                "id": "m7_c45",
+                "examSubArea": "comportamental",
+                "text": "Caso: El Gestor I debe coordinar con otra dependencia interna para resolver una inconsistencia que afecta a varios usuarios del RUT.\n\nEnunciado: Según Trabajo en equipo y Compromiso, la conducta adecuada es:",
+                "options": [
+                    "Responder a cada usuario que el problema es de otra área, sin gestionar la articulación interna.",
+                    "Elevar la situación con información clara y soportes, coordinar con la dependencia competente y mantener una orientación consistente a los usuarios afectados.",
+                    "Esperar a que los usuarios presenten quejas formales para que la coordinación ocurra automáticamente."
+                ],
+                "correct": 1,
+                "explanation": "La opción B muestra articulación, responsabilidad y enfoque en la solución institucional. A fragmenta la respuesta y C es pasivo."
+            },
+            {
+                "id": "m7_c46",
+                "examSubArea": "integridad",
+                "text": "Caso: El Gestor I comete un error al orientar un plazo y el usuario regresa inconforme con evidencia del plazo correcto.\n\nEnunciado: Desde Comportamiento ético e Integridad del servicio, debe:",
+                "options": [
+                    "Sostener la orientación inicial para no afectar su credibilidad frente al usuario.",
+                    "Reconocer el error, corregir la información con base en la norma vigente, disculparse profesionalmente y orientar la ruta correcta.",
+                    "Remitir al usuario a otro funcionario sin explicar la corrección realizada."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja responsabilidad, honestidad y orientación efectiva. A y C no reparan adecuadamente el impacto en el ciudadano."
+            },
+            {
+                "id": "m7_c47",
+                "examSubArea": "integridad",
+                "text": "Caso: En una conversación informal, un colega comenta datos de un caso tributario específico que conoció por su trabajo. Hay otras personas presentes.\n\nEnunciado: Conforme al deber de reserva y al valor de Honestidad/Respeto, el Gestor I debe:",
+                "options": [
+                    "Participar en la conversación aportando detalles adicionales para comprender mejor el caso.",
+                    "Evitar comentar o validar información reservada, recordar discretamente el deber de confidencialidad y promover el manejo adecuado de la información.",
+                    "Grabar la conversación para usarla como evidencia, sin informar a los presentes ni seguir los canales institucionales."
+                ],
+                "correct": 1,
+                "explanation": "La opción B protege la reserva y fomenta conducta íntegra. A divulga/normaliza la filtración y C actúa fuera de los canales y fines adecuados."
+            },
+            {
+                "id": "m7_c48",
+                "examSubArea": "integridad",
+                "text": "Caso: Un usuario agradecido publica en redes sociales una mención elogiosa al Gestor I y ofrece enviarle un regalo personal a su dirección.\n\nEnunciado: La actuación alineada con integridad es:",
+                "options": [
+                    "Aceptar el regalo si se entrega fuera de la oficina y no se relaciona con un trámite en curso.",
+                    "Agradecer el reconocimiento, rechazar el regalo y mantener una conducta transparente acorde con las reglas de integridad.",
+                    "Pedir que el regalo se entregue a nombre del equipo para evitar una percepción personal."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evita beneficios personales derivados del servicio y preserva la transparencia. A y C no eliminan el riesgo de conflicto o percepción indebida."
+            },
+            {
+                "id": "m7_c49",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un cambio de última hora en la distribución de turnos genera inconformidad en el equipo, pero la atención debe continuar.\n\nEnunciado: Desde Adaptabilidad y Trabajo en equipo, el Gestor I debe:",
+                "options": [
+                    "Negarse a aceptar el cambio y continuar con la asignación anterior para evitar incomodidad.",
+                    "Ajustarse a la nueva organización, mantener una actitud colaborativa y enfocar al equipo en garantizar la continuidad del servicio.",
+                    "Cumplir el cambio pero criticar abiertamente la decisión frente a los usuarios para justificar demoras."
+                ],
+                "correct": 1,
+                "explanation": "La opción B favorece continuidad del servicio y colaboración ante cambios operativos. A y C afectan la coordinación y la experiencia ciudadana."
+            },
+            {
+                "id": "m7_c50",
+                "examSubArea": "comportamental",
+                "text": "Caso: El Gestor I atiende a un ciudadano que habla con un dialecto/localismo y no comprende algunas instrucciones estándar del trámite.\n\nEnunciado: Conforme a Comunicación efectiva y Orientación al usuario, debe:",
+                "options": [
+                    "Repetir las instrucciones con el mismo formato, asumiendo que el ciudadano debe adaptarse al lenguaje institucional.",
+                    "Adaptar el mensaje con respeto y claridad, usar ejemplos sencillos, confirmar comprensión y asegurarse de que el ciudadano pueda completar el trámite.",
+                    "Finalizar la orientación y remitirlo a consultar la información por escrito sin apoyo adicional."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra comunicación inclusiva y orientación efectiva, sin perder precisión. A y C crean barreras innecesarias."
+            },
+            {
+                "id": "m7_c51",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un ciudadano llega al Punto de Contacto confundido porque intentó actualizar su RUT en línea, pero no completó el proceso y teme haber generado inconsistencias.\n\nEnunciado: En el rol de Gestor I (Asistencia al Usuario, CC-AU-3008), la conducta que mejor demuestra Orientación al Usuario y al Ciudadano (Res. 065/2024) es:",
+                "options": [
+                    "Indicarle que la DIAN no se responsabiliza por trámites web inconclusos y que debe esperar un requerimiento para actuar.",
+                    "Escuchar su situación con empatía, verificar el estado del trámite en los canales oficiales, explicarle con lenguaje claro qué ocurrió y orientarlo en los pasos concretos para regularizarlo.",
+                    "Entregarle un instructivo general del portal sin revisar su caso, para que identifique por sí mismo el error cometido."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Orientación al usuario y al ciudadano: escucha activa, solución oportuna, información clara y acompañamiento dentro de las competencias del Gestor I. A y C no atienden efectivamente la necesidad."
+            },
+            {
+                "id": "m7_c52",
+                "examSubArea": "comportamental",
+                "text": "Caso: Durante una jornada de asistencia masiva, un usuario con baja alfabetización digital necesita radicar una solicitud y no comprende el formulario.\n\nEnunciado: Conforme a Comunicación Efectiva y Orientación al Usuario (Res. 065/2024), el Gestor I debe:",
+                "options": [
+                    "Leerle el formulario rápidamente y pedirle que firme, asumiendo que así se agiliza la atención.",
+                    "Adaptar la explicación con lenguaje sencillo, verificar comprensión, apoyarlo en el diligenciamiento según el procedimiento y confirmar los datos antes de finalizar.",
+                    "Remitirlo a que busque apoyo externo, porque el Punto de Contacto no puede ayudar en el diligenciamiento de solicitudes."
+                ],
+                "correct": 1,
+                "explanation": "La opción B evidencia Comunicación efectiva y servicio: adapta el mensaje, verifica comprensión y brinda apoyo práctico respetuoso. A no garantiza comprensión y C crea una barrera de acceso."
+            },
+            {
+                "id": "m7_c53",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un contribuyente reporta que recibió respuestas diferentes en dos canales sobre los documentos para inscribir una sucesión ilíquida en el RUT.\n\nEnunciado: Desde Solución de Problemas y Comunicación Efectiva (Res. 065/2024), el Gestor I debe:",
+                "options": [
+                    "Escoger la respuesta que parezca más conveniente para cerrar rápido el caso, sin validar el procedimiento.",
+                    "Analizar el requerimiento, verificar la regla y soportes vigentes aplicables al caso, explicar la respuesta correcta con claridad y orientar la ruta documental adecuada.",
+                    "Responder que no puede intervenir porque la contradicción fue generada por otros canales."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra Solución de problemas: identifica el problema, verifica información confiable y da una respuesta fundamentada. A improvisa y C evade la responsabilidad de asistencia."
+            },
+            {
+                "id": "m7_c54",
+                "examSubArea": "comportamental",
+                "text": "Caso: En el equipo de Asistencia al Usuario se reasignan funciones por ausencia de un compañero y el Gestor I debe cubrir orientación en un trámite que atiende con menor frecuencia.\n\nEnunciado: La conducta alineada con Adaptabilidad y Trabajo en Equipo (Res. 065/2024) es:",
+                "options": [
+                    "Negarse a cubrir el trámite para evitar equivocaciones, aunque aumente la carga del equipo.",
+                    "Aceptar el apoyo con disposición, consultar las guías/procedimientos vigentes, pedir soporte cuando sea necesario y mantener la calidad de la orientación.",
+                    "Atender el trámite sin consultar procedimientos, respondiendo con base en suposiciones para no mostrar inseguridad."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Adaptabilidad y Trabajo en equipo: responde al cambio, busca información válida y colabora para sostener el servicio. A y C afectan la operación o la calidad."
+            },
+            {
+                "id": "m7_c55",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un usuario llega molesto porque su turno tardó más de lo esperado y cuestiona la utilidad del Punto de Contacto.\n\nEnunciado: En el contexto de Asistencia al Usuario, la respuesta que mejor integra Comunicación Efectiva y Orientación al Usuario es:",
+                "options": [
+                    "Responder que los tiempos de espera no dependen del funcionario y pedirle que se limite a su trámite.",
+                    "Escuchar con respeto, reconocer la incomodidad sin escalar el conflicto, explicar de forma clara lo que se puede hacer y enfocar la atención en resolver su necesidad.",
+                    "Suspender la atención hasta que el usuario cambie su actitud, sin ofrecer información sobre su trámite."
+                ],
+                "correct": 1,
+                "explanation": "La opción B combina escucha activa, autocontrol comunicativo y enfoque en la solución. A y C deterioran la experiencia ciudadana y no resuelven el caso."
+            },
+            {
+                "id": "m7_c56",
+                "examSubArea": "comportamental",
+                "text": "Caso: El Gestor I detecta que varios contribuyentes cometen el mismo error al aportar soportes para actualización del RUT, lo que genera devoluciones repetidas.\n\nEnunciado: Conforme a Iniciativa, Orientación al Logro y Compromiso con la Organización (Res. 065/2024), debe:",
+                "options": [
+                    "Continuar devolviendo solicitudes sin proponer mejoras, porque la corrección depende solo del ciudadano.",
+                    "Proponer una acción preventiva (mensaje claro, lista de verificación o pauta de orientación) y compartirla por el canal interno para reducir reprocesos.",
+                    "Aceptar soportes incompletos para disminuir devoluciones y mejorar el indicador de atención."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra iniciativa y orientación al logro: previene errores recurrentes y mejora resultados del servicio. A es pasivo y C compromete la calidad del trámite."
+            },
+            {
+                "id": "m7_c57",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un ciudadano solicita orientación sobre un tema tributario que excede el alcance de la atención del Punto de Contacto y requiere gestión por un área especializada.\n\nEnunciado: La actuación adecuada del Gestor I (Asistencia al Usuario) es:",
+                "options": [
+                    "Inventar una respuesta aproximada para no remitir al usuario a otra dependencia.",
+                    "Explicar con transparencia el alcance del servicio, brindar la orientación general posible y remitirlo al canal o dependencia competente con indicaciones claras.",
+                    "Negarse a dar cualquier información y cerrar la atención sin explicar alternativas."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja Comunicación efectiva, orientación al ciudadano y trabajo articulado: informa límites, ayuda dentro de su rol y encauza correctamente. A y C generan desinformación o barreras."
+            },
+            {
+                "id": "m7_c58",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un compañero nuevo atiende un caso de RUT y solicita apoyo porque no está seguro de la validación documental aplicable.\n\nEnunciado: Desde Trabajo en Equipo y Compromiso con la Organización (Res. 065/2024), el Gestor I debe:",
+                "options": [
+                    "Indicarle que resuelva solo para que aprenda, aunque pueda orientar incorrectamente al ciudadano.",
+                    "Apoyarlo con base en el procedimiento vigente, compartir criterios claros y, si el caso lo requiere, validar conjuntamente para asegurar una respuesta correcta.",
+                    "Responder por el compañero sin explicarle el criterio, para resolver más rápido el turno."
+                ],
+                "correct": 1,
+                "explanation": "La opción B fortalece el trabajo colaborativo y la calidad del servicio: apoya, transfiere conocimiento y protege al ciudadano. A y C afectan aprendizaje o consistencia."
+            },
+            {
+                "id": "m7_c59",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un contribuyente presenta documentos físicos y digitales con datos que parecen corresponder a personas diferentes para el mismo trámite.\n\nEnunciado: Conforme a Solución de Problemas y Orientación al Logro, el Gestor I debe:",
+                "options": [
+                    "Continuar con el trámite usando el documento que se vea más reciente, sin aclarar la inconsistencia.",
+                    "Detener la validación, contrastar la información con cuidado, explicar la inconsistencia al usuario y definir los soportes correctos necesarios antes de avanzar.",
+                    "Solicitar que el usuario decida cuál dato es válido, registrando lo que él indique sin verificación adicional."
+                ],
+                "correct": 1,
+                "explanation": "La opción B aplica análisis, verificación y enfoque en un resultado correcto. A y C trasladan o ignoran el riesgo de error registral."
+            },
+            {
+                "id": "m7_c60",
+                "examSubArea": "comportamental",
+                "text": "Caso: La entidad implementa una nueva pauta de lenguaje claro para respuestas en Asistencia al Usuario. El Gestor I está acostumbrado a explicaciones muy técnicas.\n\nEnunciado: De acuerdo con Adaptabilidad y Comunicación Efectiva (Res. 065/2024), debe:",
+                "options": [
+                    "Mantener su estilo técnico porque considera que es más preciso, aunque los usuarios no comprendan.",
+                    "Incorporar la pauta de lenguaje claro, ajustar sus explicaciones al perfil del ciudadano y verificar que el mensaje se entienda sin perder precisión.",
+                    "Usar lenguaje claro solo con algunos usuarios y omitir información relevante para simplificar."
+                ],
+                "correct": 1,
+                "explanation": "La opción B refleja adaptación al cambio institucional y comunicación centrada en el ciudadano. A no se ajusta y C sacrifica calidad de la información."
+            },
+            {
+                "id": "m7_c61",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un usuario necesita orientación, pero llega acompañado por una persona que intenta responder por él e interrumpe constantemente.\n\nEnunciado: En una atención efectiva y respetuosa, el Gestor I debe:",
+                "options": [
+                    "Dirigirse únicamente al acompañante para terminar más rápido, sin confirmar la voluntad o comprensión del usuario.",
+                    "Reconocer al usuario como interlocutor principal, manejar la interrupción con respeto, verificar su comprensión y considerar al acompañante solo cuando sea pertinente y autorizado.",
+                    "Pedir que el acompañante se retire en todos los casos, sin evaluar si el usuario requiere apoyo."
+                ],
+                "correct": 1,
+                "explanation": "La opción B demuestra Comunicación efectiva, respeto y orientación al ciudadano: centra la atención en el titular y gestiona la interacción con equilibrio. A y C son inadecuados."
+            },
+            {
+                "id": "m7_c62",
+                "examSubArea": "comportamental",
+                "text": "Caso: Al final de la semana, el Gestor I identifica que no alcanzó una meta de orientación por dedicar más tiempo a casos complejos de usuarios vulnerables.\n\nEnunciado: Desde Orientación al Logro y Compromiso con la Organización, la conducta más adecuada es:",
+                "options": [
+                    "Reducir la calidad de la orientación en casos complejos para priorizar únicamente la cantidad de atenciones.",
+                    "Analizar el balance entre calidad y oportunidad, documentar las causas objetivas, proponer ajustes operativos y mantener el compromiso con un servicio efectivo.",
+                    "Ocultar los casos complejos en el registro para que el indicador refleje el resultado esperado."
+                ],
+                "correct": 1,
+                "explanation": "La opción B equilibra logro y calidad con transparencia y mejora continua. A sacrifica efectividad y C compromete la veracidad de la información."
+            },
+            {
+                "id": "m7_c63",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un ciudadano pregunta por el estado de su solicitud, pero la información disponible es parcial y requiere validación adicional.\n\nEnunciado: La mejor respuesta del Gestor I, alineada con el puesto de Asistencia al Usuario, es:",
+                "options": [
+                    "Dar una respuesta definitiva con la información parcial para evitar que el usuario se vaya insatisfecho.",
+                    "Informar con claridad lo que puede confirmar, explicar qué falta por validar, indicar el canal/tiempo o ruta de seguimiento aplicable y evitar suposiciones.",
+                    "Evitar responder hasta tener certeza total, sin ofrecer ninguna orientación o canal de seguimiento."
+                ],
+                "correct": 1,
+                "explanation": "La opción B combina transparencia, comunicación clara y orientación útil sin inventar información. A genera expectativas falsas y C deja al ciudadano sin guía."
+            },
+            {
+                "id": "m7_c64",
+                "examSubArea": "comportamental",
+                "text": "Caso: En una capacitación sobre servicios DIAN, el Gestor I recibe preguntas de ciudadanos con escenarios reales diferentes al ejemplo presentado.\n\nEnunciado: Conforme a Adaptabilidad, Comunicación Efectiva y Orientación al Usuario, debe:",
+                "options": [
+                    "Responder solo con el ejemplo preparado, indicando que los demás casos no hacen parte de la capacitación.",
+                    "Adaptar la explicación a los escenarios planteados cuando estén dentro de su competencia, aclarar límites cuando no lo estén y orientar rutas confiables.",
+                    "Evitar responder preguntas reales para no asumir responsabilidad por interpretaciones."
+                ],
+                "correct": 1,
+                "explanation": "La opción B muestra flexibilidad, claridad y vocación de servicio con manejo responsable del alcance. A y C limitan innecesariamente la orientación."
+            },
+            {
+                "id": "m7_c65",
+                "examSubArea": "comportamental",
+                "text": "Caso: Un usuario manifiesta que se siente tratado con desconfianza por una validación rigurosa de sus documentos.\n\nEnunciado: En el marco de Respeto, Comunicación Efectiva y Comportamiento ético del servicio, el Gestor I debe:",
+                "options": [
+                    "Omitir la validación para mejorar la percepción del usuario y evitar molestias.",
+                    "Explicar con respeto que la verificación es un procedimiento estándar para todos, mantener un trato digno y continuar la validación con objetividad.",
+                    "Responder que la desconfianza es inevitable en trámites tributarios y continuar sin explicar el procedimiento."
+                ],
+                "correct": 1,
+                "explanation": "La opción B equilibra control y trato digno: comunica el propósito del procedimiento sin discriminar ni relajar verificaciones necesarias. A debilita controles y C es poco empático."
             }
         ]
     }
@@ -1238,11 +2522,14 @@
                     options: [...baseCase.options],
                     correct: baseCase.correct,
                     explanation: baseCase.explanation,
+                    examArea: meta.examArea || baseCase.examArea || 'funcional',
+                    examSubArea: baseCase.examSubArea || (meta.examArea === 'funcional' ? 'funcional' : 'comportamental'),
                 };
             });
             return {
                 ...meta,
                 questions,
+                caseCount: cases.length,
             };
         });
     }

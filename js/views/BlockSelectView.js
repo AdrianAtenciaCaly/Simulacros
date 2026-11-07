@@ -12,15 +12,18 @@
             this.#navigator = navigator;
         }
 
-        title({ moduleIndex }) {
+        title({ moduleIndex, mode } = {}) {
+            if (mode === 'final') return 'Examen Final Simulado — Bloques';
             return this.#repository.getModule(moduleIndex).title;
         }
 
-        navId({ moduleIndex }) {
+        navId({ moduleIndex, mode } = {}) {
+            if (mode === 'final') return 'final-exam';
             return `module-${moduleIndex}`;
         }
 
-        render({ moduleIndex }) {
+        render({ moduleIndex, mode } = {}) {
+            if (mode === 'final') return this.#renderFinal();
             const mod = this.#repository.getModule(moduleIndex);
             const size = this.#repository.blockSize;
             const blockCount = this.#repository.getBlockCount(moduleIndex);
@@ -173,6 +176,39 @@
                         class: 'btn btn-outline',
                         onClick: () => this.#navigator.goHome()
                     }, '🏠 Volver al Tablero')
+                )
+            );
+        }
+
+        #renderFinal() {
+            const finalExam = this.#repository.getFinalExam();
+            const c = finalExam.composition;
+            const info = h('div', { class: 'module-stats-banner' },
+                h('div', { class: 'module-stats-header' },
+                    h('div', {},
+                        h('h3', { class: 'module-stats-title' }, '📝 Examen Final Simulado — DIAN 2676 (Gestor I)'),
+                        h('p', { class: 'module-stats-subtitle' }, `Simulacro dividido e identificado por áreas: ${c.funcional} funcionales + ${c.comportamental} comportamentales + ${c.integridad} integridad = ${c.total} preguntas.`)
+                    )
+                ),
+                h('p', { style: 'margin-top:8px;color:var(--text-soft,#555);' }, 'Prioriza las funcionales (70% eliminatorio). Practica por bloques identificados; cada bloque mezcla preguntas del área indicada.')
+            );
+            const blockButtons = finalExam.blocks.map((b, idx) => h('button', {
+                type: 'button', class: `block-btn untouched`,
+                onClick: () => this.#navigator.startFinalExam(idx)
+            },
+                h('strong', {}, b.label),
+                h('span', { class: 'block-btn-sub' }, `${b.questions.length} preguntas · Área: ${b.areaLabel}`),
+                h('span', { class: 'block-status-tag untouched' }, '⚪ Listo para practicar')
+            ));
+            return h('section', { class: 'card' },
+                h('h2', {}, 'Examen Final Simulado'),
+                info,
+                h('div', { class: 'blocks-section', style: 'margin-top: 24px;' },
+                    h('h3', { class: 'blocks-section-title' }, '📑 Bloques identificados (Funcionales / Comportamentales / Integridad)'),
+                    h('div', { class: 'grid-blocks' }, blockButtons)
+                ),
+                h('div', { class: 'actions-row', style: 'margin-top: 24px;' },
+                    h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.goHome() }, '🏠 Volver al Tablero')
                 )
             );
         }
