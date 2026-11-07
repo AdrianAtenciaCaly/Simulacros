@@ -183,6 +183,7 @@
         #renderFinal() {
             const finalExam = this.#repository.getFinalExam();
             const c = finalExam.composition;
+            const fmtDate = (iso) => { try { const d = new Date(iso); return d.toLocaleString('es-CO', { dateStyle: 'short', timeStyle: 'short' }); } catch { return iso; } };
             const info = h('div', { class: 'module-stats-banner' },
                 h('div', { class: 'module-stats-header' },
                     h('div', {},
@@ -190,16 +191,26 @@
                         h('p', { class: 'module-stats-subtitle' }, `Simulacro dividido e identificado por áreas: ${c.funcional} funcionales + ${c.comportamental} comportamentales + ${c.integridad} integridad = ${c.total} preguntas.`)
                     )
                 ),
-                h('p', { style: 'margin-top:8px;color:var(--text-soft,#555);' }, 'Prioriza las funcionales (70% eliminatorio). Practica por bloques identificados; cada bloque mezcla preguntas del área indicada.')
+                h('p', { style: 'margin-top:8px;color:var(--text-muted,#555);' }, 'Cada bloque realizado guarda fecha/hora y resultado. Puedes rehacer un bloque con nuevo orden/preguntas.')
             );
-            const blockButtons = finalExam.blocks.map((b, idx) => h('button', {
-                type: 'button', class: `block-btn untouched`,
-                onClick: () => this.#navigator.startFinalExam(idx)
-            },
-                h('strong', {}, b.label),
-                h('span', { class: 'block-btn-sub' }, `${b.questions.length} preguntas · Área: ${b.areaLabel}`),
-                h('span', { class: 'block-status-tag untouched' }, '⚪ Listo para practicar')
-            ));
+            const blockButtons = finalExam.blocks.map((b, idx) => {
+                const done = b.completion;
+                const statusClass = done ? 'completed' : 'untouched';
+                const statusText = done ? `✅ Realizado: ${fmtDate(done.completedAt)} · ${done.correct}/${done.total} (${done.percentage}%)` : '⚪ Sin realizar';
+                return h('div', { class: `block-btn ${statusClass}`, style: 'display:flex;flex-direction:column;gap:6px;align-items:stretch;' },
+                    h('button', { type: 'button', style: 'all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;', onClick: () => this.#navigator.startFinalExam(idx) },
+                        h('strong', {}, b.label),
+                        h('span', { class: 'block-btn-sub' }, `${b.questions.length} preguntas · Área: ${b.areaLabel}`),
+                        h('span', { class: `block-status-tag ${statusClass}` }, statusText)
+                    ),
+                    h('div', { style: 'display:flex;gap:6px;justify-content:center;flex-wrap:wrap;' },
+                        h('button', { type: 'button', class: 'btn btn-outline', style: 'min-height:32px;padding:4px 10px;font-size:.78rem;',
+                            onClick: (e) => { e.stopPropagation(); this.#navigator.startFinalExam(idx); } }, done ? 'Repetir' : 'Iniciar'),
+                        h('button', { type: 'button', class: 'btn btn-secondary', style: 'min-height:32px;padding:4px 10px;font-size:.78rem;',
+                            onClick: (e) => { e.stopPropagation(); this.#repository.resetFinalBlock(b.id); this.#navigator.openFinalExam(); } }, 'Reiniciar (nuevo orden/preguntas)')
+                    )
+                );
+            });
             return h('section', { class: 'card' },
                 h('h2', {}, 'Examen Final Simulado'),
                 info,
@@ -208,6 +219,7 @@
                     h('div', { class: 'grid-blocks' }, blockButtons)
                 ),
                 h('div', { class: 'actions-row', style: 'margin-top: 24px;' },
+                    h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => { if (confirm('¿Reiniciar todo el examen final? Se generarán nuevos bloques/preguntas y se borrarán los estados guardados.')) { this.#repository.resetAllFinalExam(); this.#navigator.openFinalExam(); } } }, '🔄 Reiniciar todo el examen final (nuevas preguntas)'),
                     h('button', { type: 'button', class: 'btn btn-outline', onClick: () => this.#navigator.goHome() }, '🏠 Volver al Tablero')
                 )
             );

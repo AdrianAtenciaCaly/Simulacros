@@ -9,6 +9,8 @@
     class QuestionRepository {
         #modules;
         #blockSize;
+        #finalExamCache = null;
+        static FINAL_EXAM_KEY = 'pm_final_exam_v1';
 
         constructor(modules, { blockSize }) {
             this.#modules = modules;
@@ -110,13 +112,67 @@
          * Examen final simulado: 150 funcionales + 25 comportamentales + 25 integridad (200 total),
          * separados en bloques identificados por área.
          */
-        getFinalExam() {
-            const shuffle = PM.shuffleArray || ((a) => a);
+        #shuffle(arr) {
+            const shuffle = PM.shuffleArray;
+            if (typeof shuffle === 'function') return shuffle(arr);
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+            return a;
+        }
+
+        #loadFinalState() {
+            try { const raw = localStorage.getItem(QuestionRepository.FINAL_EXAM_KEY); return raw ? JSON.parse(raw) : { blocks: {} }; }
+            catch (e) { return { blocks: {} }; }
+        }
+        #saveFinalState(state) {
+            try { localStorage.setItem(QuestionRepository.FINAL_EXAM_KEY, JSON.stringify(state)); } catch (e) {}
+        }
+        getFinalBlockStatus(blockId) {
+            return (this.#loadFinalState().blocks || {})[blockId] || null;
+        }
+        saveFinalBlockResult(blockId, summary) {
+            const state = this.#loadFinalState();
+            state.blocks = state.blocks || {};
+            state.blocks[blockId] = {
+                completedAt: new Date().toISOString(),
+                correct: summary.correct,
+                total: summary.total,
+                percentage: summary.percentage,
+                passed: summary.passed,
+            };
+            this.#saveFinalState(state);
+        }
+        resetFinalBlock(blockId) {
+            const state = this.#loadFinalState();
+            if (state.blocks && state.blocks[blockId]) delete state.blocks[blockId];
+            this.#saveFinalState(state);
+            // regenerar bloque: nuevo orden y, cuando sea posible, preguntas diferentes
+            if (this.#finalExamCache) {
+                const b = this.#finalExamCache.blocks.find(x => x.id === blockId);
+                if (b) {
+                    const all = this.#modules.flatMap(m => (m.questions || []).map(q => ({ ...q, _moduleId: m.id, _moduleTitle: m.title })));
+                    let pool;
+                    if (b.area === 'funcional') pool = all.filter(q => (q.examArea || 'funcional') === 'funcional');
+                    else if (b.area === 'comportamental') pool = all.filter(q => q._moduleId === 'm7' && q.examSubArea === 'comportamental');
+                    else pool = all.filter(q => q._moduleId === 'm7' && (q.examSubArea === 'integridad' || q.examSubArea !== 'comportamental'));
+                    const picked = this.#shuffle(pool).slice(0, b.questions.length || this.#blockSize);
+                    if (picked.length) b.questions = picked;
+                    else b.questions = this.#shuffle(b.questions);
+                }
+            }
+        }
+        resetAllFinalExam() {
+            try { localStorage.removeItem(QuestionRepository.FINAL_EXAM_KEY); } catch (e) {}
+            this.#finalExamCache = null;
+        }
+
+        getFinalExam({ forceNew = false } = {}) {
+            if (this.#finalExamCache && !forceNew) return this.#attachFinalStatuses(this.#finalExamCache);
             const all = this.#modules.flatMap(m => (m.questions || []).map(q => ({ ...q, _moduleId: m.id, _moduleTitle: m.title })));
-            const functional = shuffle(all.filter(q => (q.examArea || 'funcional') === 'funcional')).slice(0, 150);
+            const functional = this.#shuffle(all.filter(q => (q.examArea || 'funcional') === 'funcional')).slice(0, 150);
             const m7 = all.filter(q => q._moduleId === 'm7');
-            const comportamental = shuffle(m7.filter(q => q.examSubArea === 'comportamental')).slice(0, 25);
-            const integridad = shuffle(m7.filter(q => q.examSubArea === 'integridad' || (q._moduleId === 'm7' && q.examSubArea !== 'comportamental'))).slice(0, 25);
+            const comportamental = this.#shuffle(m7.filter(q => q.examSubArea === 'comportamental')).slice(0, 25);
+            const integridad = this.#shuffle(m7.filter(q => q.examSubArea === 'integridad' || (q._moduleId === 'm7' && q.examSubArea !== 'comportamental'))).slice(0, 25);
             const sections = [
                 { key: 'funcional', label: 'Competencias Funcionales (70% eliminatorio)', questions: functional },
                 { key: 'comportamental', label: 'Competencias Comportamentales', questions: comportamental },
@@ -139,13 +195,19 @@
                     });
                 }
             });
-            return {
+            this.#finalExamCache = {
                 title: 'Examen Final Simulado DIAN 2676 — Gestor I',
                 composition: { funcional: functional.length, comportamental: comportamental.length, integridad: integridad.length, total: functional.length + comportamental.length + integridad.length },
-                sections,
-                blocks,
+                sections, blocks,
                 questions: [...functional, ...comportamental, ...integridad],
             };
+            return this.#attachFinalStatuses(this.#finalExamCache);
+        }
+
+        #attachFinalStatuses(exam) {
+            const state = this.#loadFinalState();
+            const statuses = state.blocks || {};
+            return { ...exam, blocks: exam.blocks.map(b => ({ ...b, completion: statuses[b.id] || null })) };
         }
     }
 

@@ -31,6 +31,9 @@
             const wrong = total - correct;
             const isFinal = mode === 'final';
             const modStats = !isFinal && moduleIndex != null && moduleIndex >= 0 ? this.#repository.getModuleStats(moduleIndex) : null;
+            if (isFinal && finalMeta && finalMeta.blocks && finalMeta.blocks[finalBlockIndex]) {
+                this.#repository.saveFinalBlockResult(finalMeta.blocks[finalBlockIndex].id, summary);
+            }
 
             // --- Banner de puntuacion ---
             const infoChildren = [
