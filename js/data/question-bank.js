@@ -5,7 +5,7 @@
      * BANCO DE PREGUNTAS DE JUICIO SITUACIONAL (CNSC / AREANDINA — DIAN 2676)
      * Convocatoria: Proceso de Selección DIAN 2676 | Operador: FUAA Areandina
      * Empleo: Gestor I (Código 301, Grado 01) — OPEC: 198476
-     * 257 casos tipo examen (Caso + Enunciado + 3 opciones A/B/C), con nivel de dificultad progresivo y casos integrados: 186 funcionales (m1-m6, 70% eliminatorio) + 71 comportamentales/integridad (m7, Res. 065/2024 y Código de Integridad DIAN). El simulacro final usa 150F + 25C + 25I en bloques identificados, sin repetir preguntas; el banco ampliado permite práctica avanzada del puesto Gestor I (CC-AU-3008).
+     * 297 casos tipo examen (Caso + Enunciado + 3 opciones A/B/C), con dificultad avanzada basada en teoría DIAN: 222 funcionales (m1-m6, 70% eliminatorio) + 75 comportamentales/integridad (m7, Res. 065/2024 y Código de Integridad DIAN). Distractores técnicamente plausibles; exigen norma/procedimiento (E.T., CPACA/Ley 1755, RUT D. 1625/2016, notificaciones 566-1/568, reserva 583, carrera DIAN, MIPG). Simulacro final 150F+25C+25I, sin repetir preguntas.
      * Fuentes de referencia: Diccionario de Competencias Comportamentales (Res. 065/2024) y
      * Guía de Orientación al Aspirante DIAN 2676 (incorporada en teoría; PDF guía imagen-base).
      */
@@ -358,6 +358,78 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B refleja eficacia sustancial y autocontrol: cumplir metas no justifica calidad deficiente; se corrigen causas y se mejora el servicio. A se queda en lo formal y C aumenta riesgo."
+            },
+            {
+                "id": "m1_c32",
+                "difficulty": "avanzada",
+                "text": "Caso: Un servidor de carrera de la DIAN, inscrito en el empleo de Analista (grado inferior inmediato al de un empleo superior vacante temporalmente), cumple requisitos, no tiene sanciones y obtuvo calificación sobresaliente en la última evaluación. El jefe de área propone nombrar provisionalmente a un profesional externo \"por experiencia específica\".\n\nEnunciado: De acuerdo con el régimen de carrera especial DIAN (Decretos Ley 071 de 2020 y 927 de 2023) y el principio de mérito, la actuación correcta es:",
+                "options": [
+                    "Realizar el nombramiento provisional externo si se sustenta la necesidad del servicio, porque la provisión transitoria es discrecional de la administración.",
+                    "Proveer la vacante mediante encargo con el servidor de carrera que cumpla requisitos y tenga derecho preferencial, salvo que no exista empleado en condiciones legales de ser encargado.",
+                    "Convocar primero a todos los servidores de la planta global sin considerar grado inferior ni evaluación, y elegir por antigüedad."
+                ],
+                "correct": 1,
+                "explanation": "Exige conocer la regla de encargo preferente en carrera DIAN: prioridad al empleado de carrera del grado inferior inmediato que cumpla requisitos/condiciones legales (mérito). La opción A desconoce la prelación legal y C altera los criterios de encargo."
+            },
+            {
+                "id": "m1_c33",
+                "difficulty": "avanzada",
+                "text": "Caso: En el cumplimiento de una orden escrita, el Gestor I advierte que ejecutar la instrucción implicaría omitir la verificación documental obligatoria para la actualización del RUT, generando riesgo de inscripción irregular.\n\nEnunciado: Conforme al Art. 6 C.P., Art. 209 C.P., Ley 1952/2019 (deberes y obediencia) y el derecho de representación, el servidor debe:",
+                "options": [
+                    "Ejecutar la orden por ser escrita y provenir de superior jerárquico, dejando constancia informal para trasladar la responsabilidad.",
+                    "Representar por escrito la orden cuando sea contraria a la ley o implique omitir requisitos legales, con la motivación correspondiente; no ejecutar actos contrarios al ordenamiento.",
+                    "Desobedecer verbalmente y negarse a registrar cualquier actuación, sin dejar soporte escrito."
+                ],
+                "correct": 1,
+                "explanation": "No basta el sentido común de \"cumplir o no\"; exige la figura jurídica de representación escrita frente a órdenes ilegales/que omiten requisitos, propia de la función pública/disciplinaria."
+            },
+            {
+                "id": "m1_c34",
+                "difficulty": "avanzada",
+                "text": "Caso: Un contribuyente alega que un acto administrativo que afecta su situación RUT fue expedido con base en una interpretación normativa que cambió recientemente y solicita que no se le aplique retroactivamente.\n\nEnunciado: En materia de función administrativa y sistema tributario, el Gestor I debe orientar considerando principalmente:",
+                "options": [
+                    "Que toda interpretación administrativa se aplica retroactivamente si favorece el recaudo.",
+                    "Los principios de legalidad, debido proceso e irretroactividad de las normas tributarias en lo que corresponda (Art. 363 C.P.), verificando vigencia, notificación y vías de defensa procedentes.",
+                    "Que la irretroactividad solo aplica a sentencias judiciales, no a actuaciones de la DIAN."
+                ],
+                "correct": 1,
+                "explanation": "Requiere teoría constitucional/tributaria: irretroactividad (Art. 363), debido proceso y vigencia/notificación; no se resuelve solo con \"ser justo\"."
+            },
+            {
+                "id": "m1_c35",
+                "difficulty": "avanzada",
+                "text": "Caso: La DIAN reorganiza internamente funciones entre dependencias, pero el ciudadano sigue radicando solicitudes ante el Punto de Contacto según competencia funcional vigente para orientación y recepción.\n\nEnunciado: Frente a dudas de competencia interna, el Gestor I debe actuar bajo los principios del Art. 209 C.P. y reglas de eficacia, priorizando:",
+                "options": [
+                    "Rechazar cualquier solicitud si la dependencia interna cambió, hasta que el ciudadano identifique la nueva área.",
+                    "Prestar el servicio/recepción u orientación conforme a la competencia y procedimientos vigentes, y si no es competente para decidir, tramitar el traslado por el canal formal sin causar indefensión.",
+                    "Resolver de fondo todos los asuntos para evitar remisiones, aunque exceda su competencia."
+                ],
+                "correct": 1,
+                "explanation": "Exige distinguir competencia para orientar/recibir/trasladar vs decidir; la respuesta correcta aplica eficacia y debido proceso sin invadir competencia."
+            },
+            {
+                "id": "m1_c36",
+                "difficulty": "avanzada",
+                "text": "Caso: Un aspirante seleccionado para Gestor I pregunta si, tras ser nombrado, adquiere inmediatamente derechos de carrera o si existe una etapa previa de evaluación.\n\nEnunciado: Según la teoría de carrera especial DIAN aplicable al proceso, lo correcto es indicar que:",
+                "options": [
+                    "Los derechos de carrera se adquieren automáticamente con la posesión, sin evaluación posterior.",
+                    "Existe período de prueba de seis (6) meses; superado con evaluación satisfactoria o sobresaliente, se adquieren derechos de carrera según el régimen aplicable.",
+                    "El período de prueba es de doce (12) meses y lo evalúa exclusivamente la CNSC sin participación de la DIAN."
+                ],
+                "correct": 1,
+                "explanation": "Pregunta de dato normativo específico (6 meses, evaluación satisfactoria/sobresaliente). Los distractores usan plazos/reglas plausibles pero incorrectos."
+            },
+            {
+                "id": "m1_c37",
+                "difficulty": "avanzada",
+                "text": "Caso: Se evidencia que un trámite fue resuelto favorablemente para un contribuyente con vínculo cercano a un servidor que intervino en la validación. No hay prueba de dádiva, pero sí de falta de advertencia de impedimento.\n\nEnunciado: Desde el régimen disciplinario y los principios de moralidad e imparcialidad, el análisis correcto debe considerar:",
+                "options": [
+                    "Que solo hay falta si se demuestra pago o dádiva; el vínculo personal es irrelevante.",
+                    "Que el conflicto de interés/causales de impedimento y la omisión de declararlos pueden afectar la actuación y generar responsabilidad, aun sin dádiva probada.",
+                    "Que basta informar verbalmente al compañero para sanear cualquier apariencia de parcialidad."
+                ],
+                "correct": 1,
+                "explanation": "Requiere teoría de impedimentos/conflicto de interés e integridad: la responsabilidad no depende únicamente de dádiva."
             }
         ]
     },
@@ -709,6 +781,78 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B protege canal, legitimación, notificación y reserva. A y C exponen la actuación a invalidez y divulgación indebida."
+            },
+            {
+                "id": "m2_c32",
+                "difficulty": "avanzada",
+                "text": "Caso: Un contribuyente presenta recurso de reposición contra un acto notificado electrónicamente mediante buzón. Alega que contó los 10 días desde que abrió el mensaje, no desde la sur-tición legal, y por ello radicó extemporáneamente.\n\nEnunciado: Para resolver la extemporaneidad, el Gestor I/área competente debe aplicar:",
+                "options": [
+                    "La fecha de apertura del mensaje como inicio del término, por prevalecer la conducta real del contribuyente.",
+                    "Las reglas de notificación electrónica del Art. 566-1 E.T. (sur-tición/términos según la norma), verificando la fecha de entrega/disponibilidad en buzón y el cómputo de días hábiles aplicable.",
+                    "Un término uniforme de 15 días hábiles para todos los recursos contra actos tributarios notificados electrónicamente."
+                ],
+                "correct": 1,
+                "explanation": "Dificultad técnica: exige conocer Art. 566-1 (cómputo desde disponibilidad/sur-tición legal, no desde apertura) y distinguirlo del término general de petición. Opción A es sentido común; B es teoría DIAN."
+            },
+            {
+                "id": "m2_c33",
+                "difficulty": "avanzada",
+                "text": "Caso: Una petición solicita copias certificadas de actuaciones. La entidad no responde dentro del término de 10 días hábiles. El ciudadano exige la entrega inmediata gratuita alegando consecuencia automática.\n\nEnunciado: Según Ley 1755/2015, frente al silencio en peticiones de documentos/copia, lo procedente es:",
+                "options": [
+                    "Entender aceptada la petición con efectos automáticos y entregar lo solicitado sin trámite adicional, salvo reserva legal aplicable; la consecuencia del incumplimiento opera conforme a la norma.",
+                    "Responder que el silencio negativo es la regla general y que el ciudadano debe acudir a tutela sin derecho a entrega automática.",
+                    "Conceder 30 días adicionales porque las copias requieren revisión documental."
+                ],
+                "correct": 0,
+                "explanation": "Exige el régimen específico de Ley 1755 para copias/documentos (10 días y consecuencia de entrega/aceptación en los términos legales), diferenciándolo del silencio negativo general del CPACA."
+            },
+            {
+                "id": "m2_c34",
+                "difficulty": "avanzada",
+                "text": "Caso: La administración profiere un requerimiento dentro de una actuación, pero el interesado no subsana lo pedido en el término concedido. La norma aplicable prevé consecuencias procesales específicas.\n\nEnunciado: Si se configura desistimiento tácito por petición incompleta/no subsanada, la DIAN debe:",
+                "options": [
+                    "Archivar verbalmente o por nota interna sin acto administrativo, porque el desistimiento opera de pleno derecho sin formalidades.",
+                    "Declararlo mediante acto administrativo motivado cuando corresponda, notificándolo y respetando el recurso procedente según el régimen aplicable.",
+                    "Sancionar automáticamente al peticionario con multa por falta de subsanación."
+                ],
+                "correct": 1,
+                "explanation": "Requiere conocer la formalidad del desistimiento tácito (acto motivado/notificación/recursos), no solo la idea general de \"se archiva\"."
+            },
+            {
+                "id": "m2_c35",
+                "difficulty": "avanzada",
+                "text": "Caso: Un acto se intentó notificar por correo electrónico y no fue posible; luego se intenta por correo físico sin éxito por devolución. La actuación requiere notificación válida para contar términos.\n\nEnunciado: De acuerdo con el procedimiento tributario (E.T. 568 en su régimen aplicable), el mecanismo subsidiario correcto es:",
+                "options": [
+                    "Notificación por edicto en un diario nacional durante 5 días hábiles.",
+                    "Notificación por aviso, siguiendo las formalidades y plazos del E.T. (publicación/constancia según corresponda).",
+                    "Notificación verbal en el Punto de Contacto cuando el contribuyente comparezca."
+                ],
+                "correct": 1,
+                "explanation": "Dato técnico DIAN: cuándo opera notificación por aviso (E.T. 568) vs otros medios; los distractores son figuras procesales de otros contextos."
+            },
+            {
+                "id": "m2_c36",
+                "difficulty": "avanzada",
+                "text": "Caso: Un contribuyente presenta recurso de reposición y subsidiario de apelación contra un acto de determinación. El funcionario receptor duda sobre términos y ante quién se surten.\n\nEnunciado: Bajo CPACA y reglas aplicables, lo correcto es:",
+                "options": [
+                    "Conceder ambos recursos para que sean resueltos simultáneamente por el mismo funcionario.",
+                    "Tramitar la reposición ante quien profirió el acto dentro del término legal; la apelación, en subsidio, se tramita ante el superior competente conforme a procedencia y oportunidad.",
+                    "Rechazar la apelación subsidiaria porque en vía gubernativa solo procede reposición."
+                ],
+                "correct": 1,
+                "explanation": "Exige teoría procesal administrativa (reposición/apelación subsidiaria, competencia, oportunidad), más allá de lógica general."
+            },
+            {
+                "id": "m2_c37",
+                "difficulty": "avanzada",
+                "text": "Caso: La DIAN recibe una petición que involucra datos propios del solicitante y decisiones que afectan derechos de terceros determinados.\n\nEnunciado: Para responder válidamente, debe:",
+                "options": [
+                    "Resolver solo con base en lo dicho por el peticionario para cumplir el término.",
+                    "Garantizar contradicción/derecho de defensa de terceros afectados cuando corresponda, aplicar reserva de datos ajenos y responder dentro de término en lo procedente, motivando.",
+                    "Trasladar automáticamente toda la petición a la jurisdicción contenciosa."
+                ],
+                "correct": 1,
+                "explanation": "Combina Ley 1755/CPACA con debido proceso y reserva; la dificultad está en no sacrificar derechos de terceros por cumplir plazos."
             }
         ]
     },
@@ -1060,6 +1204,78 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B evita errores de identificación y representación en un caso sensible. A y C trasladan o consolidan inconsistencias."
+            },
+            {
+                "id": "m3_c38",
+                "difficulty": "avanzada",
+                "text": "Caso: Una persona natural solicita inscribirse/actualizar responsabilidades en RUT y afirma cumplir condiciones para no ser responsable de IVA. Aporta información del año actual, pero en uno de los dos años anteriores superó los topes legales.\n\nEnunciado: Conforme al Art. 437 E.T. (parágrafo 3, regla aplicable a no responsables de IVA) y verificación registral DIAN, el Gestor I debe:",
+                "options": [
+                    "Aprobar el registro como no responsable porque el comportamiento del año actual demuestra capacidad económica reducida.",
+                    "Negar/rechazar la condición solicitada si no se acreditan los requisitos en todos los períodos exigidos por la norma (incluyendo los años anteriores requeridos), orientando la norma aplicable.",
+                    "Aprobar provisionalmente por seis meses y revisar después."
+                ],
+                "correct": 1,
+                "explanation": "Pregunta de teoría tributaria/registral precisa: no basta un año; exige cumplimiento en los períodos que fija la norma (concepto evaluado frecuentemente). Distractores son \"razonables\" pero incorrectos."
+            },
+            {
+                "id": "m3_c39",
+                "difficulty": "avanzada",
+                "text": "Caso: Un contribuyente cambia de dirección y correo electrónico, pero no actualiza el RUT. Posteriormente alega que no se enteró de una actuación notificada al canal registrado.\n\nEnunciado: Según el Art. 555-2 E.T. y deberes de actualización registral, la consecuencia principal es:",
+                "options": [
+                    "La notificación es inválida por deber de la DIAN investigar la dirección real en redes sociales y bases privadas.",
+                    "La carga de mantener actualizado el RUT recae en el inscrito; las comunicaciones pueden surtirse válidamente en los datos registrados, sin perjuicio de los mecanismos de corrección cuando procedan.",
+                    "La DIAN debe suspender todas las actuaciones hasta confirmar personalmente el nuevo domicilio."
+                ],
+                "correct": 1,
+                "explanation": "Exige conocer la responsabilidad del administrado en la actualización del RUT y su efecto en comunicaciones/notificaciones."
+            },
+            {
+                "id": "m3_c40",
+                "difficulty": "avanzada",
+                "text": "Caso: Una sociedad inscrita solicita cancelación/suspensión de inscripción RUT alegando cese definitivo de actividades. Aún tiene obligaciones formales pendientes reportadas en sistemas.\n\nEnunciado: El tratamiento correcto en RUT (Art. 555-2 E.T. y procedimientos DIAN) requiere:",
+                "options": [
+                    "Cancelar automáticamente por manifestación unilateral, sin verificar estado de obligaciones o requisitos.",
+                    "Verificar requisitos legales/procedimentales, estado de obligaciones y soportes; la mera manifestación no sustituye la verificación registral aplicable.",
+                    "Conservar la inscripción activa indefinidamente aunque el cese esté probado."
+                ],
+                "correct": 1,
+                "explanation": "Exige distinguir cancelación/suspensión/inactivación según procedimiento y no aplicar sentido común absoluto."
+            },
+            {
+                "id": "m3_c41",
+                "difficulty": "avanzada",
+                "text": "Caso: Al formalizar inscripción RUT, el solicitante aporta documento de identificación válido pero la biometría/facial no coincide en el sistema y no supera los controles de autenticación.\n\nEnunciado: La actuación conforme a seguridad registral DIAN es:",
+                "options": [
+                    "Continuar la inscripción manualmente para no afectar el acceso al servicio.",
+                    "Abstenerse de formalizar la inscripción mientras no se supere la verificación de identidad, aplicar el protocolo de validación/excepción autorizado y escalar si hay sospecha de fraude.",
+                    "Inscribir con observación interna pero entregar NIT definitivo."
+                ],
+                "correct": 1,
+                "explanation": "Requiere conocimiento de controles de identidad en RUT (presencial/virtual) y prioridad de seguridad sobre celeridad."
+            },
+            {
+                "id": "m3_c42",
+                "difficulty": "avanzada",
+                "text": "Caso: Un apoderado presenta poder general para actuar ante la DIAN en trámites RUT, pero el poder no contiene facultades claras para el acto específico o presenta inconsistencias formales.\n\nEnunciado: El Gestor I debe:",
+                "options": [
+                    "Aceptar cualquier poder general por ser un documento amplio.",
+                    "Verificar vigencia, presentación/requisitos formales y suficiencia de facultades para el trámite concreto; si no es idóneo, abstenerse de tramitar y orientar la subsanación.",
+                    "Permitir que el apoderado firme una declaración jurada reemplazando las facultades del poder."
+                ],
+                "correct": 1,
+                "explanation": "Exige teoría de representación documental en trámites DIAN/RUT: no todo poder es suficiente para todo acto."
+            },
+            {
+                "id": "m3_c43",
+                "difficulty": "avanzada",
+                "text": "Caso: Se solicita actualización de actividad económica CIIU y responsabilidades, pero la actividad declarada contradice soportes y podría implicar una responsabilidad tributaria no reconocida por el contribuyente.\n\nEnunciado: La actuación correcta es:",
+                "options": [
+                    "Registrar solo lo que el contribuyente declare para respetar su autonomía privada.",
+                    "Realizar consistencia registral conforme a soportes/normativa, orientar sobre implicaciones sin prestar asesoría vinculante particular, y registrar información verificable; escalar inconsistencias según procedimiento.",
+                    "Modificar unilateralmente todas las responsabilidades sin informar al contribuyente."
+                ],
+                "correct": 1,
+                "explanation": "Combina calidad de datos RUT, verificación, orientación y límites de competencia; no se resuelve por mera cortesía."
             }
         ]
     },
@@ -1411,6 +1627,78 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B protege seguridad, privacidad y responsabilidad institucional. A y C exponen credenciales y crean riesgo grave."
+            },
+            {
+                "id": "m4_c32",
+                "difficulty": "avanzada",
+                "text": "Caso: Un adulto mayor requiere actualización RUT con atención prioritaria, pero llega sin cita en un punto que opera con agenda. Hay usuarios con cita esperando.\n\nEnunciado: Conforme a enfoque diferencial y reglas de servicio, el Gestor I debe:",
+                "options": [
+                    "Negar la atención porque la agenda garantiza igualdad formal.",
+                    "Aplicar la prioridad legal/enfoque diferencial con criterio operativo, informar con claridad el manejo de la contingencia de agenda y asegurar atención sin discriminación ni desorden injustificado.",
+                    "Atender únicamente al adulto mayor y cancelar todas las citas del día."
+                ],
+                "correct": 1,
+                "explanation": "Exige conocer la atención prioritaria (adultos mayores, discapacidad, etc.) y aplicarla sin caer en soluciones extremas; el distractor A suena \"organizado\" pero ignora la norma de prioridad."
+            },
+            {
+                "id": "m4_c33",
+                "difficulty": "avanzada",
+                "text": "Caso: Un ciudadano solicita asistencia para usar firma electrónica/mecanismo de autenticación DIAN y entrega al Gestor I su contraseña OTP para \"agilizar\".\n\nEnunciado: Según seguridad, política de identidad digital y atención TACI, procede:",
+                "options": [
+                    "Usar la OTP si el ciudadano la suministra voluntariamente y hay afán.",
+                    "Rechazar el uso de credenciales/OTP ajenas, orientar el uso seguro y autónomo, y canalizar soporte técnico autorizado sin comprometer la autenticación.",
+                    "Pedir la OTP y documentarla en el expediente para trazabilidad."
+                ],
+                "correct": 1,
+                "explanation": "Requiere regla específica de seguridad: credenciales/OTP son intransferibles; la trazabilidad no autoriza capturarlas."
+            },
+            {
+                "id": "m4_c34",
+                "difficulty": "avanzada",
+                "text": "Caso: En un Punto de Contacto, la fila física y la atención virtual compiten por el mismo equipo. Un usuario virtual tiene cita confirmada; un usuario presencial tiene prioridad legal por discapacidad.\n\nEnunciado: La decisión operativa más ajustada es:",
+                "options": [
+                    "Atender siempre primero al canal virtual por haber agendado.",
+                    "Aplicar protocolo que armonice cita y prioridad legal: reconocer la prioridad, comunicar tiempos, reprogramar/reubicar apoyo si es necesario y asegurar trazabilidad sin vulnerar derechos.",
+                    "Suspender ambos servicios hasta que haya más personal."
+                ],
+                "correct": 1,
+                "explanation": "Caso difícil de equilibrio normativo-operativo: cita no desplaza automáticamente prioridad legal; exige criterio de servicio público."
+            },
+            {
+                "id": "m4_c35",
+                "difficulty": "avanzada",
+                "text": "Caso: Un contribuyente solicita orientación sobre un concepto tributario complejo. El Gestor I no es competente para emitir doctrina vinculante, pero debe orientar en asistencia.\n\nEnunciado: Debe:",
+                "options": [
+                    "Emitir una interpretación definitiva para resolver el caso del usuario.",
+                    "Brindar orientación general basada en información oficial vigente, indicar límites de competencia, y remitir al canal de doctrina/consulta competente cuando corresponda.",
+                    "Negarse a dar cualquier información por riesgo de error."
+                ],
+                "correct": 1,
+                "explanation": "Exige distinguir orientación asistencial vs doctrina/concepto vinculante; distractores son extremos."
+            },
+            {
+                "id": "m4_c36",
+                "difficulty": "avanzada",
+                "text": "Caso: Un usuario graba la atención en el Punto de Contacto e intenta capturar pantallas con datos de otros contribuyentes visibles por error.\n\nEnunciado: El Gestor I debe:",
+                "options": [
+                    "Permitir la grabación total porque el servicio es público.",
+                    "Proteger datos personales/tributarios de terceros, ajustar la atención para evitar exposición, informar límites razonables y aplicar el protocolo institucional de seguridad/atención.",
+                    "Confiscar el dispositivo del usuario."
+                ],
+                "correct": 1,
+                "explanation": "Combina servicio público con protección de datos/reserva; no se resuelve por reacción extrema."
+            },
+            {
+                "id": "m4_c37",
+                "difficulty": "avanzada",
+                "text": "Caso: Se recibe una PQRSD verbal en jornada de alta afluencia. El usuario no quiere dejar datos, pero el caso involucra posible vulneración de derechos en un trámite RUT.\n\nEnunciado: La actuación correcta es:",
+                "options": [
+                    "No registrar nada por falta de datos del peticionario.",
+                    "Facilitar el canal para radicación formal, orientar sobre identificación/anonimato según proceda y la naturaleza de la solicitud, y asegurar que la información relevante se canalice sin barreras indebidas.",
+                    "Responder de fondo verbalmente y dar por cerrada la PQRSD."
+                ],
+                "correct": 1,
+                "explanation": "Exige conocimiento de gestión de PQRSD/derecho de petición y trazabilidad, sin imponer barreras ni inventar cierres informales."
             }
         ]
     },
@@ -1762,6 +2050,72 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B evita generalizaciones y orienta al cumplimiento según norma. A y C promueven informalidad."
+            },
+            {
+                "id": "m5_c38",
+                "text": "Caso: Un contribuyente pregunta si, al pasar a facturar electrónicamente, puede dejar de conservar soportes físicos/digitales anteriores porque \"todo queda en el sistema DIAN\".\n\nEnunciado: Conforme a deberes formales y soporte de operaciones (teoría tributaria/DIAN), el Gestor I debe orientar que:",
+                "options": [
+                    "La factura electrónica elimina todo deber de conservación de soportes por parte del obligado.",
+                    "La facturación electrónica no suprime los deberes de conservar soportes e información según la normativa aplicable; el obligado debe mantener la documentación exigida por los plazos y condiciones legales.",
+                    "Solo deben conservarse soportes si hay una auditoría en curso."
+                ],
+                "correct": 1,
+                "explanation": "Dificultad conceptual: confunde validación electrónica con eliminación de deberes formales de conservación."
+            },
+            {
+                "id": "m5_c39",
+                "text": "Caso: Un comerciante expidió factura electrónica con un error en el valor; pregunta si puede \"corregirla\" editando el PDF enviado al cliente sin seguir el mecanismo del sistema.\n\nEnunciado: La orientación correcta es:",
+                "options": [
+                    "Editar el PDF es suficiente si ambas partes están de acuerdo.",
+                    "Las correcciones deben realizarse mediante los mecanismos previstos en el sistema de facturación electrónica (notas/ajustes según aplique), conservando trazabilidad y cumpliendo requisitos normativos; un PDF alterado no reemplaza el procedimiento válido.",
+                    "Anular verbalmente la operación y no emitir documento alguno."
+                ],
+                "correct": 1,
+                "explanation": "Exige teoría de facturación electrónica (trazabilidad/mecanismos de ajuste), no sentido común de \"corregir un archivo\"."
+            },
+            {
+                "id": "m5_c40",
+                "text": "Caso: Una persona natural en RST recibe ingresos por una actividad que podría estar excluida o sujeta a tratamiento especial y pregunta si puede permanecer en el régimen sin revisar condiciones.\n\nEnunciado: El Gestor I debe:",
+                "options": [
+                    "Confirmar permanencia automática mientras pague el impuesto unificado.",
+                    "Orientar que la permanencia/elegibilidad en RST depende del cumplimiento continuo de requisitos y causales legales; debe verificarse la situación concreta con norma oficial/canales competentes.",
+                    "Indicar que el RST no tiene causales de exclusión una vez se obtiene."
+                ],
+                "correct": 1,
+                "explanation": "Requiere conocimiento de que RST tiene condiciones de acceso/permanencia; distractores son absolutos."
+            },
+            {
+                "id": "m5_c41",
+                "text": "Caso: Un contribuyente no declaró a tiempo por una falla del proveedor tecnológico, pero sí tenía obligación. Pregunta si la falla elimina automáticamente sanciones e intereses.\n\nEnunciado: La orientación responsable es:",
+                "options": [
+                    "Toda falla tecnológica elimina automáticamente sanciones e intereses.",
+                    "Las exoneraciones o tratamientos dependen de causales/procedimientos y prueba previstos en la norma; debe cumplir obligaciones y gestionar por canales formales lo que corresponda, sin prometer efectos automáticos.",
+                    "No debe presentar nada hasta que la DIAN emita una circular general de condonación."
+                ],
+                "correct": 1,
+                "explanation": "Evita el error común de \"fuerza mayor = exención automática\"; exige criterio normativo/procedimental."
+            },
+            {
+                "id": "m5_c42",
+                "text": "Caso: Un NAF orienta a un contribuyente que trae información incompleta y pide que el facilitador \"complete\" los datos faltantes para poder declarar.\n\nEnunciado: Según el alcance del NAF/asistencia, lo correcto es:",
+                "options": [
+                    "Completar los datos con estimaciones razonables para asegurar el cumplimiento.",
+                    "Orientar sobre requisitos, soportes y uso de canales, pero no suplir la responsabilidad del contribuyente ni consignar datos no verificados/soportados por este.",
+                    "Negarse a orientar cualquier tema si faltan datos."
+                ],
+                "correct": 1,
+                "explanation": "Exige conocer límites del rol de orientación (NAF/asistencia) vs responsabilidad del obligado; opción A suena útil pero es incorrecta."
+            },
+            {
+                "id": "m5_c43",
+                "text": "Caso: Un contribuyente recibe un pago con retención y pregunta si ese valor retenido \"lo exonera\" de declarar o si cambia su calidad de responsable en RUT automáticamente.\n\nEnunciado: El Gestor I debe explicar que:",
+                "options": [
+                    "La retención reemplaza la declaración y actualiza automáticamente el RUT.",
+                    "La retención es un mecanismo de recaudo/anticipo según aplique, pero no elimina por sí sola deberes formales ni actualiza automáticamente responsabilidades RUT sin el trámite/procedimiento correspondiente.",
+                    "Si hubo retención, nunca se debe declarar."
+                ],
+                "correct": 1,
+                "explanation": "Distingue conceptos técnicos (retención, declaración, registro RUT) que el sentido común suele mezclar."
             }
         ]
     },
@@ -2113,6 +2467,78 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B contiene el incidente y protege la información mediante canales formales. A omite el deber de protección y C puede ampliar la exposición."
+            },
+            {
+                "id": "m6_c32",
+                "difficulty": "avanzada",
+                "text": "Caso: Un abogado solicita información tributaria de su contraparte en un proceso civil ordinario, adjuntando memorial dirigido a la DIAN pero sin orden judicial de autoridad competente en los términos que habilitan la excepción de reserva.\n\nEnunciado: Conforme al Art. 583 E.T. (reserva tributaria) y excepciones, el Gestor I debe:",
+                "options": [
+                    "Entregar la información por tratarse de un proceso judicial en curso.",
+                    "Negar la entrega por reserva, salvo que la solicitud provenga de la autoridad/escenario legalmente habilitado y por el canal formal correspondiente; orientar el mecanismo procedente.",
+                    "Entregar solo la información \"no sensible\" del RUT, aunque incluya datos tributarios."
+                ],
+                "correct": 1,
+                "explanation": "Exige precisión sobre excepciones a la reserva (no todo proceso/abogado habilita acceso) y canal formal."
+            },
+            {
+                "id": "m6_c33",
+                "difficulty": "avanzada",
+                "text": "Caso: Un órgano de control en ejercicio de funciones solicita información con fundamento legal. La solicitud llega por un canal informal y sin especificar alcance.\n\nEnunciado: La actuación correcta es:",
+                "options": [
+                    "Rechazar toda cooperación con órganos de control para proteger la reserva.",
+                    "Verificar competencia, fundamento, alcance y canal formal; aplicar reserva con sus excepciones legales y entregar únicamente lo pertinente por el medio institucional autorizado.",
+                    "Enviar toda la base de datos para demostrar transparencia."
+                ],
+                "correct": 1,
+                "explanation": "Requiere equilibrar reserva con excepciones legales (órganos de control) y debido canal/alcance; ni cierre absoluto ni entrega masiva."
+            },
+            {
+                "id": "m6_c34",
+                "difficulty": "avanzada",
+                "text": "Caso: En una tabla de retención documental, un expediente de PQRSD/RUT aún está dentro del tiempo de conservación, pero un área pide destruirlo para liberar espacio.\n\nEnunciado: Conforme a gestión documental/archivo y control, el Gestor I debe:",
+                "options": [
+                    "Autorizar la destrucción si el área solicitante asume la responsabilidad.",
+                    "Aplicar tablas de retención/disposición documental y procedimientos autorizados; no destruir información dentro de plazos de conservación ni sin el trámite formal correspondiente.",
+                    "Digitalizar sin metadatos ni validación y destruir el físico inmediatamente."
+                ],
+                "correct": 1,
+                "explanation": "Conocimiento técnico de archivo/retención documental (Ley 594/2000 y lineamientos) vs conveniencia operativa."
+            },
+            {
+                "id": "m6_c35",
+                "difficulty": "avanzada",
+                "text": "Caso: Un dashboard de gestión pública mostrará indicadores de atención, pero al cruzar filtros permite inferir datos de contribuyentes específicos en grupos pequeños.\n\nEnunciado: Desde MIPG/datos abiertos-protección de datos/reserva, lo correcto es:",
+                "options": [
+                    "Publicar el dashboard completo porque la transparencia prevalece siempre.",
+                    "Aplicar anonimización/agregación suficiente, revisión de riesgo de reidentificación y controles antes de publicar; no divulgar información que permita inferir datos protegidos.",
+                    "Restringir todo indicador al público, incluso los agregados no sensibles."
+                ],
+                "correct": 1,
+                "explanation": "Exige criterio técnico: transparencia no equivale a exposición de datos protegidos por reidentificación."
+            },
+            {
+                "id": "m6_c36",
+                "difficulty": "avanzada",
+                "text": "Caso: Se identifica un riesgo de fraude en validación de identidad RUT. La primera línea propone un control operativo, pero no lo documenta ni define responsable/indicador.\n\nEnunciado: Conforme al modelo de Tres Líneas de MIPG, la mejora adecuada es:",
+                "options": [
+                    "Dejar el control informal porque las tres líneas operan independientemente sin coordinación.",
+                    "Diseñar/documentar el control (responsable, frecuencia, evidencia, indicador), implementarlo en primera línea y articular seguimiento/aseguramiento según corresponda.",
+                    "Trasladar todo el diseño y ejecución del control a auditoría interna (tercera línea)."
+                ],
+                "correct": 1,
+                "explanation": "Requiere teoría MIPG (Tres Líneas): auditoría asegura, no ejecuta controles operativos diarios."
+            },
+            {
+                "id": "m6_c37",
+                "difficulty": "avanzada",
+                "text": "Caso: Un funcionario usa una cuenta compartida para responder trámites porque \"es más rápido\"; no queda trazabilidad individual de las actuaciones.\n\nEnunciado: Desde control, seguridad y responsabilidad, la práctica correcta es:",
+                "options": [
+                    "Permitir cuentas compartidas en picos de trabajo si el equipo se coordina verbalmente.",
+                    "Usar cuentas individuales/autenticación y perfiles autorizados para garantizar trazabilidad, no repudio y seguridad; gestionar capacidad por medios formales.",
+                    "Compartir credenciales solo entre personal de planta, excluyendo contratistas."
+                ],
+                "correct": 1,
+                "explanation": "Exige conocimiento de seguridad/trazabilidad en gestión pública; \"eficiencia\" no justifica pérdida de control."
             }
         ]
     },
@@ -2975,6 +3401,58 @@
                 ],
                 "correct": 1,
                 "explanation": "La opción B equilibra respeto con responsabilidad: ante riesgo de datos, prima la contención y el reporte institucional. A encubre el riesgo y C expone más la situación."
+            },
+            {
+                "id": "m7_c72",
+                "examSubArea": "comportamental",
+                "difficulty": "avanzada",
+                "text": "Caso: Un contribuyente exige una respuesta inmediata sobre un tema RUT cuya norma cambió; el Gestor I conoce la regla anterior, pero no ha verificado la actualización vigente.\n\nEnunciado: La respuesta de mayor calidad (Res. 065/2024: Comunicación Efectiva, Orientación al Usuario, Adaptabilidad) es:",
+                "options": [
+                    "Responder con la regla anterior para no perder credibilidad frente al usuario.",
+                    "Informar con transparencia que verificará la vigencia, consultar la fuente oficial/guía interna, dar la respuesta correcta y orientar el siguiente paso sin inventar información.",
+                    "Remitir al usuario sin explicación para evitar riesgo."
+                ],
+                "correct": 1,
+                "explanation": "Aunque parece sentido común, se evalúa la conducta DIAN: veracidad, actualización normativa y servicio efectivo; el distractor A explota presión por rapidez."
+            },
+            {
+                "id": "m7_c73",
+                "examSubArea": "integridad",
+                "difficulty": "avanzada",
+                "text": "Caso: Un familiar solicita al Gestor I \"solo confirmar\" si una empresa específica está en un estado registral determinado, usando acceso institucional.\n\nEnunciado: Conforme a Código de Integridad DIAN (Honestidad/Justicia) y reserva/protección de datos, procede:",
+                "options": [
+                    "Confirmar verbalmente porque es un dato puntual y el familiar es de confianza.",
+                    "Negarse a usar accesos institucionales para fines no autorizados, proteger la información y orientar los canales legítimos si existen.",
+                    "Consultar la información y pedir al familiar que no la difunda."
+                ],
+                "correct": 1,
+                "explanation": "Exige aplicar integridad a un caso aparentemente menor (\"solo confirmar\"); teoría de uso debido de accesos y reserva."
+            },
+            {
+                "id": "m7_c74",
+                "examSubArea": "comportamental",
+                "difficulty": "avanzada",
+                "text": "Caso: En atención inclusiva, un usuario con discapacidad auditiva requiere información sobre un requisito complejo. El Punto de Contacto tiene ajustes razonables disponibles pero implican unos minutos adicionales.\n\nEnunciado: La conducta más alineada con Res. 065/2024 y servicio DIAN es:",
+                "options": [
+                    "Entregar un folleto estándar y continuar con la fila para cumplir metas de tiempo.",
+                    "Aplicar el ajuste razonable disponible, comunicar por medios accesibles, verificar comprensión y asegurar igualdad efectiva en el acceso al servicio.",
+                    "Pedir que regrese con un intérprete particular como única alternativa."
+                ],
+                "correct": 1,
+                "explanation": "Requiere integrar enfoque diferencial/ajustes razonables con metas operativas; la presión por tiempo hace plausible A."
+            },
+            {
+                "id": "m7_c75",
+                "examSubArea": "integridad",
+                "difficulty": "avanzada",
+                "text": "Caso: El Gestor I identifica que un indicador reportado al supervisor omite casos reprocesados, mejorando artificialmente el resultado del equipo.\n\nEnunciado: Según Diligencia, Honestidad y Compromiso con la organización, debe:",
+                "options": [
+                    "Mantener el indicador porque refleja el esfuerzo del equipo.",
+                    "Corregir o reportar objetivamente la información, sustentar los datos reales y contribuir a la mejora con base en evidencia, por los canales apropiados.",
+                    "Ajustar los casos manualmente sin dejar trazabilidad para evitar conflictos."
+                ],
+                "correct": 1,
+                "explanation": "Caso de integridad en gestión (no solo atención al ciudadano); exige priorizar veracidad sobre imagen del equipo."
             }
         ]
     }
@@ -2992,6 +3470,7 @@
                     explanation: baseCase.explanation,
                     examArea: meta.examArea || baseCase.examArea || 'funcional',
                     examSubArea: baseCase.examSubArea || (meta.examArea === 'funcional' ? 'funcional' : 'comportamental'),
+                    difficulty: baseCase.difficulty || 'estandar',
                 };
             });
             return {
